@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yiyiyiwui.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="😀">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud">
+<meta property="og:url" content="http://yiyiyiwui.com/2021/06/15/SpringCloud/index.html">
+<meta property="og:site_name" content="ei blog">
+<meta property="og:description" content="😀">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/64916a3a1ddac507cc0743e7.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/64916a581ddac507cc0771a9.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/64916a841ddac507cc07ba26.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/64916d241ddac507cc0ca20b.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/64916dd81ddac507cc0dabb8.jpg">
+<meta property="article:published_time" content="2021-06-15T10:15:24.000Z">
+<meta property="article:modified_time" content="2023-07-01T09:06:37.658Z">
+<meta property="article:author" content="ei">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/64916a3a1ddac507cc0743e7.jpg">
+
+
+<link rel="canonical" href="http://yiyiyiwui.com/2021/06/15/SpringCloud/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yiyiyiwui.com/2021/06/15/SpringCloud/","path":"2021/06/15/SpringCloud/","title":"SpringCloud"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SpringCloud | ei blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  <a target="_blank" rel="noopener" href="https://github.com/ziyunei" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ei blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">无他，惟手熟尔</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E5%89%8D%E4%BA%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">学前了解</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AE%8C%E6%88%90%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%96%B9%E6%A1%88%E9%9C%80%E8%A6%81%E5%BE%88%E5%A4%9A%E7%BB%84%E4%BB%B6%E4%B8%80%E8%B5%B7%E6%9D%A5%E5%AE%8C%E6%88%90%EF%BC%8C%E8%BF%99%E4%BA%9B%E7%BB%84%E4%BB%B6%E8%A6%81%E4%BE%9D%E8%B5%96springboot%EF%BC%8C%E8%A6%81%E4%B8%8D%E7%84%B6%E9%85%8D%E7%BD%AE%E6%AF%94%E8%BE%83%E9%BA%BB%E7%83%A6"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">完成微服务方案需要很多组件一起来完成，这些组件要依赖springboot，要不然配置比较麻烦</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RestTemplate%EF%BC%88spring-web%E5%86%85%E9%83%A8%E5%B7%B2%E7%BB%8F%E6%8F%90%E4%BE%9B%E4%BA%86%EF%BC%8C%E4%B8%8D%E9%9C%80%E8%A6%81%E5%8D%95%E7%8B%AC%E5%AF%BC%E5%85%A5%EF%BC%89"><span class="nav-number">1.0.1.</span> <span class="nav-text">RestTemplate（spring-web内部已经提供了，不需要单独导入）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%A3%E4%B9%88%E9%97%AE%E9%A2%98%E6%9D%A5%E4%BA%86"><span class="nav-number">2.</span> <span class="nav-text">那么问题来了</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%981-%E5%A6%82%E6%9E%9Ca%E7%94%A8url%E5%9C%B0%E5%9D%80%E5%8E%BB%E8%B0%83%E7%94%A8b%EF%BC%8Cb%E6%9C%89%E5%A4%9A%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8Ca%E6%80%8E%E4%B9%88%E9%80%89%E6%8B%A9%E8%B0%83%E7%94%A8%E5%93%AA%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%91%A2%EF%BC%9F"><span class="nav-number">2.0.1.</span> <span class="nav-text">问题1:如果a用url地址去调用b，b有多个服务器，a怎么选择调用哪个服务器呢？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%982%EF%BC%9Aa%E8%B0%83%E7%94%A8b%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E6%80%8E%E4%B9%88%E8%8E%B7%E5%8F%96b%E7%9A%84%E5%9C%B0%E5%9D%80%E4%BF%A1%E6%81%AF%E5%91%A2%EF%BC%9F"><span class="nav-number">2.0.2.</span> <span class="nav-text">问题2：a调用b的时候，怎么获取b的地址信息呢？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%983%EF%BC%9Aa%E6%80%8E%E4%B9%88%E7%9F%A5%E9%81%93b%E5%93%AA%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%98%AF%E5%A5%BD%E7%9A%84%E6%98%AF%E5%9D%8F%E7%9A%84%EF%BC%9F"><span class="nav-number">2.0.3.</span> <span class="nav-text">问题3：a怎么知道b哪一台服务器是好的是坏的？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%984%EF%BC%9Ab%E7%9A%84%E5%90%84%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%8E%E4%B9%88%E7%9F%A5%E9%81%93%E8%87%AA%E5%B7%B1%E6%98%AF%E5%A5%BD%E7%9A%84%E6%98%AF%E5%9D%8F%E7%9A%84%EF%BC%9F"><span class="nav-number">2.0.4.</span> <span class="nav-text">问题4：b的各个服务器怎么知道自己是好的是坏的？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%985%EF%BC%9A%E5%BC%80%E5%90%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%90%8E%EF%BC%8C%E9%BB%98%E8%AE%A4%E7%9A%84%E6%98%AF%E8%BD%AE%E8%AF%A2%EF%BC%8C%E6%80%8E%E4%B9%88%E6%9B%B4%E6%8D%A2%EF%BC%9F"><span class="nav-number">2.0.5.</span> <span class="nav-text">问题5：开启负载均衡后，默认的是轮询，怎么更换？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%986%EF%BC%9A%E6%80%8E%E4%B9%88%E6%8F%90%E9%AB%98%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6"><span class="nav-number">2.0.6.</span> <span class="nav-text">问题6：怎么提高访问速度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%987%EF%BC%9A%E6%80%8E%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%84%E5%88%99"><span class="nav-number">2.0.7.</span> <span class="nav-text">问题7：怎么自定义设置负载均衡规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Nacos"><span class="nav-number">2.0.8.</span> <span class="nav-text">Nacos</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%988%EF%BC%9A%E5%A6%82%E6%9E%9C%E8%AE%BF%E9%97%AE%E9%80%94%E4%B8%AD%EF%BC%8C%E6%9C%89100%E4%B8%AAb%E7%9A%84%E5%AE%9E%E4%BE%8B%EF%BC%8C%E6%8C%82%E4%BA%8699%E4%B8%AA%EF%BC%8C%E5%8F%AA%E5%89%A9%E4%B8%8B%E4%B8%80%E4%B8%AA%EF%BC%8C%E4%BC%9A%E6%80%8E%E4%B9%88%E6%A0%B7%EF%BC%9F"><span class="nav-number">2.0.9.</span> <span class="nav-text">问题8：如果访问途中，有100个b的实例，挂了99个，只剩下一个，会怎么样？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%989%EF%BC%9A%E6%AF%8F%E4%B8%AA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%83%BD%E8%A6%81%E8%B0%83%E7%94%A8nocos%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%8C%E6%80%8E%E4%B9%88%E8%B0%83%E7%94%A8%EF%BC%9F"><span class="nav-number">2.0.10.</span> <span class="nav-text">问题9：每个微服务都要调用nocos中配置的配置文件，怎么调用？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%9810%EF%BC%9A%E5%A6%82%E6%9E%9Cnacos%E5%92%8C%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%90%8C%E5%90%8D%E4%BC%9A%E6%80%8E%E4%B9%88%E6%A0%B7%EF%BC%9F"><span class="nav-number">2.0.11.</span> <span class="nav-text">问题10：如果nacos和本地配置文件同名会怎么样？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%9811%EF%BC%9A%E5%BD%93%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%85%B7%E6%9C%89%E7%9B%B8%E5%90%8C%E9%85%8D%E7%BD%AE%EF%BC%8C%EF%BC%8C%E8%BF%99%E4%BA%9B%E9%85%8D%E7%BD%AE%E5%9C%A8%E6%AF%8F%E4%B8%AA%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E9%83%BD%E9%85%8D%E7%BD%AE%E4%BA%86%E4%B8%80%E4%BB%BD%EF%BC%8C%E6%AD%A4%E6%97%B6%E5%87%BA%E7%8E%B0%E4%BA%86%E9%87%8D%E5%A4%8D%E9%85%8D%E7%BD%AE%E5%A6%82%E4%BD%95%E5%8F%AA%E9%85%8D%E7%BD%AE%E4%B8%80%E6%AC%A1%EF%BC%8C%E8%BF%98%E8%83%BD%E5%9C%A8%E5%A4%9A%E4%B8%AA%E7%8E%AF%E5%A2%83%E4%B8%AD%E5%85%B1%E4%BA%AB%E9%85%8D%E7%BD%AE%E5%91%A2%EF%BC%9F"><span class="nav-number">2.0.12.</span> <span class="nav-text">问题11：当不同环境具有相同配置，，这些配置在每个环境的配置文件中都配置了一份，此时出现了重复配置如何只配置一次，还能在多个环境中共享配置呢？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%9812%EF%BC%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BC%98%E5%85%88%E7%BA%A7%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.0.13.</span> <span class="nav-text">问题12：配置文件优先级是什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%9813%EF%BC%9A%E5%A6%82%E6%9E%9Cnacos%E6%8C%82%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="nav-number">2.0.14.</span> <span class="nav-text">问题13：如果nacos挂了怎么办？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%9814%EF%BC%9A-nacos%E5%92%8CEureka%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.0.15.</span> <span class="nav-text">问题14： nacos和Eureka的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%9815%EF%BC%9A%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%B9%8B%E9%97%B4%E8%B0%83%E7%94%A8%E7%9A%84%E4%BB%A3%E7%A0%81%E4%B8%8D%E7%BB%9F%E4%B8%80%EF%BC%8C%E5%8F%82%E6%95%B0%E5%A4%8D%E6%9D%82%E7%9A%84%E5%9C%B0%E5%9D%80%E9%9A%BE%E4%BB%A5%E7%BB%B4%E6%8A%A4%EF%BC%8C%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E7%9A%84%E5%8A%9E%E6%B3%95%E5%90%97%EF%BC%9F"><span class="nav-number">2.0.16.</span> <span class="nav-text">问题15：微服务之间调用的代码不统一，参数复杂的地址难以维护，有什么好的办法吗？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A-%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E5%8A%9E%E6%B3%95%E8%A7%A3%E5%86%B3%E9%9B%AA%E5%B4%A9%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">2.0.17.</span> <span class="nav-text">问题： 还有什么办法解决雪崩问题？</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Hystrix%EF%BC%88%E8%A7%A3%E5%86%B3%E9%9B%AA%E5%B4%A9%E7%9A%84%E4%B8%80%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%BB%84%E4%BB%B6%EF%BC%89%EF%BC%9A"><span class="nav-number">2.0.17.1.</span> <span class="nav-text">Hystrix（解决雪崩的一种解决方案组件）：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E5%85%B3%EF%BC%9F"><span class="nav-number">2.0.18.</span> <span class="nav-text">问题：什么是网关？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E7%BD%91%E5%85%B3%E6%80%9D%E8%B7%AF%E6%9C%89%E4%BA%86%EF%BC%8C%E8%90%BD%E5%9C%B0%E6%96%B9%E6%A1%88%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="nav-number">2.0.19.</span> <span class="nav-text">问题: 网关思路有了，落地方案怎么实现？</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#geteway%E7%BB%84%E4%BB%B6"><span class="nav-number">2.0.19.1.</span> <span class="nav-text">geteway组件</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A%E6%96%AD%E8%A8%80%E8%A7%84%E5%88%99%E5%B8%B8%E7%94%A8%E7%9A%84%E6%98%AF%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%99%EF%BC%8C%E8%BF%98%E6%9C%89%E5%85%B6%E4%BB%96%E8%A7%84%E5%88%99%E5%90%97%EF%BC%9F"><span class="nav-number">2.0.20.</span> <span class="nav-text">问题：断言规则常用的是路径规则，还有其他规则吗？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%87%E6%BB%A4%E5%99%A8%EF%BC%8C%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AE%EF%BC%9F"><span class="nav-number">2.0.21.</span> <span class="nav-text">问题：什么是过滤器，怎么配置？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A-%E6%80%8E%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%A8%E5%B1%80%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="nav-number">2.0.22.</span> <span class="nav-text">问题： 怎么自定义全局过滤器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%9C%89%E5%A4%9A%E4%B8%AA%E8%BF%87%E6%BB%A4%E5%99%A8%EF%BC%8C%E8%B0%81%E5%85%88%E6%89%A7%E8%A1%8C%EF%BC%8C%E8%B0%81%E5%90%8E%E6%89%A7%E8%A1%8C%EF%BC%9F"><span class="nav-number">2.0.23.</span> <span class="nav-text">问题：如果有多个过滤器，谁先执行，谁后执行？</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ei"
+      src="/images/tou.jpg">
+  <p class="site-author-name" itemprop="name">ei</p>
+  <div class="site-description" itemprop="description">我心自有光明月</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yiyiyiwui" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yiyiyiwui" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://chat6.aichatos.com/#/chat/1683349543895" title="ChatGPT → https:&#x2F;&#x2F;chat6.aichatos.com&#x2F;#&#x2F;chat&#x2F;1683349543895" rel="noopener me" target="_blank"><i class="fa bilibili fa-fw"></i>ChatGPT</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yiyiyiwui.com/2021/06/15/SpringCloud/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/tou.jpg">
+      <meta itemprop="name" content="ei">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ei blog">
+      <meta itemprop="description" content="我心自有光明月">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="SpringCloud | ei blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringCloud
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-15 18:15:24" itemprop="dateCreated datePublished" datetime="2021-06-15T18:15:24+08:00">2021-06-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-01 17:06:37" itemprop="dateModified" datetime="2023-07-01T17:06:37+08:00">2023-07-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/SpringCloud/" itemprop="url" rel="index"><span itemprop="name">SpringCloud</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>😀</p>
+<span id="more"></span>
+<p><font color=FF0000> 负载均衡、Nacos、Feign、熔断器、网关、断言 </font></p>
+<h3 id="学前了解"><a href="#学前了解" class="headerlink" title="学前了解"></a>学前了解</h3><p>单体应用架构是把所有应用模块放一起，用的时候都去数据库调用，如果数据库崩了，就会影响所有的模块运行。</p>
+<p>微服务架构是把应用模块分成好几个各自的模块，每个模块都有各自的数据库，用的时候互相调用即可，如果有一个模块崩了，不用影响其他模块运行，大大提高了容错率。<br><img src="https://pic.imgdb.cn/item/64916a3a1ddac507cc0743e7.jpg"><br>有了思想，就需要有技术框架方案落地，全球最知名的有SpringcCloud NetFlix和 SpringCloud Alibaba。</p>
+<p>现在已经把应用模块分成了好几个，但互相调用比较麻烦，所以在此基础上，可以创建一个服务注册中心，专门用来管理各个模块。同时每个模块也需要有各自的配置信息，模块微服务要调用后台的开发环境或测试环境，就要修改配置文件，比较麻烦，所以我们需要创建一个配置中心,一处修改，多处调用<br><img src="https://pic.imgdb.cn/item/64916a581ddac507cc0771a9.jpg"></p>
+<h6 id="完成微服务方案需要很多组件一起来完成，这些组件要依赖springboot，要不然配置比较麻烦"><a href="#完成微服务方案需要很多组件一起来完成，这些组件要依赖springboot，要不然配置比较麻烦" class="headerlink" title="完成微服务方案需要很多组件一起来完成，这些组件要依赖springboot，要不然配置比较麻烦"></a>完成微服务方案需要很多组件一起来完成，这些组件要依赖springboot，要不然配置比较麻烦</h6><p><img src="https://pic.imgdb.cn/item/64916a841ddac507cc07ba26.jpg"><br>各个模块区分了，如果你要调用另一个模块，就要像浏览器那样发送http请求</p>
+<p>以前用的是httpClient，用起来虽然比较方便，但是代码多，这里我们用另一个</p>
+<h5 id="RestTemplate（spring-web内部已经提供了，不需要单独导入）"><a href="#RestTemplate（spring-web内部已经提供了，不需要单独导入）" class="headerlink" title="RestTemplate（spring-web内部已经提供了，不需要单独导入）"></a>RestTemplate（spring-web内部已经提供了，不需要单独导入）</h5><p>我们需要把他定义到springioc容器中，因为启动类就是配置类，我们a要调用b，所以就在a的启动类中定义@Bean注解，把RestTemplate放入springioc容器中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@LoadBalanced</span> <span class="comment">// 开启负载均衡</span></span><br><span class="line"><span class="meta">@Bean</span> <span class="comment">// 创建代码交给ioc容器 </span></span><br><span class="line"><span class="keyword">public</span> RestTemplate <span class="title function_">restTemplate</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">RestTemlate</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过@Autowired导入restTemplate，然后调用b，需要给b发送请求</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向b发送请求调用的地址</span></span><br><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;http://localhost:xxxx&quot;</span>+a.id;</span><br><span class="line"><span class="comment">//给b发送请求调用。b接收请求后返回的是json格式，java不能直接接收json格式，需要把json转换成对象</span></span><br><span class="line">restTemplate.(这里发送什么请求就输入什么请求).getForObject(url,a.class)</span><br></pre></td></tr></table></figure>
+<p>a调用b，a就是消费者，b就是提供者，同理，谁调用谁谁就是消费者，提供信息的就是提供者！</p>
+<p>如果a调用b的时候，b挂了，就不能正常执行了，所以需要多台服务器，比如b1，b2，…… </p>
+<p>这个时候就需要用到注册中心，假设消费者要调用提供者，提供者可以把自己所有的服务器都放在一个叫“注册中心”的地方统一管理，通过注册中心来告诉消费者，提供者哪一台服务器是健康的，哪一台是坏的</p>
+<h3 id="那么问题来了"><a href="#那么问题来了" class="headerlink" title="那么问题来了"></a>那么问题来了</h3><h5 id="问题1-如果a用url地址去调用b，b有多个服务器，a怎么选择调用哪个服务器呢？"><a href="#问题1-如果a用url地址去调用b，b有多个服务器，a怎么选择调用哪个服务器呢？" class="headerlink" title="问题1:如果a用url地址去调用b，b有多个服务器，a怎么选择调用哪个服务器呢？"></a>问题1:如果a用url地址去调用b，b有多个服务器，a怎么选择调用哪个服务器呢？</h5><p>a要调用b，但可能也有c要调用a，所以自己既是消费者，也是提供者。比如这里a调用了b，把b的所有服务器都从注册中心拉取下来，但有多个服务器，要用哪个呢？选择的过程就叫<strong>负载均衡</strong>，默认是轮询，比如请求先调用b，再调用b1,……</p>
+<h5 id="问题2：a调用b的时候，怎么获取b的地址信息呢？"><a href="#问题2：a调用b的时候，怎么获取b的地址信息呢？" class="headerlink" title="问题2：a调用b的时候，怎么获取b的地址信息呢？"></a>问题2：a调用b的时候，怎么获取b的地址信息呢？</h5><p>找注册中心要。</p>
+<h5 id="问题3：a怎么知道b哪一台服务器是好的是坏的？"><a href="#问题3：a怎么知道b哪一台服务器是好的是坏的？" class="headerlink" title="问题3：a怎么知道b哪一台服务器是好的是坏的？"></a>问题3：a怎么知道b哪一台服务器是好的是坏的？</h5><p>b有个心跳续约的过程，会每30秒向注册中心上报自身健康信息，如果b有个服务器挂了，注册中心知道后，就会告诉消费者a，然后a就不会再调用b挂了的服务器</p>
+<h5 id="问题4：b的各个服务器怎么知道自己是好的是坏的？"><a href="#问题4：b的各个服务器怎么知道自己是好的是坏的？" class="headerlink" title="问题4：b的各个服务器怎么知道自己是好的是坏的？"></a>问题4：b的各个服务器怎么知道自己是好的是坏的？</h5><p>b有个心跳续约的过程，会每30秒向注册中心上报自身健康信息</p>
+<h5 id="问题5：开启负载均衡后，默认的是轮询，怎么更换？"><a href="#问题5：开启负载均衡后，默认的是轮询，怎么更换？" class="headerlink" title="问题5：开启负载均衡后，默认的是轮询，怎么更换？"></a>问题5：开启负载均衡后，默认的是轮询，怎么更换？</h5><p>可以调用java代码更换，但是如果调用的多了，就比较麻烦。如果a调用b，负载均衡用的轮询， a再调用c，要求用循环的话，java代码就不好用了，这里就可以用配置文件</p>
+<h5 id="问题6：怎么提高访问速度"><a href="#问题6：怎么提高访问速度" class="headerlink" title="问题6：怎么提高访问速度"></a>问题6：怎么提高访问速度</h5><p>饥饿加载，第一次调用的时候就创建好，下次调用直接用就可以了，就不用再次创建</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ribbon:</span></span><br><span class="line">  <span class="attr">eager-load:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span> <span class="comment"># 开启饥饿加载</span></span><br><span class="line">    <span class="attr">clients:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">userservice</span>  <span class="comment"># 指定饥饿加载的服务名称</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="问题7：怎么自定义设置负载均衡规则"><a href="#问题7：怎么自定义设置负载均衡规则" class="headerlink" title="问题7：怎么自定义设置负载均衡规则"></a>问题7：怎么自定义设置负载均衡规则</h5><p>可以用java代码，也可以在配置文件中，两个不能一起</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">userservice:</span> <span class="comment"># 给某个微服务配置负载均衡规则，这里是userservice服务</span></span><br><span class="line">   <span class="attr">ribbon:</span></span><br><span class="line">     <span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.alibaba.cloud.nacos.ribbon.NacosRule</span> <span class="comment"># 负载均衡规则</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Nacos"><a href="#Nacos" class="headerlink" title="Nacos"></a>Nacos</h5><p>打开Nacos安装目录，在bin目录下执行，访问网页<a target="_blank" rel="noopener" href="http://localhost:8848/nacos">http://localhost:8848/nacos</a>  账号密码都是nacos</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">startup.cmd</span> <span class="string">-m</span> <span class="string">standalone</span></span><br></pre></td></tr></table></figure>
+<p>把模块放入Nacos管理<br>导入依赖：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;!--nacos注册中心客户端依赖--&gt;</span></span><br><span class="line"><span class="string">&lt;dependency&gt;</span></span><br><span class="line">    <span class="string">&lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span></span><br><span class="line">    <span class="string">&lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">&lt;/dependency&gt;</span></span><br></pre></td></tr></table></figure>
+<p>添加配置文件：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">discovery:</span> <span class="string">//</span> <span class="string">注册中心地址</span></span><br><span class="line">        <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># 连接nacos注册中心</span></span><br></pre></td></tr></table></figure>
+<p>Nacos设置负载均衡的权重，权重就相当于你的等级大小，官方建议在0~1之间设置</p>
+<h5 id="问题8：如果访问途中，有100个b的实例，挂了99个，只剩下一个，会怎么样？"><a href="#问题8：如果访问途中，有100个b的实例，挂了99个，只剩下一个，会怎么样？" class="headerlink" title="问题8：如果访问途中，有100个b的实例，挂了99个，只剩下一个，会怎么样？"></a>问题8：如果访问途中，有100个b的实例，挂了99个，只剩下一个，会怎么样？</h5><p>如果所有请求都去访问一个实例服提供者，会造成雪崩，比如有100个b，挂了99个，那么消费者都会去访问剩下的1个，剩下一个承受不了压力，就会导致最后系统瘫痪，所以要设置一个阈值，就是比如有100个服务器，设置假如挂了50台，就自动开启保护阈值，之后消费者访问的时候就按照比例，一半人访问成功，一半人访问失败，来缓解提供者的压力，从而能让剩下的提供者能正常工作。</p>
+<p>保护阈值触发条件为：（实际健康实例&#x2F;总服务实例）&lt;&#x3D;设置的保护阈值</p>
+<p>比如健康实例为1个，服务实例为2个 1&#x2F;2&#x3D;0.5    设置保护阈值&#x3D;0.5</p>
+<h5 id="问题9：每个微服务都要调用nocos中配置的配置文件，怎么调用？"><a href="#问题9：每个微服务都要调用nocos中配置的配置文件，怎么调用？" class="headerlink" title="问题9：每个微服务都要调用nocos中配置的配置文件，怎么调用？"></a>问题9：每个微服务都要调用nocos中配置的配置文件，怎么调用？</h5><p>在nocos中配置好配置文件，然后在项目中创建优先级比application.yml高的bootstrap.yml引导配置文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">application:</span></span><br><span class="line">		<span class="attr">name:</span> <span class="string">userservice</span>   <span class="comment"># 服务名</span></span><br><span class="line">	<span class="attr">cloud:</span></span><br><span class="line">	  <span class="attr">nacos:</span></span><br><span class="line"> 		<span class="attr">config:</span> <span class="string">//</span> <span class="string">配置中心地址</span></span><br><span class="line">   		  <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos 配置中心地址</span></span><br><span class="line">   		  <span class="attr">file-extension:</span> <span class="string">yml</span>  <span class="comment"># 文件扩展名</span></span><br></pre></td></tr></table></figure>
+<p>之前的是注册中心的依赖，这里也要引入配置中心的依赖</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;!--nacos配置管理依赖--&gt;</span></span><br><span class="line"><span class="string">&lt;dependency&gt;</span></span><br><span class="line"> <span class="string">&lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span></span><br><span class="line"> <span class="string">&lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-config&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">&lt;/dependency&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里nacos配置要是改变了的话，微服务就要重新启动才能生效，重启期间用户不能正常访问，非常不友好，我们可以设置自动刷新，新建一个配置属性类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;jdbc&quot;)</span> <span class="comment">//批量读取</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyJdbcProperties</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String username;</span><br><span class="line"><span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="问题10：如果nacos和本地配置文件同名会怎么样？"><a href="#问题10：如果nacos和本地配置文件同名会怎么样？" class="headerlink" title="问题10：如果nacos和本地配置文件同名会怎么样？"></a>问题10：如果nacos和本地配置文件同名会怎么样？</h5><p>先入为主，谁的优先级高就会先读取谁的，如果nacos里面有了，会读取nacos里面的，就不会读取本地配置文件里面的了</p>
+<h5 id="问题11：当不同环境具有相同配置，，这些配置在每个环境的配置文件中都配置了一份，此时出现了重复配置如何只配置一次，还能在多个环境中共享配置呢？"><a href="#问题11：当不同环境具有相同配置，，这些配置在每个环境的配置文件中都配置了一份，此时出现了重复配置如何只配置一次，还能在多个环境中共享配置呢？" class="headerlink" title="问题11：当不同环境具有相同配置，，这些配置在每个环境的配置文件中都配置了一份，此时出现了重复配置如何只配置一次，还能在多个环境中共享配置呢？"></a>问题11：当不同环境具有相同配置，，这些配置在每个环境的配置文件中都配置了一份，此时出现了重复配置如何只配置一次，还能在多个环境中共享配置呢？</h5><p>微服务启动时，会去nacos读取 2 个配置文件，例如：</p>
+<ul>
+<li><p>环境配置：例如：userservice-dev.yml</p>
+</li>
+<li><p>共享配置： 例如：userservice.yml</p>
+</li>
+</ul>
+<p>​      而userservice.yml不包含环境，因此可以被多个环境共享。</p>
+<p>然后修改配置文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">userservice</span>   <span class="comment"># 服务名</span></span><br><span class="line">  <span class="attr">profiles:</span> <span class="string">//在这里指定开发环境</span></span><br><span class="line">      <span class="attr">active:</span> <span class="string">dev</span> <span class="comment"># 指定具体的环境</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos 配置中心地址</span></span><br><span class="line">        <span class="attr">file-extension:</span> <span class="string">yml</span>  <span class="comment"># 文件扩展名</span></span><br></pre></td></tr></table></figure>
+<h5 id="问题12：配置文件优先级是什么？"><a href="#问题12：配置文件优先级是什么？" class="headerlink" title="问题12：配置文件优先级是什么？"></a>问题12：配置文件优先级是什么？</h5><p><img src="https://pic.imgdb.cn/item/64916d241ddac507cc0ca20b.jpg"></p>
+<h5 id="问题13：如果nacos挂了怎么办？"><a href="#问题13：如果nacos挂了怎么办？" class="headerlink" title="问题13：如果nacos挂了怎么办？"></a>问题13：如果nacos挂了怎么办？</h5><p>这里可以弄一个集群，设置好几台nacos实例，客户端去连接Nginx(负载均衡服务器)来调用nacos实例，同时nacos实例1里面的配置文件设置持久化，Nginx(负载均衡)调用nacos实例2的时候，nacos去数据区取配置文件</p>
+<h5 id="问题14：-nacos和Eureka的区别"><a href="#问题14：-nacos和Eureka的区别" class="headerlink" title="问题14： nacos和Eureka的区别"></a>问题14： nacos和Eureka的区别</h5><p>1· nacos具有配置中心的功能</p>
+<p>2·nacos支持动态刷新</p>
+<p>3·nacos可以根据业务和环境进行分组管理，做到隔离</p>
+<p>4·nacos可以设置权重</p>
+<p>5·nacos支持在线管理，eureka只能预览</p>
+<h5 id="问题15：微服务之间调用的代码不统一，参数复杂的地址难以维护，有什么好的办法吗？"><a href="#问题15：微服务之间调用的代码不统一，参数复杂的地址难以维护，有什么好的办法吗？" class="headerlink" title="问题15：微服务之间调用的代码不统一，参数复杂的地址难以维护，有什么好的办法吗？"></a>问题15：微服务之间调用的代码不统一，参数复杂的地址难以维护，有什么好的办法吗？</h5><p>可以用 Feign来代替Resttemplate,谁发请求，谁使用Feign<br>导入坐标依赖</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;dependency&gt;</span></span><br><span class="line">    <span class="string">&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span></span><br><span class="line">    <span class="string">&lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">&lt;/dependency&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在消费者的启动类上标注注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableFeignClients</span> <span class="comment">//用于开启Feign的功能</span></span><br></pre></td></tr></table></figure>
+<p>声明一个远程调用的接口，名字一般叫 模块名+Client，之后在接口添加注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient(&quot;这里写调用url地址&quot;)</span></span><br></pre></td></tr></table></figure>
+<p>然后在接口定义要接收的请求，对方的Controller怎么写，我们的Client就怎么写，比如对方是这个：<br><img src="https://pic.imgdb.cn/item/64916dd81ddac507cc0dabb8.jpg"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//我们这里就这样写</span></span><br><span class="line"><span class="meta">@FeignClient(&quot;userservice&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserClient</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  &quot;http://userservice/user/&quot;+id</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user/&#123;id&#125;&quot;)</span></span><br><span class="line">    User <span class="title function_">findById</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之后修改消费者调用提供者的方法：直接把Client用@Autowired注入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">调用Client.findById(xxx)</span><br></pre></td></tr></table></figure>
+<p>Feign支持自定义配置文件，可以用java代码，也可以用配置文件</p>
+<p>比如说针对所有微服务做日志记录：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span>  </span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">config:</span> </span><br><span class="line">      <span class="attr">default:</span> <span class="comment"># 这里用default就是全局配置，如果是写服务名称，则是针对某个微服务的配置</span></span><br><span class="line">        <span class="attr">loggerLevel:</span> <span class="string">FULL</span> <span class="comment">#  日志级别 </span></span><br></pre></td></tr></table></figure>
+<p>每次发送请求都是新的连接，消耗资源，对于高并发不友好，我们可以创建个连接池，每次用的时候取连接池里面取。默认的是没有连接池的<br>导入依赖：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;!--httpClient的依赖内置连接池</span> <span class="string">--&gt;</span></span><br><span class="line"><span class="string">&lt;dependency&gt;</span></span><br><span class="line">    <span class="string">&lt;groupId&gt;io.github.openfeign&lt;/groupId&gt;</span></span><br><span class="line">    <span class="string">&lt;artifactId&gt;feign-httpclient&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">&lt;/dependency&gt;</span></span><br></pre></td></tr></table></figure>
+<p>配置连接池：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span></span><br><span class="line">  <span class="attr">httpclient:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span> <span class="comment"># 开启feign对HttpClient的支持</span></span><br><span class="line">    <span class="attr">max-connections:</span> <span class="number">200</span> <span class="comment"># 设置最大的连接数</span></span><br><span class="line">    <span class="attr">max-connections-per-route:</span> <span class="number">50</span> <span class="comment"># 并行接收一个服务的请求数量</span></span><br></pre></td></tr></table></figure>
+<p>假如a访问b有100个人访问，连接池设置的也是100个。a再有人访问c的话，连接池就没有了，所以为了雨露均沾，要在每个微服务接收请求数量里面设置均匀的并行接收请求数量</p>
+<p>假如a要调用b，c也要调用b。配置和实现接口都会重复调,就会出现代码重复。我们可以设置一个feign-api的公共组件，每次消费者使用的时候，直接从feign-api调用就可以了，避免了重复代码</p>
+<h5 id="问题：-还有什么办法解决雪崩问题？"><a href="#问题：-还有什么办法解决雪崩问题？" class="headerlink" title="问题： 还有什么办法解决雪崩问题？"></a>问题： 还有什么办法解决雪崩问题？</h5><p>常用方式有 超时处理：设置超时时间，请求超过一定时间没有响应就返回错误信息，不会无休止等待，但是设置超时时间的话会影响性能，用户体验</p>
+<p>熔断降级：如果第一次访问失败，就开启熔断，类似保险丝，烧断了以后就不会再工作了，告诉你这里不能再访问了。</p>
+<p>流量控制：限制访问，设置个大门（Sentinel）控制流量，类似以前游戏登录，如果当天有活动，就会</p>
+<p>开启排队机制，告诉你前面还有多少人，等处理完前面的请求再放你进去，一般用在抢票，秒杀抢购等</p>
+<h6 id="Hystrix（解决雪崩的一种解决方案组件）："><a href="#Hystrix（解决雪崩的一种解决方案组件）：" class="headerlink" title="Hystrix（解决雪崩的一种解决方案组件）："></a>Hystrix（解决雪崩的一种解决方案组件）：</h6><p>熔断： 提供者挂了，消费者就不在向提供者发送请求，这里可以设置阈值，比如100次里面有50次失败，就会开启阈值</p>
+<p>降级：熔断后，给提供者返回默认值，可以是错误提示信息</p>
+<p>开启Hystrix；(谁调用谁谁加)</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span></span><br><span class="line">  <span class="attr">hystrix:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span> <span class="comment"># 开启Feign的熔断功能</span></span><br></pre></td></tr></table></figure>
+<p>降级：设置一个实现类来实现远程调用的接口，如果调用的接口失败了，就异常处理，在feign-api模块中提供一种异常处理，然后在接口的@FeignClient注解后面添加地址，确保能扫描到  (value&#x3D;”这里写调用url地址”,  😀fallback&#x3D;UserClientFallback.class)。之后再在消费者的启动类中添加@Import(UserClientFallback.class) 来手动导入指定类创建</p>
+<p>断路器默认是关闭状态，打开断路器后阈值就会运行，但是如果挂了之后，不能就不再访问了，可以设置一个半开状态，等熔断时间过去了，再放行两个值，如果可以正常运行，就关闭熔断，如果还是访问失败，则继续打开断路器，在消费者配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">hystrix:</span></span><br><span class="line">  <span class="attr">command:</span></span><br><span class="line">    <span class="attr">default:</span></span><br><span class="line">      <span class="attr">circuitBreaker:</span></span><br><span class="line">       <span class="attr">requestVolumeThreshold:</span> <span class="number">10</span> <span class="string">//触发熔断的最小请求次数，默认20</span></span><br><span class="line">       <span class="attr">errorThresholdPercentage:</span> <span class="number">50</span> <span class="comment">#异常比例 触发熔断的失败请求最小占比，默认50%</span></span><br><span class="line">       <span class="attr">sleepWindowInMilliseconds:</span> <span class="number">10000</span> <span class="string">//休眠时长，默认是5000毫秒</span></span><br></pre></td></tr></table></figure>
+<p>访问每个微服务都要写过滤器和拦截器用来权限校验和身份认证，我们可以把它写在登录口，网关（大门口）来简化公共重复的代码，如果符合条件放行，不符合条件直接返回</p>
+<h5 id="问题：什么是网关？"><a href="#问题：什么是网关？" class="headerlink" title="问题：什么是网关？"></a>问题：什么是网关？</h5><p>用来身份认证和权限校验，也可以服务路由（转发） ，负载均衡， 请求限流</p>
+<p>路由：路由就是转发，接收到请求后，帮你转发到微服务</p>
+<p>断言：断言要和路由一起用，断言就是校验是否满足规则，比如你要找苹果，但我这只有香蕉，不符合规则，这个校验的过程就叫断言，说白了断言就是规则，路由就是转发</p>
+<h5 id="问题-网关思路有了，落地方案怎么实现？"><a href="#问题-网关思路有了，落地方案怎么实现？" class="headerlink" title="问题: 网关思路有了，落地方案怎么实现？"></a>问题: 网关思路有了，落地方案怎么实现？</h5><h6 id="geteway组件"><a href="#geteway组件" class="headerlink" title="geteway组件"></a>geteway组件</h6><p>注册一个模块，导入依赖,因为网关不知道微服务的每个地址，所以要找nacos要，这里也要把nacos依赖导入进来</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;dependencies&gt;</span></span><br><span class="line">    <span class="string">&lt;!--网关--&gt;</span></span><br><span class="line">    <span class="string">&lt;dependency&gt;</span></span><br><span class="line">        <span class="string">&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span></span><br><span class="line">        <span class="string">&lt;artifactId&gt;spring-cloud-starter-gateway&lt;/artifactId&gt;</span></span><br><span class="line">    <span class="string">&lt;/dependency&gt;</span></span><br><span class="line">    <span class="string">&lt;!--nacos服务发现依赖--&gt;</span></span><br><span class="line">    <span class="string">&lt;dependency&gt;</span></span><br><span class="line">        <span class="string">&lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span></span><br><span class="line">        <span class="string">&lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;/artifactId&gt;</span></span><br><span class="line">    <span class="string">&lt;/dependency&gt;</span></span><br><span class="line"><span class="string">&lt;/dependencies&gt;</span></span><br></pre></td></tr></table></figure>
+<p>网关也是个微服务，也需要连接注册中心，所以需要配置配置文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">80</span> <span class="comment"># 网关端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">gateway</span> <span class="comment"># 服务名称</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos地址</span></span><br><span class="line">    <span class="attr">gateway:</span></span><br><span class="line">      <span class="attr">routes:</span> <span class="comment"># 网关路由配置</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">user-service</span> <span class="comment"># 路由 ID，唯一</span></span><br><span class="line">          <span class="comment"># uri: http://127.0.0.1:8081 # 目标 URI，路由到微服务的地址</span></span><br><span class="line">          <span class="attr">uri:</span> <span class="string">lb://userservice</span> <span class="comment"># 目标 URI，获取注册中心微服务地址，并支持负载均衡</span></span><br><span class="line">          <span class="attr">predicates:</span> <span class="comment"># 断言规则（判断条件）</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">Path=/user/**</span> <span class="comment"># 匹配对应的 URL 请求，调用 URI 对应的微服务来工作</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">Order-service</span> </span><br><span class="line">          <span class="attr">uri:</span> <span class="string">lb://Orderservice</span> </span><br><span class="line">          <span class="attr">predicates:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">Path=/Order/**</span> </span><br><span class="line">            <span class="string">有几个微服务，下面就写几个</span></span><br></pre></td></tr></table></figure>
+<p>之后调用网关地址，先断言在转发，先看看断言规则里面有没有要的微服务，有的话就转发，没有就返回</p>
+<h5 id="问题：断言规则常用的是路径规则，还有其他规则吗？"><a href="#问题：断言规则常用的是路径规则，还有其他规则吗？" class="headerlink" title="问题：断言规则常用的是路径规则，还有其他规则吗？"></a>问题：断言规则常用的是路径规则，还有其他规则吗？</h5><p>可以在断言工厂找：<a target="_blank" rel="noopener" href="http://mtw.so/5SUZPA">断言工厂</a></p>
+<p>比如：After(某个时间点之后访问生效) ，比如说我要在2025年之后开服，之前不能访问</p>
+<p>Before(某个时间点之前访问生效)，比如你要在1天后关闭这个网站，1天之前都可以访问，一天之后就不能访问了</p>
+<p>Between（某个时间点之间访问）比如只能在工作日访问，节假日就不能访问了</p>
+<p>RemoteAddr(指定ip范围)，比如只能是中国的ip访问，外国不行</p>
+<h5 id="问题：什么是过滤器，怎么配置？"><a href="#问题：什么是过滤器，怎么配置？" class="headerlink" title="问题：什么是过滤器，怎么配置？"></a>问题：什么是过滤器，怎么配置？</h5><p>过滤器就是用来身份认证和权限校验，在路由之后，断言认证后，路由转发的时候用到过滤器</p>
+<p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gatewayfilter-factories">过滤器工厂</a><br>比如这里在用户服务里面加一个过滤器：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">gateway:</span></span><br><span class="line">      <span class="attr">routes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">user-service</span> </span><br><span class="line">          <span class="attr">uri:</span> <span class="string">lb://userservice</span> </span><br><span class="line">          <span class="attr">predicates:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">Path=/user/**</span> </span><br><span class="line">          <span class="attr">filters:</span> <span class="comment"># 过滤器</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">AddRequestHeader=Truth,</span> <span class="string">jian</span> <span class="string">pan</span> <span class="string">qiao</span> <span class="string">lan</span> <span class="string">xin</span> <span class="string">zi</span> <span class="string">guo</span> <span class="string">wan!</span> <span class="comment"># 添加请求头</span></span><br></pre></td></tr></table></figure>
+<p>如果都要执行过滤器的话，就把滤器工厂写到default下。格式如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">gateway:</span></span><br><span class="line">      <span class="attr">routes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">user-service</span> </span><br><span class="line">          <span class="attr">uri:</span> <span class="string">lb://userservice</span> </span><br><span class="line">          <span class="attr">predicates:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">Path=/user/**</span> </span><br><span class="line">      <span class="attr">default-filters:</span> <span class="comment"># 默认过滤项</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">AddRequestHeader=Truth,</span> <span class="string">jian</span> <span class="string">pan</span> <span class="string">qiao</span> <span class="string">lan</span> <span class="string">xin</span> <span class="string">zi</span> <span class="string">guo</span> <span class="string">wan!</span> </span><br></pre></td></tr></table></figure>
+
+<h5 id="问题：-怎么自定义全局过滤器"><a href="#问题：-怎么自定义全局过滤器" class="headerlink" title="问题： 怎么自定义全局过滤器"></a>问题： 怎么自定义全局过滤器</h5><p>在网关模块中定义一个类，实现接口GlobalFilter，然后实现里面的方法，最后放在spring容器中就可<br>比如有一个需求：</p>
+<p><strong>需求：</strong>定义全局过滤器，拦截请求，判断请求的参数是否满足下面条件：</p>
+<ul>
+<li>参数中是否有authorization</li>
+<li>authorization参数值是否为admin</li>
+<li>如果同时满足则放行，否则拦截<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AuthFilter</span> <span class="keyword">implements</span> <span class="title class_">GlobalFilter</span>, Ordered &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        exchange=request+response</span></span><br><span class="line"><span class="comment">        chain=过滤器链</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Mono&lt;Void&gt; <span class="title function_">filter</span><span class="params">(ServerWebExchange exchange, GatewayFilterChain chain)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;AuthFilter执行了...&quot;</span>);</span><br><span class="line">        <span class="comment">// 1.获取request对象</span></span><br><span class="line">        <span class="type">ServerHttpRequest</span> <span class="variable">request</span> <span class="operator">=</span> exchange.getRequest();</span><br><span class="line">        <span class="comment">// 2.获取authorization参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">auth</span> <span class="operator">=</span> request.getQueryParams().getFirst(<span class="string">&quot;authorization&quot;</span>);</span><br><span class="line">        <span class="comment">// 3.判断拦截</span></span><br><span class="line">        <span class="keyword">if</span> (auth == <span class="literal">null</span> || !auth.equals(<span class="string">&quot;admin&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">// 设置状态码401</span></span><br><span class="line">            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);</span><br><span class="line">            <span class="comment">// 响应拦截结果</span></span><br><span class="line">            <span class="keyword">return</span> exchange.getResponse().setComplete();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 4.放行</span></span><br><span class="line">        <span class="keyword">return</span> chain.filter(exchange);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getOrder</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="问题：如果有多个过滤器，谁先执行，谁后执行？"><a href="#问题：如果有多个过滤器，谁先执行，谁后执行？" class="headerlink" title="问题：如果有多个过滤器，谁先执行，谁后执行？"></a>问题：如果有多个过滤器，谁先执行，谁后执行？</h5><p>可以实现Ordered接口，实现里面的方法，数值越低，优先级越高！ 如果是负数，肯定第一个执行。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 1999 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ei</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+
+  <a href="https://github.com/yiyiyiwui" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.4.3/mermaid.min.js","integrity":"sha256-e0o3JYsdjqKajf9eOe22FhioYSz9WofRY4dLKo3F6do="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
