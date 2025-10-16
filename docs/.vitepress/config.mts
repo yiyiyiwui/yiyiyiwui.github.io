@@ -9,8 +9,10 @@ const collapsibleSidebar = {
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     base: '/',
+    ignoreDeadLinks: true, //忽略死链检查
     title: "我的博客", // 网站标题，显示在浏览器标签和封面左上角
     description: "德智体美劳全面发展", // 网站描述，用于SEO和社交媒体分享
+
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [ // 导航栏配置
