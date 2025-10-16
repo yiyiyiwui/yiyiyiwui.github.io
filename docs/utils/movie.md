@@ -45,11 +45,9 @@ outline: deep
 ### **天猫影视** 
 • [https://example-tv.com](https://example-tv.com)
 > 提供高清电视直播流，涵盖多种频道
-> ![截图](../public/images/tv.png)
 
 ## 🎎 动漫
 
 ### **动漫天堂** 
 • [https://example-anime.com](https://example-anime.com)
 > 专注二次元内容，收录新番经典
-> ![截图](../public/images/anime.png)

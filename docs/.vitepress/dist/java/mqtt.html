@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MQTT | 我的博客</title>
+    <meta name="description" content="德智体美劳全面发展">
+    <meta name="generator" content="VitePress v2.0.0-alpha.12">
+    <link rel="preload stylesheet" href="/assets/style.CZvPc2EJ.css" as="style">
+    <link rel="preload stylesheet" href="/vp-icons.css" as="style">
+    
+    <script type="module" src="/assets/app.DUD75REu.js"></script>
+    <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/assets/chunks/theme.DpYtQAvY.js">
+    <link rel="modulepreload" href="/assets/chunks/framework.kZi0S3Z0.js">
+    <link rel="modulepreload" href="/assets/java_mqtt.md.CBxS-T0R.lean.js">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-1df9f90f><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a><!--]--><!----><header class="VPNav" data-v-1df9f90f data-v-9f75dce3><div class="VPNavBar" data-v-9f75dce3 data-v-2a96a3d0><div class="wrapper" data-v-2a96a3d0><div class="container" data-v-2a96a3d0><div class="title" data-v-2a96a3d0><div class="VPNavBarTitle has-sidebar" data-v-2a96a3d0 data-v-1e38c6bc><a class="title" href="/" data-v-1e38c6bc><!--[--><!--]--><!----><span data-v-1e38c6bc>我的博客</span><!--[--><!--]--></a></div></div><div class="content" data-v-2a96a3d0><div class="content-body" data-v-2a96a3d0><!--[--><!--]--><div class="VPNavBarSearch search" data-v-2a96a3d0><!--[--><!----><div id="local-search"><button type="button" aria-label="Search" aria-keyshortcuts="/ control+k meta+k" class="DocSearch DocSearch-Button"><span class="DocSearch-Button-Container"><span class="vpi-search DocSearch-Search-Icon"></span><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key"></kbd><kbd class="DocSearch-Button-Key"></kbd></span></button></div><!--]--></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-2a96a3d0 data-v-39714824><span id="main-nav-aria-label" class="visually-hidden" data-v-39714824> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/" tabindex="0" data-v-39714824 data-v-e56f3d57><!--[--><span data-v-e56f3d57>首页</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/admin/my.html" tabindex="0" data-v-39714824 data-v-e56f3d57><!--[--><span data-v-e56f3d57>关于</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/utils/index.html" tabindex="0" data-v-39714824 data-v-e56f3d57><!--[--><span data-v-e56f3d57>潘多拉</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/java/index.html" tabindex="0" data-v-39714824 data-v-e56f3d57><!--[--><span data-v-e56f3d57>Java</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/linux/index.html" tabindex="0" data-v-39714824 data-v-e56f3d57><!--[--><span data-v-e56f3d57>Linux</span><!--]--></a><!--]--><!--[--><div class="VPFlyout VPNavBarMenuGroup" data-v-39714824 data-v-42cb505d><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-42cb505d><span class="text" data-v-42cb505d><!----><span data-v-42cb505d>组件</span><span class="vpi-chevron-down text-icon" data-v-42cb505d></span></span></button><div class="menu" data-v-42cb505d><div class="VPMenu" data-v-42cb505d data-v-25a6cce8><div class="items" data-v-25a6cce8><!--[--><!--[--><div class="VPMenuLink" data-v-25a6cce8 data-v-cd834e02><a class="VPLink link" href="/dev/mysql.html" data-v-cd834e02><!--[--><span data-v-cd834e02>MySql</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-25a6cce8 data-v-cd834e02><a class="VPLink link" href="/dev/nginx.html" data-v-cd834e02><!--[--><span data-v-cd834e02>Nginx</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-25a6cce8 data-v-cd834e02><a class="VPLink link" href="/dev/redis.html" data-v-cd834e02><!--[--><span data-v-cd834e02>Redis</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-25a6cce8 data-v-cd834e02><a class="VPLink link" href="/dev/docker.html" data-v-cd834e02><!--[--><span data-v-cd834e02>Docker</span><!--]--></a></div><!--]--><!--]--></div><!--[--><!--]--></div></div></div><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-2a96a3d0 data-v-6c893767><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-6c893767 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-2a96a3d0 data-v-0394ad82 data-v-d07f11e6><!--[--><a class="VPSocialLink no-icon" href="https://github.com/vuejs/vitepress" aria-label="github" target="_blank" rel="me noopener" data-v-d07f11e6 data-v-591a6b30><span class="vpi-social-github"></span></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-2a96a3d0 data-v-bb2aa2f0 data-v-42cb505d><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-42cb505d><span class="vpi-more-horizontal icon" data-v-42cb505d></span></button><div class="menu" data-v-42cb505d><div class="VPMenu" data-v-42cb505d data-v-25a6cce8><!----><!--[--><!--[--><!----><div class="group" data-v-bb2aa2f0><div class="item appearance" data-v-bb2aa2f0><p class="label" data-v-bb2aa2f0>Appearance</p><div class="appearance-action" data-v-bb2aa2f0><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-bb2aa2f0 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div></div></div><div class="group" data-v-bb2aa2f0><div class="item social-links" data-v-bb2aa2f0><div class="VPSocialLinks social-links-list" data-v-bb2aa2f0 data-v-d07f11e6><!--[--><a class="VPSocialLink no-icon" href="https://github.com/vuejs/vitepress" aria-label="github" target="_blank" rel="me noopener" data-v-d07f11e6 data-v-591a6b30><span class="vpi-social-github"></span></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-2a96a3d0 data-v-e5dd9c1c><span class="container" data-v-e5dd9c1c><span class="top" data-v-e5dd9c1c></span><span class="middle" data-v-e5dd9c1c></span><span class="bottom" data-v-e5dd9c1c></span></span></button></div></div></div></div><div class="divider" data-v-2a96a3d0><div class="divider-line" data-v-2a96a3d0></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-1df9f90f data-v-8acdfeb5><div class="container" data-v-8acdfeb5><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-8acdfeb5><span class="vpi-align-left menu-icon" data-v-8acdfeb5></span><span class="menu-text" data-v-8acdfeb5>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-8acdfeb5 data-v-0bf0e06f><button data-v-0bf0e06f>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-1df9f90f data-v-e7c6e512><div class="curtain" data-v-e7c6e512></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-e7c6e512><span class="visually-hidden" id="sidebar-aria-label" data-v-e7c6e512> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-8d50c081><section class="VPSidebarItem level-0 collapsible has-active" data-v-8d50c081 data-v-d81de50c><div class="item" role="button" tabindex="0" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><h2 class="text" data-v-d81de50c>概览</h2><div class="caret" role="button" aria-label="toggle section" tabindex="0" data-v-d81de50c><span class="vpi-chevron-right caret-icon" data-v-d81de50c></span></div></div><div class="items" data-v-d81de50c><!--[--><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/java.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>Java基础</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/openSource.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>开源框架</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/mp.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>MybatisPlus</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/springCloud.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>SpringCloud</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/webSocket.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>WebSocket</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/springCache.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>SpringCache</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/bitmap.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>位图</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/spring.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>Spring</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/mqtt.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>MQTT</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/springTask.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>SpringTask</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/es.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>ES</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/dt.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>分布式事务</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/project.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>Java项目</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/mq.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>MQ</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-d81de50c data-v-d81de50c><div class="item" data-v-d81de50c><div class="indicator" data-v-d81de50c></div><a class="VPLink link link" href="/java/mybatis.html" data-v-d81de50c><!--[--><p class="text" data-v-d81de50c>Mybatis</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-1df9f90f data-v-aff0b8d7><div class="VPDoc has-sidebar has-aside" data-v-aff0b8d7 data-v-7011f0d8><!--[--><!--]--><div class="container" data-v-7011f0d8><div class="aside" data-v-7011f0d8><div class="aside-curtain" data-v-7011f0d8></div><div class="aside-container" data-v-7011f0d8><div class="aside-content" data-v-7011f0d8><div class="VPDocAside" data-v-7011f0d8 data-v-3f215769><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-3f215769 data-v-60d5052e><div class="content" data-v-60d5052e><div class="outline-marker" data-v-60d5052e></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-60d5052e>页面导航</div><ul class="VPDocOutlineItem root" data-v-60d5052e data-v-2d0bdf9b><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-3f215769></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-7011f0d8><div class="content-container" data-v-7011f0d8><!--[--><!--]--><main class="main" data-v-7011f0d8><div style="position:relative;" class="vp-doc _java_mqtt" data-v-7011f0d8><div><h1 id="mqtt" tabindex="-1">MQTT <a class="header-anchor" href="#mqtt" aria-label="Permalink to “MQTT”">​</a></h1><blockquote><p>MQTT、EMQX、MQTTX</p></blockquote><h2 id="了解" tabindex="-1">了解 <a class="header-anchor" href="#了解" aria-label="Permalink to “了解”">​</a></h2><p>1：发布者发布一个主题，比如开启车联网的汽车空调，然后会有负载，我们把内容存到负载里面。之后订阅者订阅主题就可以取到内容</p><p>2：需要有服务质量，比如连接设备断网了，消息怎么办？</p><p>三个级别 Qos0：消息最多传递一次，说白了就是只发一次，发完我就关闭了，有没有收到我不管，如果当时客户端不可用，则丢失这条消息。 Qos1：消息传递至少一次，必须要你收到消息，你断网了没收到，我还会给你发， 直到你收到消息。注意：如果接收端没挂，只是消息堵塞了，那么还会发消息，这个时候接收端就会收到两条消息 Qos2：消息仅传送一次，我发送消息后，等待你给我返回确认，你什么时候确认收到了，我什么时候才会关闭发送消息 如果发布消息/主题订阅/接收消息三方设置的Qos等级不一样， 那么会优先考虑性能（等级最小的优先）</p><p>发送消息的时候要订阅主题，那么主题名字需要有命名规则： 比如你要发送汽车相关的，比如 汽车/座椅加热 汽车/开空调…… 那么接收的时候可以用通配符，汽车/* 代表接收有前面汽车的所有消息，可以多层匹配 可以理解为你发快递，发送北京/朝阳区 发到订阅者，然后接收者只要有北京/* 就可以接收到北京/的信息 还有+，这里没写，具体看下面。</p><p>延时消息： 用于下单后不支付， 我们可以设置为15分钟后去查看消息，如果为未支付，就关闭订单，恢复库存 发布者发送消息后，接收者15分钟后才能收到消息 怎么用？ 在主题前面添加$delayed/DelayInterval/TopicName 最前面的是表示延迟消息，中间的是延迟时间，后面的是主题内容</p><p>共享消息： 只要订阅了主题，发送者发送消息后，订阅主题的都能收到消息 比如说有5w台机器，都要发送消息，那么接收端一下子就要接收很多消息，影响性能。这个时候我们可以设置集群，设置多个接收方来接收，接收方1号接收1w条消息，2号接收1w条消息…… ，这样就能提高执行效率了 共享消息是我发送消息后，接收方1号接收消息了，那么2号就不接收了</p><p>共享消息分为两种：带群组的 不带群组的</p><p>不带群组的：我发送消息1，2，3 接收方1处理1 接受方2处理2 …… 这里分发给谁，可以设置负载均衡，默认的策略是随机</p><p>带群组的：比如我订阅消息的有多个，有扣库存的，有通知物流的，我们把这两个分两个组，然后订阅消息。发送方发送消息后，两个组都能收到一条消息</p><p>JAVA使用，具体看下面</p><h2 id="什么是mqtt" tabindex="-1">什么是MQTT？ <a class="header-anchor" href="#什么是mqtt" aria-label="Permalink to “什么是MQTT？”">​</a></h2><p>MQ是异步发送消息 MQTT是物联网发送消息，说白了就是冰箱可以给手机发消息，可以给电脑发消息，设备之间互相发送消息，可以理解为订阅MQTT后，就可以给订阅过的设备发送消息了 <img src="/assets/18.DAOm8upp.png" alt=""></p><h2 id="连接设备-客户端" tabindex="-1">连接设备（客户端） <a class="header-anchor" href="#连接设备-客户端" aria-label="Permalink to “连接设备（客户端）”">​</a></h2><p>（1）发布信息；</p><p>（2）订阅消息；</p><p>（3）退订或删除消息；</p><p>（4）断开与服务器连接；</p><h2 id="中间件-服务端" tabindex="-1">中间件（服务端） <a class="header-anchor" href="#中间件-服务端" aria-label="Permalink to “中间件（服务端）”">​</a></h2><p>（1）接受来自客户端的网络连接；</p><p>（2）接受客户端发布的信息；</p><p>（3）处理来自客户端的订阅和退订请求；</p><p>（4）向订阅的客户转发应用程序消息；</p><h2 id="mqtt协议构成" tabindex="-1">MQTT协议构成 <a class="header-anchor" href="#mqtt协议构成" aria-label="Permalink to “MQTT协议构成”">​</a></h2><p><img src="/assets/19.DiVEyoN0.png" alt=""></p><h2 id="mqtt协议方法" tabindex="-1">MQTT协议方法 <a class="header-anchor" href="#mqtt协议方法" aria-label="Permalink to “MQTT协议方法”">​</a></h2><p>MQTT协议中定义了一些方法（也被称为动作），来于表示对确定资源所进行操作：</p><p><strong>（1）CONNECT：客户端连接到服务器</strong></p><p>（2）CONNACK：连接确认</p><p><strong>（3）PUBLISH：发布消息</strong></p><p>（4）PUBACK：发布确认</p><p>（5）PUBREC：发布的消息已接收</p><p>（6）PUBREL：发布的消息已释放</p><p>（7）PUBCOMP：发布完成</p><p><strong>（8）SUBSCRIBE：订阅请求</strong></p><p>（9）SUBACK：订阅确认</p><p>（10）UNSUBSCRIBE：取消订阅</p><p>（11）UNSUBACK：取消订阅确认</p><p>（12）PINGREQ：客户端发送心跳</p><p>（13）PINGRESP：服务端心跳响应</p><p><strong>（14）DISCONNECT：断开连接</strong></p><p>（15）AUTH：认证</p><h2 id="消息服务质量qos" tabindex="-1">消息服务质量QoS <a class="header-anchor" href="#消息服务质量qos" aria-label="Permalink to “消息服务质量QoS”">​</a></h2><h3 id="mqtt-设计了-3-个-qos-等级" tabindex="-1">MQTT 设计了 3 个 QoS 等级： <a class="header-anchor" href="#mqtt-设计了-3-个-qos-等级" aria-label="Permalink to “MQTT 设计了 3 个 QoS 等级：”">​</a></h3><ul><li><p>QoS 0：消息最多传递一次，如果当时客户端不可用，则会丢失该消息。</p></li><li><p>QoS 1：消息传递至少 1 次。</p></li><li><p>QoS 2：消息仅传送一次。</p></li></ul><h4 id="qos-0-等级" tabindex="-1">QoS 0 等级 <a class="header-anchor" href="#qos-0-等级" aria-label="Permalink to “QoS 0 等级”">​</a></h4><p>QoS0：”至多一次”，消息发布完全依赖底层TCP/IP网络。</p><p><strong>特点</strong>：会发生消息丢失或重复。丢失一次读记录无所谓。</p><p><strong>场景</strong>：可以接受消息偶尔丢失的场景下可以选择 QoS 0。</p><p><strong>举例</strong>：APP消息推送，倘若你的智能设备在消息推送时未联网，推送过去没收到，再次联网也就收不到了。</p><ul><li>如推送新闻、广告消息</li></ul><h4 id="qos-1-等级" tabindex="-1">QoS 1 等级 <a class="header-anchor" href="#qos-1-等级" aria-label="Permalink to “QoS 1 等级”">​</a></h4><p>QoS1：”至少一次”，确保消息到达，但消息重复可能会发生。 <strong>特点</strong>：消息确保至少成功发送和送达，会有消息重试的情况。</p><p><strong>场景</strong>：物联网大部分场景都是选用 QoS1，它实现了系统资源性能和消息实时性、可靠性最优化</p><p><strong>举例</strong>：普通消息推送，倘若你的智能设备在消息推送时未联网，推送过去没收到，联网后还会收到消息。</p><ul><li>如软件设备升级消息、车辆行驶记录消息。</li></ul><h4 id="qos-2-等级" tabindex="-1">QoS 2 等级 <a class="header-anchor" href="#qos-2-等级" aria-label="Permalink to “QoS 2 等级”">​</a></h4><p><strong>特点</strong>：消息确保至少成功发送和送达，不会有消息重复的情况。</p><p><strong>场景</strong>：对于不能忍受消息丢失，且不希望收到重复消息，数据完整性与及时性要求较高的场景，可以选择 QoS 2</p><p><strong>举例</strong>：APP即时消息推送，确保用户收到且只会收到一次。</p><ul><li><p>QoS2等级可以增加消息可靠性，但同时也使资源消耗和消息时延大幅增加。</p></li><li><p>主要运用于对数据完整性与及时性要求较高的银行、消防、航空等行业。</p></li></ul><h2 id="发布与订阅qos" tabindex="-1">发布与订阅QoS <a class="header-anchor" href="#发布与订阅qos" aria-label="Permalink to “发布与订阅QoS”">​</a></h2><p>对于 QoS 等级，在生产方、MQ服务、消费方都可以分别进行设置</p><p>但对于生产方和MQ服务设置等级不一致时，消费方会遵循的原则：以最小的等级为标准（性能优先）</p><h2 id="topic通配符匹配规则" tabindex="-1">Topic通配符匹配规则 <a class="header-anchor" href="#topic通配符匹配规则" aria-label="Permalink to “Topic通配符匹配规则”">​</a></h2><p><img src="/assets/20.DCDkg2Vc.png" alt=""></p><h4 id="通配符说明" tabindex="-1">通配符说明 <a class="header-anchor" href="#通配符说明" aria-label="Permalink to “通配符说明”">​</a></h4><h5 id="层级分隔符" tabindex="-1">层级分隔符：/ <a class="header-anchor" href="#层级分隔符" aria-label="Permalink to “层级分隔符：/”">​</a></h5><ul><li>/ 用来分割主题树的每一层，并给主题空间提供分等级的结构。</li></ul><h5 id="多层通配符" tabindex="-1">多层通配符：# <a class="header-anchor" href="#多层通配符" aria-label="Permalink to “多层通配符：#”">​</a></h5><ul><li>多层通配符有可以表示大于等于0的层次。</li></ul><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>love/you/#  </span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>适配下面路径：</span></span>
+<span class="line"><span>    love/you</span></span>
+<span class="line"><span>    love/you/with</span></span>
+<span class="line"><span>    love/you/with/all</span></span>
+<span class="line"><span>    love/you/with/all/my/heart</span></span>
+<span class="line"><span>    love/you/with/all/my/hearts</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>love/#/you 				不支持此规则（#只能写在最右侧）</span></span></code></pre></div><h4 id="单层通配符" tabindex="-1">单层通配符：+ <a class="header-anchor" href="#单层通配符" aria-label="Permalink to “单层通配符：+”">​</a></h4><ul><li>只匹配主题的一层。</li></ul><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>love/you/+      </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>适配下面路径：</span></span>
+<span class="line"><span>	love/you/with</span></span>
+<span class="line"><span>	love/you/and</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>不适配下面路径</span></span>
+<span class="line"><span>	love/you</span></span>
+<span class="line"><span>	love/you/with/all</span></span>
+<span class="line"><span>	</span></span>
+<span class="line"><span>love/+/you                 支持此规则（可以在中间）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>适配下面路径：</span></span>
+<span class="line"><span>	love/hehe/you</span></span>
+<span class="line"><span>	love/all/you</span></span></code></pre></div><h4 id="mqtt思想有了-落地实现是什么" tabindex="-1">MQTT思想有了，落地实现是什么？ <a class="header-anchor" href="#mqtt思想有了-落地实现是什么" aria-label="Permalink to “MQTT思想有了，落地实现是什么？”">​</a></h4><p>• <a href="https://www.emqx.com/zh" target="_blank" rel="noreferrer">EMQX</a><br> EMQX Broker 是基于高并发的 Erlang/OTP 语言平台开发，支持百万级连接和分布式集群架构，发布订阅模式的开源 MQTT 消息服务器。 为什么选择EMQ X</p><ul><li>从支持 MQTT5.0、稳定性、扩展性、集群能力等方面考虑，EMQX 的表现应该是最好的。</li><li>中国本地的技术支持服务</li><li>扩展模块和插件，EMQ X 提供了灵活的扩展机制，支持企业的一些定制场景</li></ul><h3 id="环境搭建-docker安装" tabindex="-1">环境搭建：docker安装 <a class="header-anchor" href="#环境搭建-docker安装" aria-label="Permalink to “环境搭建：docker安装”">​</a></h3><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>#1：首先拉取emqx的镜像</span></span>
+<span class="line"><span>docker pull emqx/emqx:v4.1.0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#2：使用docker命令运行得到docker容器</span></span>
+<span class="line"><span>docker run -tid --name emqx -p 1883:1883 -p 8083:8083 -p 8081:8081 -p 8883:8883 -p 8084:8084 -p 18083:18083 emqx/emqx:v4.1.0</span></span></code></pre></div><h4 id="访问控制台" tabindex="-1">访问控制台： <a class="header-anchor" href="#访问控制台" aria-label="Permalink to “访问控制台：”">​</a></h4><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>地址：http://端口号:18083</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>账号：admin 密码：public</span></span></code></pre></div><h4 id="websocket" tabindex="-1">websocket <a class="header-anchor" href="#websocket" aria-label="Permalink to “websocket”">​</a></h4><p>我们可以在工具中选择websocket来进行消息发送和订阅测试</p><h4 id="客户端调试工具" tabindex="-1">客户端调试工具 <a class="header-anchor" href="#客户端调试工具" aria-label="Permalink to “客户端调试工具”">​</a></h4><p>• <a href="https://mqttx.app/" target="_blank" rel="noreferrer">MQTTX</a><br> 创建连接: <img src="/assets/21.KUGAthTo.png" alt=""> 填写连接信息</p><p>①：填写连接服务名称，可以自己定义。</p><p>②：填写连接EMQ服务的地址，这里写下发虚拟机中的ip</p><p>③: 其他选项保持默认，点击连接服务即可</p><h4 id="订阅主题" tabindex="-1">订阅主题 <a class="header-anchor" href="#订阅主题" aria-label="Permalink to “订阅主题”">​</a></h4><p><img src="/assets/22.D7pA2xHR.png" alt=""></p><h4 id="发送和订阅" tabindex="-1">发送和订阅 <a class="header-anchor" href="#发送和订阅" aria-label="Permalink to “发送和订阅”">​</a></h4><p><img src="/assets/23.DS4pECQH.png" alt=""></p><h3 id="java使用" tabindex="-1">Java使用 <a class="header-anchor" href="#java使用" aria-label="Permalink to “Java使用”">​</a></h3><p>发送方要连接EMQ，接收方也要连接EMQ ，他们连接的话都要有连接协议，连接地址，用户名密码等，连接是一样的，只是发消息和接受消息不一样， 所以连接是重复的，我们可以把连接放在一个公共模块中，Maven依赖导入后，两个微服务就都可以使用了。而两个微服务只需要提供配置文件连接EMQX就可以 <img src="/assets/24.C4BtQEuR.png" alt=""> 1：导入坐标依赖</p><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>&lt;dependency&gt;</span></span>
+<span class="line"><span>  &lt;groupId&gt;org.eclipse.paho&lt;/groupId&gt;</span></span>
+<span class="line"><span>  &lt;artifactId&gt;org.eclipse.paho.client.mqttv3&lt;/artifactId&gt;</span></span>
+<span class="line"><span>  &lt;version&gt;1.2.5&lt;/version&gt;</span></span>
+<span class="line"><span>&lt;/dependency&gt;</span></span></code></pre></div><p>2：把公共代码写到公共模块中</p><h4 id="创建客户端连接对象" tabindex="-1">创建客户端连接对象： <a class="header-anchor" href="#创建客户端连接对象" aria-label="Permalink to “创建客户端连接对象：”">​</a></h4><p>最上面读的一堆参数就是微服务配置文件中配置的消息</p><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>@Configuration</span></span>
+<span class="line"><span>@Component</span></span>
+<span class="line"><span>@Data</span></span>
+<span class="line"><span>@Slf4j</span></span>
+<span class="line"><span>public class MqttConfig {</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.client.username}&quot;)</span></span>
+<span class="line"><span>    private String username;</span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.client.password}&quot;)</span></span>
+<span class="line"><span>    private String password;</span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.client.serverURI}&quot;)</span></span>
+<span class="line"><span>    private String serverURI;</span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.client.clientId}&quot;)</span></span>
+<span class="line"><span>    private String clientId;</span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.client.keepAliveInterval}&quot;)</span></span>
+<span class="line"><span>    private int keepAliveInterval;</span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.client.connectionTimeout}&quot;)</span></span>
+<span class="line"><span>    private int connectionTimeout;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Autowired</span></span>
+<span class="line"><span>    private MqttCallback mqttCallback;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	/*创建MQTT客户端*/</span></span>
+<span class="line"><span>    @Bean</span></span>
+<span class="line"><span>    public MqttClient mqttClient() {</span></span>
+<span class="line"><span>        try {</span></span>
+<span class="line"><span>             //新建客户端 参数：MQTT服务的地址，客户端名称，持久化</span></span>
+<span class="line"><span>            MqttClient client = new MqttClient(serverURI, clientId, mqttClientPersistence());</span></span>
+<span class="line"><span>            //设置手动消息接收确认</span></span>
+<span class="line"><span>            client.setManualAcks(true);</span></span>
+<span class="line"><span>            // 设置回调类（主要用于订阅者客户端接收消息时使用）</span></span>
+<span class="line"><span>            client.setCallback(mqttCallback);</span></span>
+<span class="line"><span>            mqttCallback.setMqttClient(client);</span></span>
+<span class="line"><span>            // 设置连接的配置</span></span>
+<span class="line"><span>            client.connect(mqttConnectOptions());</span></span>
+<span class="line"><span>            return client;</span></span>
+<span class="line"><span>        } catch (MqttException e) {</span></span>
+<span class="line"><span>            log.error(&quot;emq connect error&quot;,e);</span></span>
+<span class="line"><span>            return null;</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /*创建MQTT配置类*/</span></span>
+<span class="line"><span>    @Bean</span></span>
+<span class="line"><span>    public MqttConnectOptions mqttConnectOptions() {</span></span>
+<span class="line"><span>        MqttConnectOptions options = new MqttConnectOptions();</span></span>
+<span class="line"><span>        options.setUserName(username);</span></span>
+<span class="line"><span>        options.setPassword(password.toCharArray());</span></span>
+<span class="line"><span>        options.setAutomaticReconnect(true);//是否自动重新连接</span></span>
+<span class="line"><span>        options.setCleanSession(true);//是否清除之前的连接信息</span></span>
+<span class="line"><span>        options.setConnectionTimeout(connectionTimeout);//连接超时时间</span></span>
+<span class="line"><span>        options.setKeepAliveInterval(keepAliveInterval);//心跳</span></span>
+<span class="line"><span>        options.setMqttVersion(MqttConnectOptions.MQTT_VERSION_3_1_1);//设置mqtt版本</span></span>
+<span class="line"><span>        return options;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /*设置持久化*/</span></span>
+<span class="line"><span>    public MqttClientPersistence mqttClientPersistence() {</span></span>
+<span class="line"><span>        return new MemoryPersistence();</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span></code></pre></div><h4 id="发消息" tabindex="-1">发消息： <a class="header-anchor" href="#发消息" aria-label="Permalink to “发消息：”">​</a></h4><p>最上面读的一堆参数就是微服务配置文件中配置的消息</p><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>@Component</span></span>
+<span class="line"><span>@Slf4j</span></span>
+<span class="line"><span>public class MqttProducer {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.producer.defaultQos}&quot;)</span></span>
+<span class="line"><span>    private int defaultProducerQos;</span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.producer.defaultRetained}&quot;)</span></span>
+<span class="line"><span>    private boolean defaultRetained;</span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.producer.defaultTopic}&quot;)</span></span>
+<span class="line"><span>    private String defaultTopic;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Autowired</span></span>
+<span class="line"><span>    private MqttClient mqttClient;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /**</span></span>
+<span class="line"><span>     * 只发送消息的方法</span></span>
+<span class="line"><span>     *</span></span>
+<span class="line"><span>     * @param payload 消息信息</span></span>
+<span class="line"><span>     */</span></span>
+<span class="line"><span>    public void send(String payload) {</span></span>
+<span class="line"><span>        this.send(defaultTopic, payload);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /**</span></span>
+<span class="line"><span>     * 指定topic发送消息的方法</span></span>
+<span class="line"><span>     *</span></span>
+<span class="line"><span>     * @param topic   主体名称</span></span>
+<span class="line"><span>     * @param payload 消息信息</span></span>
+<span class="line"><span>     */</span></span>
+<span class="line"><span>    public void send(String topic, String payload) {</span></span>
+<span class="line"><span>        this.send(topic, defaultProducerQos, payload);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /**</span></span>
+<span class="line"><span>     * 指定topic和服务质量QoS发送消息的方法</span></span>
+<span class="line"><span>     *</span></span>
+<span class="line"><span>     * @param topic   主体名称</span></span>
+<span class="line"><span>     * @param qos     服务质量（0、1、2）</span></span>
+<span class="line"><span>     * @param payload 消息信息</span></span>
+<span class="line"><span>     */</span></span>
+<span class="line"><span>    public void send(String topic, int qos, String payload) {</span></span>
+<span class="line"><span>        this.send(topic, qos, defaultRetained, payload);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /**</span></span>
+<span class="line"><span>     * 发送消息的全参方法</span></span>
+<span class="line"><span>     *</span></span>
+<span class="line"><span>     * @param topic    主体名称</span></span>
+<span class="line"><span>     * @param qos      服务质量（0、1、2）</span></span>
+<span class="line"><span>     * @param retained 是否保留消息</span></span>
+<span class="line"><span>     * @param payload  消息信息</span></span>
+<span class="line"><span>     */</span></span>
+<span class="line"><span>    public void send(String topic, int qos, boolean retained, String payload) {</span></span>
+<span class="line"><span>        try {</span></span>
+<span class="line"><span>            mqttClient.publish(topic, payload.getBytes(), qos, retained);</span></span>
+<span class="line"><span>        } catch (MqttException e) {</span></span>
+<span class="line"><span>            log.error(&quot;publish msg error.&quot;, e);</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /**</span></span>
+<span class="line"><span>     * 指定topic和服务质量QoS发送消息的方法</span></span>
+<span class="line"><span>     *</span></span>
+<span class="line"><span>     * @param topic 主体名称</span></span>
+<span class="line"><span>     * @param qos   服务质量（0、1、2）</span></span>
+<span class="line"><span>     * @param msg   转换为json类对象数据</span></span>
+<span class="line"><span>     */</span></span>
+<span class="line"><span>    public &lt;T extends Object&gt; void send(String topic, int qos, T msg) throws JsonProcessingException {</span></span>
+<span class="line"><span>        String payload = JsonUtil.serialize(msg);</span></span>
+<span class="line"><span>        this.send(topic, qos, payload);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h4 id="测试发消息" tabindex="-1">测试发消息 <a class="header-anchor" href="#测试发消息" aria-label="Permalink to “测试发消息”">​</a></h4><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>@Autowired</span></span>
+<span class="line"><span>    private MqttProducer mqttProducer;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Test</span></span>
+<span class="line"><span>    public void test() throws Exception {</span></span>
+<span class="line"><span>        mqttProducer.send(&quot;主题名字/默认是testtopic&quot;,&quot;Json格式的消息&quot;);</span></span>
+<span class="line"><span>    }</span></span></code></pre></div><h4 id="接收消息" tabindex="-1">接收消息 <a class="header-anchor" href="#接收消息" aria-label="Permalink to “接收消息”">​</a></h4><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>@Component</span></span>
+<span class="line"><span>@Slf4j</span></span>
+<span class="line"><span>public class MqttCallback implements MqttCallbackExtended {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    //需要订阅的topic配置</span></span>
+<span class="line"><span>    @Value(&quot;${mqtt.consumer.consumerTopics}&quot;)</span></span>
+<span class="line"><span>    private List&lt;String&gt; consumerTopics;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    @Autowired</span></span>
+<span class="line"><span>    private MqttService mqttService;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    //当与服务器的连接丢失时调用此方法。</span></span>
+<span class="line"><span>    @Override</span></span>
+<span class="line"><span>    public void connectionLost(Throwable throwable) {</span></span>
+<span class="line"><span>        log.error(&quot;emq error.&quot;,throwable);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    //当消息从服务器到达时调用此方法</span></span>
+<span class="line"><span>    @Override</span></span>
+<span class="line"><span>    public void messageArrived(String topic, MqttMessage message) throws Exception {</span></span>
+<span class="line"><span>        log.info( &quot;topic:&quot;+topic+&quot;  message:&quot;+ new String(message.getPayload())   );</span></span>
+<span class="line"><span>        </span></span>
+<span class="line"><span>        //处理消息--在此处编写业务代码</span></span>
+<span class="line"><span>        mqttService.processMessage(topic, message);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        //处理成功后确认消息</span></span>
+<span class="line"><span>        mqttClient.messageArrivedComplete(message.getId(),message.getQos());</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    //当消息的传递完成并收到所有确认时调用。</span></span>
+<span class="line"><span>    @Override</span></span>
+<span class="line"><span>    public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {</span></span>
+<span class="line"><span>        log.info(&quot;deliveryComplete---------&quot; + iMqttDeliveryToken.isComplete());</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    // 当与服务器的连接成功完成时调用该方法。</span></span>
+<span class="line"><span>    @Override</span></span>
+<span class="line"><span>    public void connectComplete(boolean b, String s) {</span></span>
+<span class="line"><span>        //和EMQ连接成功后根据配置自动订阅topic</span></span>
+<span class="line"><span>        if(consumerTopics != null &amp;&amp; consumerTopics.size() &gt; 0){</span></span>
+<span class="line"><span>            consumerTopics.forEach(t-&gt;{</span></span>
+<span class="line"><span>                try {</span></span>
+<span class="line"><span>                        log.info(&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;subscribe topic:&quot;+t);</span></span>
+<span class="line"><span>                        mqttClient.subscribe(t, 2);</span></span>
+<span class="line"><span>                    } catch (MqttException e) {</span></span>
+<span class="line"><span>                        log.error(&quot;emq connect error&quot;, e);</span></span>
+<span class="line"><span>                    }</span></span>
+<span class="line"><span>            });</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    // 声明client客户端</span></span>
+<span class="line"><span>    private MqttClient mqttClient;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    // 提供set方法设置client客户端</span></span>
+<span class="line"><span>    public void setMqttClient(MqttClient mqttClient) {</span></span>
+<span class="line"><span>        this.mqttClient = mqttClient;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h4 id="接受消息的话可能有多个接受方-所以另外写个接口和实现类来处理业务逻辑" tabindex="-1">接受消息的话可能有多个接受方，所以另外写个接口和实现类来处理业务逻辑 <a class="header-anchor" href="#接受消息的话可能有多个接受方-所以另外写个接口和实现类来处理业务逻辑" aria-label="Permalink to “接受消息的话可能有多个接受方，所以另外写个接口和实现类来处理业务逻辑”">​</a></h4><p>接口</p><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>public interface MqttService {</span></span>
+<span class="line"><span>    void processMessage(String topic, MqttMessage message);</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>实现类</p><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * 消息分发处理器</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>@Component</span></span>
+<span class="line"><span>@Slf4j</span></span>
+<span class="line"><span>public class MqttServiceImpl implements MqttService {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /**</span></span>
+<span class="line"><span>     * mqtt消息处理</span></span>
+<span class="line"><span>     *</span></span>
+<span class="line"><span>     * @param topic</span></span>
+<span class="line"><span>     * @param message</span></span>
+<span class="line"><span>     */</span></span>
+<span class="line"><span>    @Override</span></span>
+<span class="line"><span>    public void processMessage(String topic, MqttMessage message) {</span></span>
+<span class="line"><span>        String msgContent = new String(message.getPayload());</span></span>
+<span class="line"><span>        log.info(&quot;接收到消息:&quot; + msgContent);</span></span>
+<span class="line"><span>        //执行业务。。。开始</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        //执行业务。。。结束</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>3：在需要调用EMQX的配置类中配置信息，公共代码里面会扫描每个在微服务配置类写的信息 工单配置类</p><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>mqtt:</span></span>
+<span class="line"><span>  client:</span></span>
+<span class="line"><span>    username: admin    #EMQX用户名</span></span>
+<span class="line"><span>    password: public    #密码</span></span>
+<span class="line"><span>    serverURI: tcp://192.168.200.128:1883     #端口号</span></span>
+<span class="line"><span>    clientId: monitor.task.${random.int[1000,9999]}    #客户端id，后面是生成的随机数</span></span>
+<span class="line"><span>    keepAliveInterval: 10  #连接保持检查周期</span></span>
+<span class="line"><span>    connectionTimeout: 30  #连接超时时间</span></span>
+<span class="line"><span>  producer: </span></span>
+<span class="line"><span>    defaultQos: 2   # 消息质量级别</span></span>
+<span class="line"><span>    defaultRetained: false  #发消息后是否保留消息</span></span>
+<span class="line"><span>    defaultTopic: testtopic/test1  # 默认主题</span></span>
+<span class="line"><span>  consumer:</span></span>
+<span class="line"><span>    consumerTopics: $queue/server/task/#,$share/task/server/vms/status  带分组/不带分组</span></span></code></pre></div><p>设备配置类</p><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>mqtt:</span></span>
+<span class="line"><span>  client:</span></span>
+<span class="line"><span>    username: admin</span></span>
+<span class="line"><span>    password: public</span></span>
+<span class="line"><span>    serverURI: tcp://192.168.200.128:1883</span></span>
+<span class="line"><span>    clientId: monitor.vms.${random.int[1000,9999]}</span></span>
+<span class="line"><span>    keepAliveInterval: 10</span></span>
+<span class="line"><span>    connectionTimeout: 30</span></span>
+<span class="line"><span>  producer:</span></span>
+<span class="line"><span>    defaultQos: 2</span></span>
+<span class="line"><span>    defaultRetained: false</span></span>
+<span class="line"><span>    defaultTopic: testtopic/test1</span></span>
+<span class="line"><span>  consumer:</span></span>
+<span class="line"><span>    consumerTopics: $queue/server/vms/#</span></span></code></pre></div><p>用户配置类</p><div class="language-"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>mqtt:</span></span>
+<span class="line"><span>  client:</span></span>
+<span class="line"><span>    username: admin</span></span>
+<span class="line"><span>    password: public</span></span>
+<span class="line"><span>    serverURI: tcp://192.168.200.128:1883</span></span>
+<span class="line"><span>    clientId: monitor.user.${random.int[1000,9999]}</span></span>
+<span class="line"><span>    keepAliveInterval: 10</span></span>
+<span class="line"><span>    connectionTimeout: 30</span></span>
+<span class="line"><span>  producer:</span></span>
+<span class="line"><span>    defaultQos: 2</span></span>
+<span class="line"><span>    defaultRetained: false</span></span>
+<span class="line"><span>    defaultTopic: testtopic/test1</span></span>
+<span class="line"><span>  consumer:</span></span>
+<span class="line"><span>    consumerTopics: $queue/server/user/#</span></span></code></pre></div></div></div></main><footer class="VPDocFooter" data-v-7011f0d8 data-v-e257564d><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e257564d><span class="visually-hidden" id="doc-footer-aria-label" data-v-e257564d>Pager</span><div class="pager" data-v-e257564d><a class="VPLink link pager-link prev" href="/java/spring.html" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>Previous page</span><span class="title" data-v-e257564d>Spring</span><!--]--></a></div><div class="pager" data-v-e257564d><a class="VPLink link pager-link next" href="/java/springTask.html" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>Next page</span><span class="title" data-v-e257564d>SpringTask</span><!--]--></a></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter has-sidebar" data-v-1df9f90f data-v-c3855bb3><div class="container" data-v-c3855bb3><p class="message" data-v-c3855bb3><img src="../public/images/03.png" alt="Logo" style="height: 180px; vertical-align: middle; margin-right: 8px;"> hello world</p><p class="copyright" data-v-c3855bb3>© 2025 本博客已省略 9999 个 bug</p></div></footer><!--[--><!--]--></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"admin_my.md\":\"BBDaMPgD\",\"dev_docker.md\":\"CZ1Ows3t\",\"dev_mysql.md\":\"B9i0tOVS\",\"dev_nginx.md\":\"BYrY6LqE\",\"dev_redis.md\":\"8QFZQHWt\",\"index.md\":\"C8ZZ54zT\",\"java_bitmap.md\":\"Da1EIbqE\",\"java_dt.md\":\"B9oHvMn7\",\"java_es.md\":\"CbGsdVa3\",\"java_index.md\":\"B8trZM9W\",\"java_java.md\":\"D0bYkbBw\",\"java_mp.md\":\"D77jeMbt\",\"java_mq.md\":\"6nIMkIhz\",\"java_mqtt.md\":\"CBxS-T0R\",\"java_mybatis.md\":\"cx4fa_tH\",\"java_opensource.md\":\"B_KSq-C7\",\"java_project.md\":\"Dl41NjUO\",\"java_spring.md\":\"BYI60RGT\",\"java_springcache.md\":\"DLKoybBt\",\"java_springcloud.md\":\"CIOOmLFk\",\"java_springtask.md\":\"ctM-9Lty\",\"java_websocket.md\":\"N6rrX5BY\",\"linux_index.md\":\"CxIpGxZX\",\"linux_linux.md\":\"Bs0mqmQI\",\"utils_ai.md\":\"DV0BtycB\",\"utils_index.md\":\"0vgYDxqf\",\"utils_movie.md\":\"bltkneiK\",\"utils_pdl.md\":\"u3a8y3Ew\",\"utils_util.md\":\"BDGzHmF7\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"我的博客\",\"description\":\"德智体美劳全面发展\",\"base\":\"/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"nav\":[{\"text\":\"首页\",\"link\":\"/\"},{\"text\":\"关于\",\"link\":\"/admin/my\"},{\"text\":\"潘多拉\",\"link\":\"/utils/index\"},{\"text\":\"Java\",\"link\":\"/java/index\"},{\"text\":\"Linux\",\"link\":\"/linux/index\"},{\"text\":\"组件\",\"items\":[{\"text\":\"MySql\",\"link\":\"/dev/mysql\"},{\"text\":\"Nginx\",\"link\":\"/dev/nginx\"},{\"text\":\"Redis\",\"link\":\"/dev/redis\"},{\"text\":\"Docker\",\"link\":\"/dev/docker\"}]}],\"search\":{\"provider\":\"local\"},\"outlineTitle\":\"页面导航\",\"footer\":{\"message\":\"<img src=\\\"../public/images/03.png\\\" alt=\\\"Logo\\\" style=\\\"height: 180px; vertical-align: middle; margin-right: 8px;\\\"> hello world\",\"copyright\":\"© 2025 本博客已省略 9999 个 bug\"},\"sidebar\":{\"/\":[],\"/utils/\":[{\"text\":\"概览\",\"collapsible\":true,\"collapsed\":false,\"items\":[{\"text\":\"Ai\",\"link\":\"/utils/ai\"},{\"text\":\"影视\",\"link\":\"/utils/movie\"},{\"text\":\"工具\",\"link\":\"/utils/util\"},{\"text\":\"潘多拉\",\"link\":\"/utils/pdl\"}]}],\"/java/\":[{\"text\":\"概览\",\"collapsible\":true,\"collapsed\":false,\"items\":[{\"text\":\"Java基础\",\"link\":\"/java/java\"},{\"text\":\"开源框架\",\"link\":\"/java/openSource\"},{\"text\":\"MybatisPlus\",\"link\":\"/java/mp\"},{\"text\":\"SpringCloud\",\"link\":\"/java/springCloud\"},{\"text\":\"WebSocket\",\"link\":\"/java/webSocket\"},{\"text\":\"SpringCache\",\"link\":\"/java/springCache.md\"},{\"text\":\"位图\",\"link\":\"/java/bitmap\"},{\"text\":\"Spring\",\"link\":\"/java/spring\"},{\"text\":\"MQTT\",\"link\":\"/java/mqtt\"},{\"text\":\"SpringTask\",\"link\":\"/java/springTask\"},{\"text\":\"ES\",\"link\":\"/java/es\"},{\"text\":\"分布式事务\",\"link\":\"/java/dt\"},{\"text\":\"Java项目\",\"link\":\"/java/project\"},{\"text\":\"MQ\",\"link\":\"/java/mq\"},{\"text\":\"Mybatis\",\"link\":\"/java/mybatis\"}]}],\"/linux/\":[{\"text\":\"Linux基础\",\"collapsible\":true,\"collapsed\":false,\"items\":[{\"text\":\"常用命令\",\"link\":\"/linux/commands\"},{\"text\":\"文件系统\",\"link\":\"/linux/filesystem\"},{\"text\":\"权限管理\",\"link\":\"/linux/permissions\"}]},{\"text\":\"Linux高级\",\"collapsible\":true,\"collapsed\":false,\"items\":[{\"text\":\"Shell脚本\",\"link\":\"/linux/shell\"},{\"text\":\"系统管理\",\"link\":\"/linux/administration\"}]}]},\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/vuejs/vitepress\"}]},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":false,\"additionalConfig\":{}}");</script>
+    
+  </body>
+</html>
