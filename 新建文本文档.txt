@@ -1,0 +1,31 @@
+1.下载node
+2.添加环境变量
+3.创建 VitePress 项目
+-- 创建文件夹
+mkdir my-vitepress-site
+cd my-vitepress-site
+-- 初始化项目并安装 VitePress
+npm create vitepress@latest
+-- 进入VitePress创建的目录下
+cd vitepress-project
+-- 安装依赖
+npm install
+-- 启动开发服务器。访问localhost:5173
+npm run dev
+
+----------修改网站内容
+1.VitePress 的内容都在 docs/ 目录下
+1. 编辑首页
+打开文件：docs/index.md
+
+2.添加新页面
+创建文件：docs/guide.md
+
+3.配置导航和侧边栏
+编辑：docs/.vitepress/config.ts
+
+---------- 配置完成后执行构建静态文件
+npm run build
+在docs的.vitepress下生成的构建后的dist目录，里面就是你可以部署的静态文件
+
+----------部署到 GitHub Pages
