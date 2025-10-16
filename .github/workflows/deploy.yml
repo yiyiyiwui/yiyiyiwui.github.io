@@ -2,7 +2,7 @@ name: Deploy VitePress Site
 
 on:
   push:
-    branches: [ main ]  # 当推送到 main 分支时触发
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -21,11 +21,13 @@ jobs:
         run: npm install
 
       - name: Build VitePress
-#        run: npm run docs:build
-        run: npx vitepress build docs
+        run: npm run docs:build
+
+      - name: List dist files (debug)
+        run: ls -la docs/.vitepress/dist/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/.vitepress/dist  # 构建输出目录
+          publish_dir: ./docs/.vitepress/dist
