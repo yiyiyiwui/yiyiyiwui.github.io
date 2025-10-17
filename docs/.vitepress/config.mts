@@ -36,7 +36,7 @@ export default defineConfig({
         },
         outlineTitle: '页面导航',
         footer: {
-            message: '<img src="../public/images/03.png" alt="Logo" style="height: 180px; vertical-align: middle; margin-right: 8px;"> hello world',
+            message: '<img src="/images/03.png" alt="Logo" style="height: 180px; vertical-align: middle; margin-right: 8px;"> hello world',
             copyright: '© 2025 本博客已省略 9999 个 bug'
         },
         sidebar: { // 侧边栏
