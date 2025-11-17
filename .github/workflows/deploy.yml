@@ -1,41 +1,44 @@
+# 工作流名称：部署 VitePress 站点
 name: Deploy VitePress Site
-
+# 触发条件：当向 main 分支推送代码时自动运行此工作流
 on:
   push:
     branches: [ main ]
-
-# 为GITHUB_TOKEN添加写入contents的权限
+# 授予权限：允许此工作流使用 GITHUB_TOKEN 写入仓库内容（用于发布到 GitHub Pages）
 permissions:
   contents: write
-
+# 定义一个名为 "deploy" 的任务（job）
 jobs:
   deploy:
+    # 指定在最新的 Ubuntu 虚拟机环境中运行
     runs-on: ubuntu-latest
-
     steps:
+      # 步骤 1：检出（拉取）你的 GitHub 仓库代码到运行环境中
       - name: Checkout
         uses: actions/checkout@v4
-
+      # 步骤 2：设置 Node.js 环境（VitePress 是基于 Node.js 的静态站点生成器）
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-
+          node-version: 20  # 使用 Node.js 20 版本
+      # 步骤 3：安装项目依赖（如 vitepress、markdown 解析器等）
       - name: Install dependencies
         run: npm install
-
+      # 步骤 4：构建 VitePress 静态网站
+      # 注释掉的是另一种写法（如果你 package.json 中有 "docs:build" 脚本）
+      # 当前直接使用 npx 命令构建 docs 目录下的 VitePress 项目
       - name: Build VitePress
-#        run: npm run docs:build
         run: npx vitepress build docs
 
+      # 步骤 5：【调试用】列出构建输出目录中的文件，确认是否生成成功
       - name: List dist files (debug)
         run: ls -la docs/.vitepress/dist/
 
+      # 步骤 6：将构建好的静态文件部署到 GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3  # 使用知名的 GH Pages 部署 Action
         with:
-          # 使用默认的GITHUB_TOKEN进行认证
+          # 使用 GitHub 自动提供的 GITHUB_TOKEN 进行身份验证（无需手动配置）
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 指定要发布的目录：这是 VitePress 默认的构建输出路径
           publish_dir: ./docs/.vitepress/dist
-
-
