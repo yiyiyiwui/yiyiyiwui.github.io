@@ -11,7 +11,7 @@ cd vitepress-project
 -- 安装依赖
 npm install
 -- 启动开发服务器。访问localhost:5173
-npm run dev
+npm run docs:dev
 
 ----------修改网站内容
 1.VitePress 的内容都在 docs/ 目录下

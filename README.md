@@ -1,13 +1,11 @@
-<!--
-*** 请将下方 [your-username] 替换为你的 GitHub 用户名！
-*** 如果你博客部署在 GitHub Pages，地址通常是：
-***   https://[your-username].github.io/[repo-name]/
--->
-
 <div align="center">
 
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=500&color=4A90E2&center=true&vCenter=true&width=600&lines=Hello,+World!+👋;Welcome+to+My+Tech+Blog;Writing+Code+%26+Thoughts" alt="Typing SVG" />
-
+   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&duration=3000&pause=500&color=4A90E2&center=true&vCenter=true&width=700&lines=
+   Java+Developer;
+   Linux+SysAdmin;
+   Tool+Collector;
+   Knowledge+Sharer"
+   alt="Typing SVG" />
   <h1>✨ My Personal Blog</h1>
 
   <p>
@@ -21,8 +19,6 @@
 
   <p>📝 分享技术、思考与成长 | 🌱 持续学习中 | 🚀 构建有意义的产品</p>
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=your-username&show_icons=true&theme=radical&count_private=true&include_all_commits=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=your-username&layout=compact&theme=radical)
 
 </div>
 

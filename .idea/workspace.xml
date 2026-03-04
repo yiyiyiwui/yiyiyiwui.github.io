@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="687400b0-85a1-4a5c-94b1-f873da6bda5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/utils/util.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/utils/util.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +51,11 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHELLCHECK.PATH": "I do mind",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/tan/blog",
+    "last_opened_file_path": "C:/Users/Admin/Desktop/tan/yiyiyiwui.github.io",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -66,11 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\tan\yiyiyiwui.github.io\docs\public\images" />
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\java" />
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\public\images" />
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\dev" />
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\linux" />
-      <recent name="C:\Users\Admin\Desktop\tan\blog\docs\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\public\images" />
@@ -78,7 +83,7 @@
       <recent name="C:\Users\Admin\Desktop\tan\docs\test" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.docs:dev">
+  <component name="RunManager" selected="npm.docs:build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -121,10 +126,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.docs:build" />
         <item itemvalue="npm.docs:dev" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.docs:build" />
       </list>
     </recent_temporary>
   </component>
@@ -149,6 +154,15 @@
       <workItem from="1758180257092" duration="8344000" />
       <workItem from="1758522288470" duration="49026000" />
       <workItem from="1760062129415" duration="40182000" />
+      <workItem from="1763627164665" duration="594000" />
+      <workItem from="1765434740201" duration="8278000" />
+      <workItem from="1765785981274" duration="591000" />
+      <workItem from="1766027208931" duration="42000" />
+      <workItem from="1766453760244" duration="593000" />
+      <workItem from="1772010535440" duration="16000" />
+      <workItem from="1772429471069" duration="3280000" />
+      <workItem from="1772438492856" duration="15000" />
+      <workItem from="1772605626021" duration="753000" />
     </task>
     <servers />
   </component>

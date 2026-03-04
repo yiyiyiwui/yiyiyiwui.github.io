@@ -21,6 +21,7 @@ export default defineConfig({
             {text: '潘多拉', link: '/utils/index'}, // 导航项：关于
             {text: 'Java', link: '/java/index'}, // 导航项：java
             {text: 'Linux', link: '/linux/index'}, // 导航项：linux
+            {text: '其他', link: '/test/index'},
             {
                 text: '组件',
                 items: [
@@ -37,7 +38,7 @@ export default defineConfig({
         outlineTitle: '页面导航',
         footer: {
             message: '<img src="/images/03.png" alt="Logo" style="height: 180px; vertical-align: middle; margin-right: 8px;"> hello world',
-            copyright: '© 2025 本博客已省略 9999 个 bug'
+            copyright: '© 2026 本博客已省略 9999 个 bug'
         },
         sidebar: { // 侧边栏
             // 默认侧边栏（可选，用于没有匹配到特定路径时）
