@@ -1,0 +1,229 @@
+/* ===== 隐藏原始背景球 ===== */
+.VPHero .image-bg {
+    display: none !important;
+}
+
+/* ===== 位置修复（保留你调好的）===== */
+.VPHero .image {
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+}
+
+/* ===== 头像容器 ===== */
+.VPHero .image-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 300px !important;
+    height: 300px !important;
+    position: relative !important;
+    perspective: 800px !important;
+}
+
+/* ===== 旋转星环1 ===== */
+.VPHero .image-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 270px;
+    height: 270px;
+    margin-top: -135px;
+    margin-left: -135px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background:
+            linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+            conic-gradient(
+                    from 0deg,
+                    #ff006680,
+                    #8338ec,
+                    #3a86ff,
+                    #06ffa5,
+                    #ffbe0b,
+                    #ff006680
+            ) border-box;
+    animation: orbitSpin1 4s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* ===== 旋转星环2 ===== */
+.VPHero .image-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 255px;
+    height: 255px;
+    margin-top: -127.5px;
+    margin-left: -127.5px;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    background:
+            linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+            conic-gradient(
+                    from 180deg,
+                    #06ffa580,
+                    #3a86ff,
+                    #8338ec,
+                    #ff0066,
+                    #ffbe0b80,
+                    #06ffa580
+            ) border-box;
+    animation: orbitSpin2 6s linear infinite reverse;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes orbitSpin1 {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes orbitSpin2 {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* ===== 头像主体 ===== */
+.VPHero .image-src {
+    width: 210px !important;
+    height: 210px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    position: relative !important;
+    z-index: 4 !important;
+    cursor: pointer !important;
+
+    /* 多层光圈 */
+    box-shadow:
+            0 0 0 3px rgba(255, 255, 255, 0.12),
+            0 0 0 6px rgba(131, 56, 236, 0.5),
+            0 0 0 10px rgba(58, 134, 255, 0.3),
+            0 0 0 15px rgba(6, 255, 165, 0.15),
+            0 0 25px rgba(131, 56, 236, 0.6),
+            0 0 50px rgba(58, 134, 255, 0.3),
+            0 0 80px rgba(6, 255, 165, 0.15) !important;
+
+    animation:
+            avatarBreath 3s ease-in-out infinite,
+            ringColorShift 6s linear infinite,
+            heroEntrance 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+
+    transition: box-shadow 0.3s ease !important;
+    transform-style: preserve-3d !important;
+}
+
+/* ===== 呼吸动画 ===== */
+@keyframes avatarBreath {
+    0%, 100% { transform: scale(1) translateY(0); }
+    50%       { transform: scale(1.03) translateY(-6px); }
+}
+
+/* ===== 光圈颜色流转 ===== */
+@keyframes ringColorShift {
+    0% {
+        box-shadow:
+                0 0 0 3px rgba(255,255,255,0.12),
+                0 0 0 6px rgba(131,56,236,0.55),
+                0 0 0 10px rgba(58,134,255,0.3),
+                0 0 0 15px rgba(6,255,165,0.15),
+                0 0 25px rgba(131,56,236,0.65),
+                0 0 50px rgba(58,134,255,0.3),
+                0 0 80px rgba(6,255,165,0.15);
+    }
+    25% {
+        box-shadow:
+                0 0 0 3px rgba(255,255,255,0.15),
+                0 0 0 6px rgba(58,134,255,0.6),
+                0 0 0 10px rgba(6,255,165,0.35),
+                0 0 0 15px rgba(255,190,11,0.2),
+                0 0 25px rgba(58,134,255,0.7),
+                0 0 50px rgba(6,255,165,0.35),
+                0 0 80px rgba(255,190,11,0.15);
+    }
+    50% {
+        box-shadow:
+                0 0 0 3px rgba(255,255,255,0.12),
+                0 0 0 6px rgba(6,255,165,0.55),
+                0 0 0 10px rgba(255,0,102,0.3),
+                0 0 0 15px rgba(131,56,236,0.15),
+                0 0 25px rgba(6,255,165,0.65),
+                0 0 50px rgba(255,0,102,0.3),
+                0 0 80px rgba(131,56,236,0.15);
+    }
+    75% {
+        box-shadow:
+                0 0 0 3px rgba(255,255,255,0.15),
+                0 0 0 6px rgba(255,190,11,0.55),
+                0 0 0 10px rgba(131,56,236,0.3),
+                0 0 0 15px rgba(58,134,255,0.15),
+                0 0 25px rgba(255,190,11,0.65),
+                0 0 50px rgba(131,56,236,0.3),
+                0 0 80px rgba(58,134,255,0.15);
+    }
+    100% {
+        box-shadow:
+                0 0 0 3px rgba(255,255,255,0.12),
+                0 0 0 6px rgba(131,56,236,0.55),
+                0 0 0 10px rgba(58,134,255,0.3),
+                0 0 0 15px rgba(6,255,165,0.15),
+                0 0 25px rgba(131,56,236,0.65),
+                0 0 50px rgba(58,134,255,0.3),
+                0 0 80px rgba(6,255,165,0.15);
+    }
+}
+
+/* ===== 进场动画 ===== */
+@keyframes heroEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotateY(-30deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
+    }
+}
+
+/* ===== hover 增强 ===== */
+.VPHero .image-src:hover {
+    box-shadow:
+            0 0 0 3px rgba(255,255,255,0.25),
+            0 0 0 7px rgba(131,56,236,0.8),
+            0 0 0 13px rgba(58,134,255,0.5),
+            0 0 0 20px rgba(6,255,165,0.25),
+            0 0 35px rgba(131,56,236,0.9),
+            0 0 65px rgba(58,134,255,0.5),
+            0 0 100px rgba(6,255,165,0.25) !important;
+}
+
+/* ===== 名字渐变 ===== */
+.VPHero .name {
+    background: linear-gradient(135deg, #3a86ff 0%, #8338ec 50%, #ff006e 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 0 20px rgba(131, 56, 236, 0.5));
+}
+
+.VPHero .tagline {
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+}
+
+/* ===== 移动端 ===== */
+@media (max-width: 640px) {
+    .VPHero .image-container {
+        width: 220px !important;
+        height: 220px !important;
+    }
+    .VPHero .image-src {
+        width: 160px !important;
+        height: 160px !important;
+    }
+}

@@ -21,7 +21,7 @@ export default defineConfig({
             {text: '潘多拉', link: '/utils/index'}, // 导航项：关于
             {text: 'Java', link: '/java/index'}, // 导航项：java
             {text: 'Linux', link: '/linux/index'}, // 导航项：linux
-            {text: '其他', link: '/test/index'},
+            {text: '其他', link: '/other/index'},
             {
                 text: '组件',
                 items: [
@@ -107,6 +107,16 @@ export default defineConfig({
                     items: [
                         {text: 'Shell脚本', link: '/linux/shell'},
                         {text: '系统管理', link: '/linux/administration'}
+                    ]
+                }
+            ],
+
+            '/other/': [
+                {
+                    text: '其他',
+                    ...collapsibleSidebar,
+                    items: [
+                        {text: '常用命令', link: '/other/index'}
                     ]
                 }
             ]
