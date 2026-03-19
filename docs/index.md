@@ -6,7 +6,7 @@ hero:
   text: "德智体美劳 全面发展"
   tagline: "写代码 · 运动 · 养猫 · 偶尔emo"
   image:
-    src: /public/images/avatar.jpg   # 建议准备一个带猫/动物元素的 logo（或用默认的 vitepress logo 改色）
+    src: /images/avatar.jpg   # 建议准备一个带猫/动物元素的 logo（或用默认的 vitepress logo 改色）
     alt: nanの小窝 logo
   actions:
     - theme: brand
