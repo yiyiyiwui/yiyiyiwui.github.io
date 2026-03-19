@@ -1,0 +1,1 @@
+import{_ as u,o,c as q,ah as a}from"./chunks/framework.C80vgv3d.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"java/java.md","filePath":"java/java.md"}'),e={name:"java/java.md"};function i(l,t,v,m,r,p){return o(),q("div",null,[...t[0]||(t[0]=[a("",13)])])}const s=u(e,[["render",i]]);export{d as __pageData,s as default};
