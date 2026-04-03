@@ -270,6 +270,133 @@ https://kodcloud.com/
 https://github.com/DrewThomasson/ebook2audiobook
 ## 站址导航
 https://www.zhanlian.net/code
+## 开源网穿透工具frp的桌面客户端frpc-desktop
+https://mp.weixin.qq.com/s/7nCQKfUj-YPoj_ESVw-5bA
+## 多智能体工作管理工具
+https://github.com/steveyegge/gastown
+## 浏览器中的桌面环境
+https://dustinbrett.com/
+## 亲戚计算器
+https://passer-by.com/relationship/
+## 元素周期表
+https://seanwong17.github.io/Future-Style-Periodic-Table/
+## Docker Hub 镜像代理
+https://github.com/DaoCloud/public-image-mirror
+## 苹果电脑版应用仓库
+https://apps.apple.com/app/id1596411278
+## 视频转手绘
+https://clipsketch-ai.vercel.app/
+## ui组件
+https://github.com/longbridge/gpui-component
+## 现代文转古文
+https://modelscope.cn/studios/chostem/ancient_Chinese_text_generator
+## 通用包搜索引擎 支持所有主流Linux发行版
+专用包仓库：https://pkgs.org/
+RPM包: http://rpmfind.net/linux/RPM/index.html
+Debian包: https://packages.debian.org/
+Ubuntu包: https://packages.ubuntu.com/
+## 匿名邮件
+https://anonymousemail.me/
+## docker
+https://download.docker.com/linux/static/stable/x86_64/
+## docker Compose
+https://github.com/docker/compose/releases/download/v2.25.0/docker-compose-linux-x86_64
+## kafka
+https://kafka.apache.org/downloads
+## zookeeper
+https://archive.apache.org/dist/zookeeper/zookeeper-3.5.9/
+## 全球儿歌乐园
+https://beddysongs.com/zh
+## 文件快传
+https://transfer.52python.cn/
+## ai网页后面直接提问问题
+https://818233.xyz/你是什么模型
+## 做饭教程
+https://www.xiachufang.com/
+## 做饭教程
+https://www.douguo.com/
+## 做饭教程
+https://www.meishichina.com/
+## 做饭教程
+https://www.xiangha.com/
+## 全景故宫
+https://pano.dpm.org.cn/#/
+## 数字敦煌
+https://www.e-dunhuang.com/index.htm
+## 千亿像素看中国
+https://www.bigpixel.cn/gigapixelAPP/web/index.html
+## 国家博物馆VR
+http://chnmuseum.cn/Portals/0/web/vr
+## 点击屏幕让初音未来唱歌
+https://aidn.jp/mikutap/
+## 有趣网址之家
+https://youquhome.com/
+## 鼠标样式
+https://sweezy-cursors.com/
+## 光污染地图，看全球哪里天空最黑、星星最多
+https://www.lightpollutionmap.info/
+## 核弹威力
+https://nuclearsecrecy.com/nukemap/
+## 地球时间线，滚动屏幕浏览地球46亿年历史
+https://timelineofearth.com/
+## Silk，鼠标乱画就能生成炫彩对称图，解压神器
+http://weavesilk.com/
+## 故宫数字文物库
+https://digicol.dpm.org.cn/
+## 解压神器
+https://paveldogreat.github.io/WebGL-Fluid-Simulation/
+## 迷宫生成
+https://mazegenerator.net/
+## 键盘变钢琴，能弹《卡农》《天空之城》，不懂乐理也行
+https://virtualpiano.net/
+## 中国历史照片库
+https://hpcbristol.net/
+## 用高清影片看各种化学反应
+https://www.beautifulchemistry.net/
+## 有趣的网站
+https://sspai.com/post/71547
+## youtube字幕，可用于图文发布
+https://downsub.com/
+## IDEA导入Eclipse项目
+https://blog.csdn.net/zeal9s/article/details/90690524
+## ai声音克隆
+https://aivoicecloning.io/zh
+## 局域网数据传输
+https://pairdrop.net/
+## 电影
+https://www.netflixgc.com/
+## 美团技术团队
+https://tech.meituan.com/
+## IT码农
+https://tanqingbo.cn/
+## web前端导航
+http://www.alloyteam.com/nav/
+## 京东架构师
+https://bugstack.cn/
+## 犬小哈教程网
+https://www.exception.site/
+## 巧解Docker镜像拉取失败！无需梯子/服务器，无拉取数量限制！
+https://mp.weixin.qq.com/s/1kQlYQnKGZg6HVNgmDjQfg
+## 文本转语音
+https://www.ttsomni.com
+## ai + 热门短剧
+https://youtu.be/5IqG9uGsBpk
+## 快手视频带货
+https://youtu.be/ubIgB1-MT-Y
+## crl地址ai
+https://818233.xyz/你是什么模型
+## 文件快传
+https://transfer.52python.cn/
+## 博客分享
+https://luolei.org/
+## 自动炒股
+https://gitee.com/dromara/northstar
+## 硅基流动，ai体验+aip对接
+https://www.siliconflow.cn/
+## 将任何东西暴露到互联网
+https://tunelo.net/#zh
+## 一键发布网站
+https://pinme.eth.limo/#/
 ## 
 
 ## 
@@ -323,12 +450,4 @@ https://www.zhanlian.net/code
 ## 
 
 ## 
-
-## 
-
-## 
-
-## 
-
-
 
