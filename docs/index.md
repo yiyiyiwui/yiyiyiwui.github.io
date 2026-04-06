@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 向上攀爬 →  # 更有动感的按钮
-      link: /other/
+      link: /java/index
     - theme: alt
       text: 洞穴藏书  # 分类改成藏书
       link: /utils/index    
