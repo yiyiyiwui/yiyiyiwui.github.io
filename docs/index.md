@@ -38,5 +38,5 @@ features:
   - icon: 📖
     title: 井蛙之言·笔记
     details: 对记录、思考与新知的拙见。记录每一刻挣扎与突破，这些拙见，是向着光亮攀爬的真实印记。
-    link: /other/index
+    link: /other/memo
 ---

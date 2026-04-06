@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="687400b0-85a1-4a5c-94b1-f873da6bda5f" name="Changes" comment="111">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/admin/my.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin/my.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/java/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/other/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/other/memo.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/utils/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/utils/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +61,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "node",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/my/yiyiyiwui.github.io",
+    "last_opened_file_path": "D:/my/yiyiyiwui.github.io/docs/public/files",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -83,11 +77,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\my\yiyiyiwui.github.io\docs\public\files" />
       <recent name="C:\Users\Admin\Desktop\tan\yiyiyiwui.github.io\docs\public\images" />
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\java" />
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\public\images" />
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\dev" />
-      <recent name="C:\Users\Admin\Desktop\tan\blog\docs\linux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\tan\blog\docs\public\images" />
