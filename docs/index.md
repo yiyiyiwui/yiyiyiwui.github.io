@@ -2,41 +2,41 @@
 layout: home
 
 hero:
-  name: "eiの小窝"
-  text: "德智体美劳 全面发展"
-  tagline: "写代码 · 运动 · 养猫 · 偶尔emo"
+  name: "一一一五"  # 名字更有沉浸感
+  text: "破井而出，步履不停"  # 核心 Slogan，自嘲中带点哲学
+  tagline: "我的数字洞穴 / 终身学习，不作困兽斗" # 更有深度的自我介绍
   image:
-    src: /images/avatar.jpg   # 建议准备一个带猫/动物元素的 logo（或用默认的 vitepress logo 改色）
-    alt: nanの小窝 logo
+    src: /images/avatar.jpg   # 你的青蛙头像，完美契合主题
+    alt: ei的头像
   actions:
     - theme: brand
-      text: 最近文章 →
-      link: /posts/             # 假设你有 posts/ 目录放博客
+      text: 向上攀爬 →  # 更有动感的按钮
+      link: /other/
     - theme: alt
-      text: 技术分类
-      link: /categories/
+      text: 洞穴藏书  # 分类改成藏书
+      link: /utils/index    
     - theme: alt
-      text: 关于我
+      text: 关于这只蛙
       link: /admin/my
 
 features:
-  
-  - icon: ⚡
-    title: 后端 & 云
-    details: Spring Boot / Java / Docker / K8s
+  - icon: 💻
+    title: 井底之术·代码
+    details: 在 Java 与 Spring Cloud 的幽暗代码里，构建高并发告警的通天巨塔。
     link: /java/index
+
   - icon: 🐧
-    title: Linux & 运维
-    details: Nginx / 系统调优 / 脚本 / 服务器
-    link: /linux/index
-  - icon: 🐱
-    title: 生活碎片
-    details: 日常 /  工具 / 电影 / 随机
+    title: 井口之风·革新
+    details: 探头捕捉来自数字世界的凛冽新风。在 AI、容器化与前沿架构的流转中，挣脱思维的围墙。
+    link: /dev/ai
+
+  - icon: 🌿
+    title: 井边之苔·生活
+    details: 记录生活、运动和 emo。井底虽潮湿，这些生活点滴便是最顽强盛开的绿意。
     link: /utils/index
-  - icon: 📚
-    title: 学习笔记
-    details: 算法 / 设计模式 / 数据库 / 前端摸索中...
-    link: /test/index
 
-
+  - icon: 📖
+    title: 井蛙之言·笔记
+    details: 对记录、思考与新知的拙见。记录每一刻挣扎与突破，这些拙见，是向着光亮攀爬的真实印记。
+    link: /other/index
 ---

@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="687400b0-85a1-4a5c-94b1-f873da6bda5f" name="Changes" comment="111">
-      <change afterPath="$PROJECT_DIR$/新建文本文档.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/other/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/other/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/新建文本文档.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/admin/my.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin/my.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/java/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/other/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/other/memo.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/utils/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/utils/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,28 +53,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;I do mind&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/tan/yiyiyiwui.github.io&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.docs:build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.docs:dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\myDev\\idea\\IntelliJ IDEA 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "disable.download.node.interpreter.editor.notification": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/my/yiyiyiwui.github.io",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.docs:build.executor": "Run",
+    "npm.docs:dev.executor": "Run",
+    "settings.editor.selected.configurable": "settings.javascript.runtime",
+    "ts.external.directory.path": "D:\\myDev\\idea\\IntelliJ IDEA 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\tan\yiyiyiwui.github.io\docs\public\images" />
@@ -85,7 +95,7 @@
       <recent name="C:\Users\Admin\Desktop\tan\docs\test" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.docs:build">
+  <component name="RunManager" selected="npm.docs:dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -122,14 +132,14 @@
       <scripts>
         <script value="docs:dev" />
       </scripts>
-      <node-interpreter value="project" />
+      <node-interpreter value="$PROJECT_DIR$/../../mydev/Node/node" />
       <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.docs:build" />
         <item itemvalue="npm.docs:dev" />
+        <item itemvalue="npm.docs:build" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
       </list>
@@ -195,5 +205,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="111" />
     <option name="LAST_COMMIT_MESSAGE" value="111" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

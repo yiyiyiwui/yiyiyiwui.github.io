@@ -21,14 +21,15 @@ export default defineConfig({
             {text: '潘多拉', link: '/utils/index'}, // 导航项：关于
             {text: 'Java', link: '/java/index'}, // 导航项：java
             {text: 'Linux', link: '/linux/index'}, // 导航项：linux
-            {text: '其他', link: '/other/index'},
+            {text: '其他', link: '/other/memo'},
             {
                 text: '组件',
                 items: [
                     { text: 'MySql', link: '/dev/mysql' },
                     { text: 'Nginx', link: '/dev/nginx' },
                     {text: 'Redis', link: '/dev/redis'},
-                    { text: 'Docker', link: '/dev/docker' }
+                    { text: 'Docker', link: '/dev/docker'},
+                    { text: 'Ai', link: '/dev/ai' }
                 ]
             }
         ],
@@ -116,7 +117,8 @@ export default defineConfig({
                     text: '其他',
                     ...collapsibleSidebar,
                     items: [
-                        {text: '常用命令', link: '/other/index'}
+                        {text: '备忘录', link: '/other/memo'},
+                        {text: '面试问题', link: '/other/interview'}
                     ]
                 }
             ]
@@ -124,7 +126,7 @@ export default defineConfig({
         },
 
         socialLinks: [ // 社交媒体链接配置
-            {icon: 'github', link: 'https://github.com/vuejs/vitepress'} // GitHub链接
+            {icon: 'github', link: 'https://github.com/yiyiyiwui'} // GitHub链接
         ]
 
     }
