@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.C80vgv3d.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"utils/index.md","filePath":"utils/index.md"}'),n={name:"utils/index.md"};function s(r,i,o,c,d,p){return t(),a("div")}const m=e(n,[["render",s]]);export{l as __pageData,m as default};

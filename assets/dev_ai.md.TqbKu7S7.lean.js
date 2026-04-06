@@ -1,0 +1,1 @@
+import{_ as a,o as t,c as r,j as o}from"./chunks/framework.C80vgv3d.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"dev/ai.md","filePath":"dev/ai.md"}'),s={name:"dev/ai.md"};function n(i,e,d,c,p,l){return t(),r("div",null,[...e[0]||(e[0]=[o("p",null,"ai的风口",-1)])])}const f=a(s,[["render",n]]);export{_ as __pageData,f as default};
