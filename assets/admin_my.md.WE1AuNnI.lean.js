@@ -1,1 +1,0 @@
-import{_ as r,o as p,c as e,ah as i}from"./chunks/framework.C80vgv3d.js";const c=JSON.parse('{"title":"个人简历","description":"","frontmatter":{},"headers":[],"relativePath":"admin/my.md","filePath":"admin/my.md"}'),n={name:"admin/my.md"};function t(l,a,o,s,h,g){return p(),e("div",null,[...a[0]||(a[0]=[i("",75)])])}const u=r(n,[["render",t]]);export{c as __pageData,u as default};
