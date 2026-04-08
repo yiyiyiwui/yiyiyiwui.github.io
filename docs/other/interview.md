@@ -1,66 +1,41 @@
-# 🎯 Java面试宝典 - 完整增强版（大白话+代码+AI专题）
-
-> 📌 **背诵技巧**：先看大白话理解→再看概念定义→最后结合项目场景说出来
-> 📌 **项目关键词**：DCIM平台、千万级测点数据、Kafka告警、MQTT对接、ShardingSphere分库分表
-
----
+# 🎯 Java面试宝典
 
 ## 第一章：Java基础
+### 面向对象三大特征
+- **封装** 保安全（数据不乱改）：防止"脏数据"污染数据库，保证业务逻辑的严密性
+- **继承** 省代码（共性不重写）：代码复用，减少重复劳动。修改父类，所有子类自动生效
+- **多态** 防僵化（扩展不修改）：消除 if-else，系统扩展性极强。新增设备类型时，只需新增一个类，不需要修改核心业务代码
 
+
+---
 ### JDK、JVM、JRE的区别？
-
-**大白话**：
-- JDK = 开发工具箱（写代码用的，包含编译器）
-- JVM = 翻译官（把Java代码翻译成电脑能懂的语言）
-- JRE = 运行环境（只是跑程序，不能开发）
-- 关系：JDK包含JRE，JRE包含JVM
-
-**概念**：
 - JDK：Java开发工具包，提供编译、调试、运行Java程序的工具
 - JVM：Java虚拟机，负责将字节码转换为机器码执行，实现跨平台
 - JRE：Java运行时环境，包含JVM和核心类库，只能运行不能开发
-
+- 关系：JDK包含JRE，JRE包含JVM
 ---
+### JVM
+#### JVM包含什么？
+- 类加载器：
+  负责：把你的 .class 文件放进来
 
-### JDK1.8新特性？
+- 执行引擎：
+  负责把你的 .class翻译成机器能听懂的指令
 
-**大白话**：1.8是Java里程碑版本，加了一堆让代码写起来更爽的功能
+- 内存区域：
 
-**主要特性**：
-- **Lambda表达式**：匿名函数，少写很多代码
-- **Stream流**：像流水线一样处理集合数据
-- **Optional**：优雅解决空指针问题
-- **接口默认方法**：接口可以有默认实现了
-- **新时间API**：LocalDate、LocalDateTime，比Date好用多了
-- **方法引用**：Class::method，更简洁
+**堆**：存放对象实例（比如你new的对象）。这是空间最大的地方，GC主要在这里工作
 
-**代码示例**：
-```java
-// Lambda表达式 - 以前要写匿名内部类，现在一行搞定
-List<String> list = Arrays.asList("banana", "apple", "cherry");
-list.sort((a, b) -> a.compareTo(b));
+**栈**：每个线程一个。存放局部变量。
 
-// Stream流 - 链式操作，过滤+转换+收集
-List<String> result = list.stream()
-    .filter(s -> s.startsWith("a"))   // 过滤a开头的
-    .map(String::toUpperCase)          // 转大写
-    .collect(Collectors.toList());     // 收集结果
+**本地方法栈**：调用c++等本地接口。
 
-// Optional - 避免空指针
-Optional<String> opt = Optional.ofNullable(getName());
-String name = opt.orElse("默认名字");  // 为空时返回默认值
-```
+**方法区**：存放类信息、常量、静态变量。
 
----
+**程序计数器**：记住当前执行到哪一行，线程切换后能继续
 
-### JVM运行时数据区？
-
-**大白话**：JVM把内存分成几块，各司其职
-- **堆**：放对象的大仓库，GC主要在这里工作
-- **栈**：每个线程一个，放方法调用记录
-- **方法区**：放类信息、常量，就像图书馆的目录
-- **程序计数器**：记住当前执行到哪一行，线程切换后能继续
-- **本地方法栈**：调用C/C++代码用的
+- 垃圾回收器（ 清洁工）：
+  负责盯着"堆仓库"，看到没人用的对象（废料）就把它扔掉，腾出空间
 
 ```
 JVM内存结构图：
@@ -79,22 +54,11 @@ JVM内存结构图：
 └─────────────────────────────────────┘
 ```
 
-**对象年龄晋升**：
-```
-新对象 → Eden区
-  ↓ GC后存活
-幸存区S0/S1（来回复制，年龄+1）
-  ↓ 年龄达到15次（默认）
-老年代
-  ↓ 老年代满了
-Full GC（最耗时）
-```
-
 ---
 
 ### Java垃圾回收机制？
 
-**大白话**：Java自动帮你清理没用的对象，不需要手动释放内存（像C/C++那样）
+Java自动帮你清理没用的对象，不需要手动释放内存（像C/C++那样）
 
 **判断是否该回收**：可达性分析（从GC Roots出发，找不到引用就回收）
 
@@ -102,13 +66,6 @@ Full GC（最耗时）
 - 虚拟机栈中的局部变量
 - 静态变量
 - 常量池中的引用
-
-**回收算法**：
-| 算法 | 优点 | 缺点 | 适用 |
-|------|------|------|------|
-| 标记-清除 | 简单 | 有内存碎片 | 老年代 |
-| 标记-整理 | 无碎片 | 效率低 | 老年代 |
-| 复制算法 | 快、无碎片 | 浪费一半空间 | 新生代 |
 
 **常用垃圾收集器**：
 - **G1**（推荐）：均衡吞吐量和延迟，JDK9默认
@@ -119,7 +76,7 @@ Full GC（最耗时）
 
 ### 双亲委派模型？
 
-**大白话**：类加载时，先问上级"你有没有加载过这个类？"有了就用现成的，没有才自己加载。就像公司报销，先问上级能不能批，不行再自己处理。
+类加载时，先问上级"你有没有加载过这个类？"有了就用现成的，没有才自己加载。就像公司报销，先问上级能不能批，不行再自己处理。
 
 **作用**：防止核心类被篡改（你自己写个java.lang.String不会生效，因为父级已经加载了）
 
@@ -134,35 +91,15 @@ Full GC（最耗时）
 
 ### String、StringBuffer、StringBuilder区别？
 
-**大白话**：
 - String就像刻在石头上，改一次就刻一块新石头
 - StringBuffer是橡皮泥，可以改，但改的时候要排队（加锁）
 - StringBuilder是橡皮泥，可以改，不用排队（不加锁，更快）
 
-**使用场景**：
-```java
-// String：字符串不变时用
-String name = "张三";
-
-// StringBuilder：循环拼接字符串，单线程（99%的场景用这个）
-StringBuilder sb = new StringBuilder();
-for (int i = 0; i < 1000; i++) {
-    sb.append(i).append(",");  // 不会每次创建新对象
-}
-String result = sb.toString();
-
-// StringBuffer：多线程环境下拼接字符串（少见）
-StringBuffer buffer = new StringBuffer();
-// 方法都加了synchronized，线程安全
-```
-
 ---
 
 ### ==和equals的区别？
-
-**大白话**：
-- ==：比较的是"是不是同一个东西"（对于对象比地址，就像比身份证号）
-- equals：比较的是"内容是不是一样"（就像比名字）
+- == 比较基本数据类型是比较数值，比较引用数据类型是比较地址
+- equals是比较两个对象的内容是否相等
 
 ```java
 String a = new String("hello");
@@ -184,110 +121,41 @@ System.out.println(m == n);  // false，超出缓存范围，不同对象
 ---
 
 ### 接口和抽象类的区别？
-
-**大白话**：
-- 接口：定义"能做什么"的规范，就像工作职责说明书，只说要做什么，不说怎么做
-- 抽象类：半成品，有些方法实现了，有些留给子类实现
-
-```java
-// 接口：只定义规范
-interface Flyable {
-    void fly();  // 所有会飞的都要实现这个方法
-    default void land() {  // JDK8后接口可以有默认实现
-        System.out.println("降落");
-    }
-}
-
-// 抽象类：半成品
-abstract class Animal {
-    String name;  // 可以有成员变量
-
-    // 具体方法（已实现）
-    void breathe() {
-        System.out.println("呼吸");
-    }
-
-    // 抽象方法（子类必须实现）
-    abstract void sound();
-}
-
-// 可以同时继承抽象类和实现多个接口
-class Bird extends Animal implements Flyable {
-    @Override
-    void sound() { System.out.println("啾啾"); }
-    @Override
-    public void fly() { System.out.println("扑腾翅膀"); }
-}
-```
+- 接口：只定义规范，没有具体的实现代码,需要类实现接口定义方法
+- 抽象类：既可以包含具体方法实现，又可以包含抽象方法声明的类
+  接口主要用于定义规范和实现多态性，抽象类主要用于被继承和代码复用
 
 ---
 
 ### 浅拷贝和深拷贝？
-
-**大白话**：
-- 浅拷贝：复印一张纸，但纸上贴的照片（引用对象）还是原来那张
-- 深拷贝：完整复制，连照片也重新洗一张，两份完全独立
-
-```java
-// 浅拷贝问题演示
-class Person implements Cloneable {
-    String name;
-    int[] scores;  // 引用类型
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();  // 浅拷贝
-    }
-}
-
-Person p1 = new Person();
-p1.scores = new int[]{90, 80};
-Person p2 = (Person) p1.clone();  // 浅拷贝
-
-p2.scores[0] = 100;  // 修改p2的成绩
-System.out.println(p1.scores[0]);  // 结果：100（p1也被修改了！）
-
-// 深拷贝方案：序列化/反序列化，或手动复制每个引用对象
-// 推荐用第三方库：Apache Commons BeanUtils 或 Jackson
-```
+- 浅拷贝：浅拷贝是拷贝对象中的基本数据类型和对象的引用
+- 深拷贝：深拷贝除了复制基本数据类型的值外，还会创建一个全新的对象，并复制包括子对象在内的所有内容
 
 ---
 
 ### 什么是内存泄漏？
-
-**大白话**：对象没用了，但还有人拽着它不放，垃圾回收器没法清理，内存越来越小
-
-**常见原因**：
-```java
-// 1. ThreadLocal没有remove（最常见）
-ThreadLocal<String> tl = new ThreadLocal<>();
-tl.set("用户ID:123");
-// 用完必须remove！！！
-tl.remove();  // 如果不调用，线程池环境下会泄漏
-
-// 2. 静态集合持有对象
-static List<Object> cache = new ArrayList<>();
-cache.add(bigObject);  // 一直加，从不清理
-
-// 3. 未关闭的资源
-// 错误写法
-Connection conn = getConnection();
-// 如果这里抛异常，conn永远不会关闭
-conn.close();
-
-// 正确写法：try-with-resources
-try (Connection conn = getConnection()) {
-    // 自动关闭
-}
-```
+- Java内存泄漏是指在程序中不再使用的对象仍然被占用内存，无法被垃圾回收器回收释放，最终导致内存资源的浪费和程序性能问题。
+- 造成内存泄漏的原因：对象引用未及时释放、集合类未正确使用、资源未正确释放、循环引
+- 避免泄漏：及时释放不再使用的对象和资源，正确使用集合类。
 
 ---
+
+### 🆕 你在项目中做过JVM调优吗？
+**结合DCIM项目回答：**
+
+我们平台数据量千万级，接入100万+测点，高峰期GC频繁导致接口偶发卡顿。主要做了以下几点：
+
+1. **堆内存调整**：根据服务器内存（32G）设置 `-Xms8g -Xmx8g`，避免动态扩容造成STW
+2. **选择G1收集器**：`-XX:+UseG1GC -XX:MaxGCPauseMillis=200`，控制最大停顿在200ms内
+3. **元空间限制**：`-XX:MetaspaceSize=256m -XX:MaxMetaspaceSize=512m`，防止元空间无限扩张
+4. **GC日志开启**：`-Xlog:gc*` 监控GC频率和耗时，定位Full GC根因
+5. **排查内存泄漏**：用Arthas的 `heapdump` 命令导出堆快照，MAT分析大对象，发现告警处理时一次性把10万条数据全部load进内存，改成分页批量处理后问题解决
 
 ## 第二章：集合
 
 ### 集合体系总览
 
-**大白话**：Java的容器家族，根据不同需求选不同容器
+Java的容器家族，根据不同需求选不同容器
 
 ```
 Collection（集合）
@@ -313,120 +181,33 @@ Map（键值对）
 
 ### ArrayList和LinkedList区别？
 
-**大白话**：
 - ArrayList像数组格子，通过编号直接找到位置（查快），但插入要把后面的格子全部移动（增删慢）
 - LinkedList像链条，每个节点记着下一个在哪，插入只需要改一下指向（增删快），但找第100个要从头数（查慢）
-
-```java
-// ArrayList适合：频繁查询，少增删
-ArrayList<String> list = new ArrayList<>();
-list.get(100);  // O(1)，直接通过下标访问，很快
-
-// LinkedList适合：频繁增删，少查询
-LinkedList<String> linked = new LinkedList<>();
-linked.addFirst("头部插入");  // O(1)，很快
-linked.addLast("尾部插入");   // O(1)，很快
-
-// 性能测试
-long start = System.currentTimeMillis();
-// 中间插入10万次，ArrayList要比LinkedList慢很多
-for (int i = 0; i < 100000; i++) {
-    list.add(list.size() / 2, "插入");  // 每次都要移动一半元素
-}
-```
 
 ---
 
 ### HashMap底层原理？
 
-**大白话**：HashMap就像一个超大的停车场
-- 停车场有16个区（数组，初始容量16）
-- 根据车牌号（hash值）决定停哪个区
-- 同一个区来了多辆车，就排队（链表）
-- 排队超过8辆，就建多层立体停车场（红黑树）
-- 停车场满了75%，就扩建成2倍大（扩容）
+HashMap内部使用一个**数组来存储元素**，数组的每个元素被称为桶，默认初始容量是16。桶的数量由HashMap的容量确定，容量即数组的长度，**键是唯一的，而值可以重复**。HashMap使用键的哈希码（hash code）来确定存储位置。
 
-```java
-// HashMap基本操作
-HashMap<String, Integer> map = new HashMap<>();
-map.put("张三", 25);  // 存入
-map.get("张三");       // 获取：25
-map.containsKey("李四");  // 判断key是否存在
-
-// put流程（源码简化版）
-// 1. 计算key的hash值
-// 2. hash值 & (数组长度-1) 得到数组下标
-// 3. 下标位置为空，直接放
-// 4. 不为空，遍历链表/红黑树找key相同的，有则更新，无则追加
-
-// 扩容触发条件
-// 元素数量 > 容量(16) × 负载因子(0.75) = 12
-// 超过12个元素就扩容到32
-
-// 注意：HashMap线程不安全！
-// 多线程场景用ConcurrentHashMap
-```
-
-**为什么容量是2的N次方？**
-```java
-// 计算下标公式：index = hash & (capacity - 1)
-// 容量16时，15的二进制：01111
-// 任何hash值 & 01111，结果都在0-15范围内
-// 位运算比取模（%）快很多
-```
+如果发生了哈希碰撞，在桶上面存储的元素一样时，会生成链表，当链表长度到达8，且数组长度到达64，就会生成红黑树，如果存储的元素数量超过了容量的75%时，就会扩容，HashMap 的扩容操作会导致哈希表的大小变为原大小的两倍，并重新计算和分配元素的桶位置。
 
 ---
 
-### ConcurrentHashMap为什么线程安全？
+### ConcurrentHashMap为什么比HashMap安全？
 
-**大白话**：
-- HashTable：整个停车场上一把大锁，同时只能一辆车进出（效率低）
-- ConcurrentHashMap：每个停车位单独上锁，互不干扰（效率高）
-
-```java
-// JDK1.8实现原理：CAS + synchronized（只锁单个桶）
-// 读操作：不加锁（volatile保证可见性）
-// 写操作：先CAS尝试，失败了再synchronized锁住单个链表头节点
-
-ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
-// 多线程安全的计数
-map.compute("count", (k, v) -> v == null ? 1 : v + 1);
-
-// 原子操作
-map.putIfAbsent("key", 1);  // 不存在才put
-```
+- HashTable：多线程同时存储时，可能两个线程同时判断某个位置为空然后写进去，导致数据覆盖丢失
+- ConcurrentHashMap：使用了分段锁，保证线程安全
 
 ---
 
 ### HashSet如何检查重复？
+HashSet底层就是HashMap，存的是键，值是个固定的占位Object。判断重复先比hashCode（快速过滤），再用equals（精确比较）。
 
-**大白话**：HashSet底层就是HashMap，存的是键，值是个固定的占位Object。判断重复先比hashCode（快速过滤），再用equals（精确比较）。
-
-```java
-// 自定义对象要重写hashCode和equals
-class User {
-    String name;
-    int age;
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age);  // 用name和age计算hash
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return age == user.age && Objects.equals(name, user.name);
-    }
-}
-
-Set<User> set = new HashSet<>();
-set.add(new User("张三", 25));
-set.add(new User("张三", 25));  // 不会重复添加，因为hashCode和equals相同
-System.out.println(set.size());  // 输出：1
-```
+---
+### HashSet如何检查重复？
+- 使用一个新的哈希函数再计算这个哈希码
+- 为哈希表分配额外的存储区域，用于存储碰撞的元素
 
 ---
 
@@ -434,7 +215,7 @@ System.out.println(set.size());  // 输出：1
 
 ### 创建线程的方式？
 
-**大白话**：就像安排人干活，有4种方式
+就像安排人干活，有4种方式
 
 ```java
 // 方式1：继承Thread（不推荐，Java单继承限制）
@@ -460,48 +241,38 @@ new Thread(task).start();
 String result = task.get();  // 获取结果，会阻塞等待
 
 // 方式4：线程池（最推荐）
-ExecutorService pool = Executors.newFixedThreadPool(5);
-pool.submit(() -> System.out.println("线程池执行"));
-pool.shutdown();
+ExecutorService pool = new ThreadPoolExecutor(
+        5,                          // 1. corePoolSize (核心线程数)
+        10,                         // 2. maximumPoolSize (最大线程数)
+        60L,                        // 3. keepAliveTime (空闲存活时间)
+        TimeUnit.SECONDS,           // 4. unit (时间单位)
+        new ArrayBlockingQueue<>(100), // 5. workQueue (任务队列，这里指定容量为100)
+        Executors.defaultThreadFactory(), // 6. threadFactory (线程工厂，用默认的就行)
+        new ThreadPoolExecutor.AbortPolicy() // 7. handler (拒绝策略，满了怎么办)
+);
+        pool.submit(() -> System.out.println("线程池执行"));
+        pool.shutdown();
 ```
 
 ---
 
 ### 线程池7个核心参数？
 
-**大白话**：就像一个外包团队的管理规则
-1. 核心员工数（corePoolSize）：长期保留的员工
-2. 最多员工数（maximumPoolSize）：忙不过来时最多招多少临时工
-3. 临时工等待时间（keepAliveTime）：临时工闲置多久就辞退
+1. 核心线程数（corePoolSize）：核心线程数，即使空闲也不销毁
+2. 最大线程数（maximumPoolSize）：最大的线程数量
+3. 非核心线程等待时间（keepAliveTime）：非核心线程空闲多久后销毁
 4. 时间单位（unit）：秒/分钟/小时
-5. 任务等待室（workQueue）：核心员工都忙了，新任务在这等
-6. 员工工厂（threadFactory）：决定员工的名字、优先级
-7. 拒绝策略（handler）：等待室也满了，新任务怎么处理
-
-```java
-// 自定义线程池（推荐这样写，不要用Executors工厂方法）
-ThreadPoolExecutor pool = new ThreadPoolExecutor(
-    5,                              // 核心线程数
-    10,                             // 最大线程数
-    60L,                            // 空闲存活时间
-    TimeUnit.SECONDS,               // 时间单位
-    new LinkedBlockingQueue<>(100), // 等待队列（最多100个）
-    new ThreadFactoryBuilder().setNameFormat("alarm-pool-%d").build(), // 线程命名
-    new ThreadPoolExecutor.CallerRunsPolicy()  // 拒绝策略：调用者自己执行
-);
-
-// 项目中告警消费线程池配置
-// 核心5线程，最大10线程，队列100，拒绝时调用者执行（保证告警不丢）
-```
+5. 任务队列（workQueue）：核心线程满了任务先进队列
+6. 线程工厂（threadFactory）：可以给线程起名方便排查问题
+7. 拒绝策略（handler）：队列满了且线程数到最大时怎么处理新的任务
 
 ---
 
 ### 线程池工作流程？
 
-**大白话**：就像餐厅点餐
-1. 有空闲服务员（核心线程）→ 直接服务
-2. 服务员都忙 → 先等位（进队列）
-3. 等位满了 → 临时招人（非核心线程）
+1. 有空闲（核心线程）→ 直接服务
+2. 都忙 → 先等位（进队列）
+3. 等位满了 → 找临时工（非核心线程）
 4. 临时工也满了 → 执行拒绝策略
 
 ```
@@ -518,80 +289,58 @@ ThreadPoolExecutor pool = new ThreadPoolExecutor(
 
 ---
 
+### 线程池的拒绝策略有哪些？
+1 默认策略： 抛出异常，表示拒绝处理任务
+
+2 丢弃老任务，执行新的任务
+
+3 直接丢弃新的任务，不做任何处理。
+
+4 只要线程池没有关闭，就由提交任务的当前线程处理。
+
+---
+### 线程的状态？
+#### 6种状态
+
+**创建状态**：new 的时候就是创建
+
+**就绪状态**：调用start，启动好了，变成就绪状态
+
+**阻塞状态**：当运行的时候，调用sleep，wait或同步锁定时，线程进入阻塞状态，阻塞接触后，变成就绪状态，再等待cpu调度
+
+**运行状态**：等待cpu调度后进入运行状态
+
+**超时等待状态**：设置时间等待，时间到了后，线程会主动结束等待状态，继续往下执行其他操作。目的是控制线程的执行时间，避免线程一直阻塞在等待状态
+
+**死亡状态**：执行完后变成死亡状态
+
+#### 关键方法：
+Priority：更改线程的优先级
+
+sleep：指定正在执行的线程休眠多少毫秒
+
+**join：插队，能够按照指定顺序执行**
+
+isAlive：测试线程是否存活
+
+
 ### synchronized和Lock区别？
 
-**大白话**：
 - synchronized：自动上锁解锁，就像自动门，进去自动锁，出来自动开
 - Lock：手动上锁解锁，功能更多，但忘了解锁就死锁
-
-```java
-// synchronized用法
-synchronized (this) {
-    // 临界区代码
-}  // 自动解锁，即使抛异常也会解锁
-
-// Lock用法（必须在finally里unlock！）
-ReentrantLock lock = new ReentrantLock();
-lock.lock();
-try {
-    // 临界区代码
-} finally {
-    lock.unlock();  // 必须！否则死锁
-}
-
-// Lock的高级功能
-lock.tryLock(3, TimeUnit.SECONDS);  // 尝试获取锁，最多等3秒
-lock.lockInterruptibly();            // 可中断等待
-
-// 公平锁（按等待顺序获取锁）
-ReentrantLock fairLock = new ReentrantLock(true);
-
-// 项目中：告警去重用ReentrantLock，支持tryLock避免死等
-```
 
 ---
 
 ### volatile关键字作用？
 
-**大白话**：
 - 可见性：A改了变量，B能立刻看到最新值（不从本地缓存读）
 - 禁止重排序：代码按你写的顺序执行，不乱序
-
-```java
-// 没有volatile的问题
-class Counter {
-    private boolean running = true;
-
-    public void stop() {
-        running = false;  // 线程A修改
-    }
-
-    public void run() {
-        while (running) {  // 线程B可能读到旧值，永远循环
-            doWork();
-        }
-    }
-}
-
-// 加volatile解决可见性
-class Counter {
-    private volatile boolean running = true;  // 加volatile
-    // 现在线程B能立刻看到线程A的修改
-}
-
-// volatile不能保证原子性！
-volatile int count = 0;
-count++;  // 这不是原子操作，多线程下还是会有问题
-// 需要用AtomicInteger
-AtomicInteger atomicCount = new AtomicInteger(0);
-atomicCount.incrementAndGet();  // 原子自增，线程安全
-```
 
 ---
 
 ### ThreadLocal是什么？
 
-**大白话**：每个线程专属的小抽屉，线程A放进去的东西，线程B看不到，各不干扰
+每个线程专属的小抽屉，线程A放进去的东西，线程B看不到，各不干扰
 
 **主要用途**：
 1. 存储当前登录用户信息（不用到处传参）
@@ -638,72 +387,76 @@ Long currentUserId = UserContext.getUserId();
 
 ---
 
-## 第四章：网络与Web
+### 🆕 你在项目里用过多线程吗？举个例子
+**结合DCIM项目回答：**
 
-### TCP三次握手四次挥手？
+用在两个地方：
 
-**大白话**：
-- 三次握手：打电话时"喂，你听得到吗？" "听得到，你听得到我吗？" "听得到，开始说吧"
-- 四次挥手：挂电话时，一方说"我说完了"，另一方说"好，我还有话说"，说完后"我也说完了"，"好，挂了"
+**1. 告警消费线程池**：Kafka消费者按厂商分了8个分区，对应8个消费者线程并行消费。每个消费者内部用线程池处理业务逻辑，核心线程数设置为4，最大16，队列容量500，这样单日峰值10万条告警消息能稳定消费完。
 
-**为什么是三次**：确保双方都能正常收发数据，两次不够（不能确认服务器收到了客户端的确认）
-
-**为什么挥手是四次**：因为TCP是全双工，关闭时两个方向各自独立关闭
-
----
-
-### 过滤器和拦截器区别？
-
-**大白话**：
-- 过滤器：大门保安，所有人都要过（Servlet级别）
-- 拦截器：公司前台，进了门才遇到（Spring级别）
+**2. 多厂商设备数据并行对接**：平台接了10+家厂商，有些场景需要同时向多个厂商查询设备状态做汇总。用`CompletableFuture.allOf()`并行发起请求，原来串行要10秒，并行后缩短到2秒内。
 
 ```java
-// 过滤器（实现Filter接口）
-@Component
-public class CharsetFilter implements Filter {
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response,
-                         FilterChain chain) throws IOException, ServletException {
-        request.setCharacterEncoding("UTF-8");
-        chain.doFilter(request, response);  // 继续往下走
-    }
-}
+// 并行查询多厂商设备状态
+List<CompletableFuture<DeviceStatus>> futures = factoryList.stream()
+    .map(factory -> CompletableFuture.supplyAsync(
+        () -> deviceService.queryStatus(factory.getId()), threadPool))
+    .collect(Collectors.toList());
 
-// 拦截器（实现HandlerInterceptor）
-@Component
-public class LoginInterceptor implements HandlerInterceptor {
-    @Override
-    public boolean preHandle(HttpServletRequest request,
-                              HttpServletResponse response, Object handler) {
-        String token = request.getHeader("Authorization");
-        if (token == null) {
-            response.setStatus(401);
-            return false;  // 返回false，请求不继续
-        }
-        return true;
-    }
-}
-
-// 注册拦截器
-@Configuration
-public class WebConfig implements WebMvcConfigurer {
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor())
-                .addPathPatterns("/api/**")      // 拦截这些路径
-                .excludePathPatterns("/api/login"); // 不拦截登录
-    }
-}
+List<DeviceStatus> results = futures.stream()
+    .map(CompletableFuture::join)
+    .collect(Collectors.toList());
 ```
 
 ---
 
-## 第五章：Spring全家桶
+## 第四章：网络与Web
 
+### TCP三次握手四次挥手？
+
+三次握手三次握手是指在TCP协议中，当客户端和服务器建立连接时，需要经过**三次握手来确认双方都能正常通信**。
+
+第一次握手：客户端发送消息给服务器，表示客户端请求建立连接
+
+第二次握手：服务器端收到消息后给客户端发送条消息，表示收到了请求，并准备好建立连接
+
+第三次握手：客户端收到服务端消息后，再回复一下，确认连接已建立
+
+四次挥手是指当客户端和服务器关闭连接时，需要经过**四次挥手来确认双方都已经断开连接**。
+
+第一次挥手：客户端发送消息，表示已完成数据的发送
+
+第二次挥手：服务器接收到客户端的消息后，表示已经接收到了客户端的结束传输请求，但服务器仍将继续发送剩余数据。
+
+第三次挥手：服务器发送消息给客户端，表示服务器已经完成数据的传输。
+
+第四次挥手：客户端接收到服务器消息后，再发一条消息给服务器，表示已经接收到了服务器的结束传输请求，确认连接已被关闭。
+
+---
+
+### 过滤器和拦截器区别？
+- 过滤器：大门保安，所有人都要过（Servlet级别），跨域处理、全局日志记录、防 SQL 注入/XSS 攻击、黑白名单
+- 拦截器：公司前台，进了门才遇到（Spring级别），登录校验、权限控制、性能监控
+---
+### Cookie和Session的区别
+
+Cokiehe和Session都是用来**存储用户状态信息**的，比如登录状态和身份验证。
+
+Cookie： 是 web 服务器发送给浏览器的一块信息，浏览器会在本地一个文件中给 每个 web 服务器存储 cookie
+
+Session： 是存储在 web 服务器端的 一块信息。session 对象存储特定用户会话所需的信息
+
+cookie 存在于客户端，临时文件夹中，因为是在客户端，所以安全性差
+
+session 存在于服务器的内存，存到服务器的内存中，安全性好
+
+
+## 第五章：Spring
+框架主要以ioc（控制反转）和aop（面向切面编程）为核心，极大的简化了代码
 ### Spring IOC是什么？
 
-**大白话**：以前你要用一个对象，要自己new；用了IOC，告诉Spring我要用这个，Spring自动给你，你不用管怎么创建的
+
+以前你要用一个对象，要自己new；用了IOC，告诉Spring我要用这个，Spring自动给你，你不用管怎么创建的
 
 ```java
 // 以前：手动创建，强耦合
@@ -728,7 +481,7 @@ private UserService userService;
 
 ### Spring AOP是什么？
 
-**大白话**：不改原来代码，在方法执行前/后/出错时插入额外逻辑。就像给蛋糕加装饰，不用重做蛋糕
+不改原来代码，在方法执行前/后/出错时插入额外逻辑。
 
 **主要用途**：日志记录、事务管理、权限校验、接口耗时统计
 
@@ -771,7 +524,17 @@ public Object logAlarmOperation(ProceedingJoinPoint point) throws Throwable {
 
 ### SpringBean生命周期？
 
-**大白话**：Bean从出生到死亡的过程，就像人的一生
+从实例化到销毁的整个过程
+
+**对象实例化**：在 Spring 容器启动时，根据配置或注解，这个时候只是将对象实例化了，对象内的属性还未设置
+
+**属性赋值**：容器会将配置的属性值或依赖注入到 Bean 实例中。这可以通过 setter 方法、字段注入或构造函数注入来完成。
+
+**对象初始化**：在初始化前回调执行完毕后，Bean 实例处于已初始化的状态
+
+**使用**：在这个阶段，可以进行一些自定义的初始化逻辑操作。
+
+**销毁**：Bean 实例将被销毁，占用的资源被释放。
 
 ```java
 @Component
@@ -807,12 +570,11 @@ public class MyBean implements InitializingBean, DisposableBean {
     }
 }
 ```
-
 ---
 
 ### Spring事务传播行为（7种）？
 
-**大白话**：方法A调用方法B时，B的事务怎么处理
+方法A调用方法B时，B的事务怎么处理
 
 ```java
 // 最重要的两种：
@@ -833,10 +595,21 @@ public void saveLog() {
 ```
 
 ---
+### 什么是事务？
+事务就是"要么全做，要么全不做"
 
 ### Spring事务失效场景？
+1：不是public修饰
 
-**大白话**：以为加了@Transactional就有事务，其实有这些坑
+2：非事务方法调用本类中事务方法
+
+3：异常被捕获
+
+4：事务传播行为错误
+
+5：回滚异常类型不匹配
+
+6：没有被Spring管理
 
 ```java
 // 坑1：同类方法调用（最常见！）
@@ -895,9 +668,30 @@ public void save() throws IOException { ... }
 
 ---
 
+### Spring中的事务隔离级别?
+当两个事务对同一个数据库的记录进行操作时，那么，他们之间的影响是怎么样的呢?这就出现了事务隔离级别的概念
+
+读未提交 ：什么也没解决
+
+读已提交：解决了脏读
+
+可重复读 ：在同一个事务内，多次查询数据是一样的，没有解决幻读
+
+串行化：所有事务按顺序依次执行
+
+怎么解决？
+
+用MVCC方案：多版本并发控制
+
+---
 ### Spring循环依赖如何解决（三级缓存）？
 
-**大白话**：A需要B，B需要A，互相等对方先出生，就死锁了。Spring用"早期引用"解决：A先出生一个半成品，把半成品给B用，B完成了再回来把A补全。
+需要B，B需要A，互相等对方先出生，就死锁了。Spring用"早期引用"解决：A先出生一个半成品，把半成品给B用，B完成了再回来把A补全。
+
+1：使用 `@Lazy` 延迟注入：通过在循环依赖的 bean 上添加 `@Lazy` 注解，可以延迟注入属性，从而避免循环依赖问题。
+
+2：使用 `@Autowired` 和构造器注入：使用构造器注入而非字段注入时，Spring 容器会在实例化 bean 时传入相应的参数，避免了属性循环依赖的问题。
+
 
 ```
 问题：
@@ -920,9 +714,22 @@ B在创建过程中需要注入A
 
 ---
 
+### Spring的通知是什么?有哪几种类型?
+Spring通知是一种面向切面编程（AOP）的概念，在不修改原有业务逻辑的情况下，能够在指定的切点上执行额外的代码逻辑。
+通过使用不同类型的通知，可以实现与业务逻辑无关的功能，如日志记录、事务管理等
+
+**前置通知**：在方法执行之前调用。
+
+**后置通知**：在方法执行之后调用，如果方法发生异常则不会被调用。
+
+**异常通知**：在方法发生异常时调用。
+
+**最终通知**：在方法执行之后调用，无论方法是否正常完成都会被调用。
+
+**环绕通知：**包含了方法执行前后的全部流程，需要手动调用目标方法。
+
 ### MyBatis #{}和${}区别？
 
-**大白话**：
 - #{}：就像参数化查询，值会被当作参数传入，安全
 - ${}：直接把字符串拼进SQL，危险，有SQL注入风险
 
@@ -946,11 +753,123 @@ List<Map> query(String tableName);
 
 ---
 
-## 第六章：数据库MySQL
+## 第六章：数据库SQL
 
-### 索引失效场景（必考）？
+### sql的关键字有哪些？ 分别什么意思？
 
-**大白话**：建了索引但没用上，就像有导航不用，还是漫无目的找
+常见SQL关键字及含义：
+
+- `SELECT`：查询数据，指定要返回的列
+- `FROM`：指定查询的表
+- `WHERE`：过滤条件，只返回满足条件的行
+- `JOIN`：连接多张表（INNER/LEFT/RIGHT JOIN）
+- `ON`：JOIN的连接条件
+- `GROUP BY`：按某列分组，配合聚合函数使用
+- `HAVING`：对分组结果过滤（WHERE不能用聚合函数，HAVING可以）
+- `ORDER BY`：排序，ASC升序，DESC降序
+- `LIMIT`：限制返回行数，常用于分页
+- `INSERT INTO`：插入数据
+- `UPDATE ... SET`：更新数据
+- `DELETE FROM`：删除数据
+- `DISTINCT`：去重
+- `IN / NOT IN`：在某个集合内/外
+- `LIKE`：模糊匹配，%代表任意字符
+- `BETWEEN ... AND`：范围查询
+- `EXISTS`：判断子查询是否返回结果
+- `UNION / UNION ALL`：合并两个查询结果，UNION自动去重，UNION ALL不去重
+
+---
+
+### 我执行select后，sql底层做了什么？
+
+MySQL执行一条SELECT语句，内部经历了以下步骤：
+
+```
+SELECT * FROM device_data WHERE factory_id = 1 ORDER BY create_time DESC LIMIT 10;
+
+执行流程：
+1. 连接器：验证用户名密码，检查权限，建立连接
+2. 查询缓存（MySQL 8.0已移除）：8.0之前会先查缓存，命中直接返回
+3. 解析器：词法分析（把SQL拆成token）+ 语法分析（检查语法是否合法）
+4. 预处理器：检查表名、字段名是否存在，补全*对应的列名
+5. 优化器：生成执行计划，决定：
+   - 用哪个索引（如果有多个索引，选最优的）
+   - JOIN顺序怎么排
+   - 是否需要全表扫描
+6. 执行器：按执行计划调用存储引擎的接口，逐行读数据
+7. 存储引擎（InnoDB）：
+   - 先查Buffer Pool（内存缓冲池）
+   - 没有再读磁盘，读到Buffer Pool再返回
+8. 返回结果给客户端
+```
+
+---
+
+### 各大数据库的优缺点对比
+
+| 数据库 | 优点 | 缺点 | 适用场景 |
+|--------|------|------|---------|
+| **MySQL** | 开源免费、社区庞大、易上手、InnoDB事务支持好 | 大数据量下全文检索弱、JSON支持不如PG | 互联网业务、中小型系统首选 |
+| **PostgreSQL（PG）** | 标准SQL支持最完整、JSON/数组类型强、扩展性好（PostGIS地理、pgvector向量） | 配置复杂、DBA门槛高 | 复杂查询、地理信息、需要JSON文档存储场景 |
+| **高斯DB（GaussDB）** | 华为出品、兼容Oracle和MySQL语法、分布式支持强、金融级可靠性 | 商业收费、生态相对封闭 | 政企、金融、电信等对国产化有要求的场景（我们DCIM项目用过PG和MySQL，电信有时要求国产化时用高斯） |
+| **Oracle** | 性能强、功能最全、稳定性极高 | 授权贵、运维复杂 | 传统金融、电信核心系统 |
+| **TiDB** | MySQL兼容、原生分布式、水平扩展 | 小数据量性能不如MySQL | 超大数据量、需要水平扩展场景 |
+
+**项目经历**：我在DCIM项目里MySQL和PostgreSQL都用过。千万级测点数据主要在MySQL上用ShardingSphere分表，PG主要用在需要复杂JSON查询的设备配置数据上。
+
+---
+
+### sql索引都有哪些？他们分别用来做什么？哪个索引最快？
+
+**按数据结构分**：
+- **B+树索引**（最常用，MySQL InnoDB默认）：适合范围查询、等值查询、排序。叶子节点存所有数据，查询效率稳定O(log n)
+- **Hash索引**：只支持等值查询，不支持范围查询。等值查询比B+树快（O(1)），但范围查询不适用
+- **全文索引（Full-Text）**：专门用于全文搜索，`MATCH ... AGAINST` 语法，比LIKE '%关键词%'快很多
+
+**按功能分**：
+- **主键索引**：唯一 + 非空，InnoDB中数据按主键顺序存储（聚簇索引）
+- **唯一索引**：保证列值唯一，允许NULL
+- **普通索引**：最基础的索引，无唯一性约束
+- **联合索引（复合索引）**：多列组合的索引，遵循最左前缀原则
+- **覆盖索引**：查询的所有字段都在索引里，不用回表，速度最快
+
+**哪个最快？** 覆盖索引+等值查询最快，因为直接在索引树上找到数据，不需要回表查主键。
+
+---
+
+### sql回表是什么意思？ mysql都有哪些锁？
+
+**回表**：
+InnoDB中非主键索引（二级索引）的叶子节点只存主键值，不存完整数据。当查询的字段不在索引中时，需要拿着主键值去主键索引（聚簇索引）再查一次完整数据，这个过程叫"回表"。
+
+```sql
+-- 假设name有普通索引，查询name和age
+SELECT name, age FROM user WHERE name = '张三';
+-- 1. 走name索引，找到主键id=100
+-- 2. 拿id=100去聚簇索引再查一次（回表）才能得到age
+
+-- 避免回表：建联合索引(name, age)，age就在索引里了，不需要回表（覆盖索引）
+```
+
+**MySQL的锁**：
+
+按粒度分：
+- **表锁**：锁整张表，开销小但并发低，MyISAM常用
+- **行锁**：只锁某一行，InnoDB支持，并发高
+- **间隙锁（Gap Lock）**：锁两行数据之间的"间隙"，防止幻读（可重复读级别下生效）
+- **临键锁（Next-Key Lock）**：行锁+间隙锁的组合，InnoDB默认
+
+按性质分：
+- **共享锁（S锁/读锁）**：多个事务可以同时持有，`SELECT ... LOCK IN SHARE MODE`
+- **排他锁（X锁/写锁）**：只有一个事务能持有，UPDATE/DELETE自动加，`SELECT ... FOR UPDATE`
+
+按意向分：
+- **意向共享锁（IS）**、**意向排他锁（IX）**：表级别的意向锁，提高加表锁的效率
+
+---
+### 索引失效场景？
+
+建了索引但没用上
 
 ```sql
 -- 1. 对索引列做运算/函数（常见坑！）
@@ -987,80 +906,52 @@ EXPLAIN SELECT * FROM user WHERE name = '张三';
 ```
 
 ---
+### Mybatis执行流程？
+1：加载配置文件，该配置文件包含了数据库连接信息、映射关系配置等
 
-### MySQL分库分表（项目经验）？
+2：构建会话工厂，创建SqlSession 对象管理 ，SqlSession里面包含了执行 SQL语句的所有方法
 
-**大白话**：一张桌子放不下，就多搬几张桌子来放
+3：把java的类型转换为数据库支持的类型，然后把结果映射。
 
-**项目实战（DCIM平台）**：
-```yaml
-# application.yml - ShardingSphere配置
-spring:
-  shardingsphere:
-    datasource:
-      names: ds0, ds1
-      ds0:
-        type: com.zaxxer.hikari.HikariDataSource
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://localhost:3306/dcim_0
-        username: root
-        password: 123456
-      ds1:
-        jdbc-url: jdbc:mysql://localhost:3306/dcim_1
+4：关闭资源
 
-    rules:
-      sharding:
-        tables:
-          # 测点数据表配置
-          point_data:
-            # 实际存在的节点：ds0.point_data_0 到 ds1.point_data_15
-            actual-data-nodes: ds$->{0..1}.point_data_$->{0..15}
-            # 分库策略
-            database-strategy:
-              standard:
-                sharding-column: factory_id
-                sharding-algorithm-name: db-inline
-            # 分表策略
-            table-strategy:
-              standard:
-                sharding-column: factory_id
-                sharding-algorithm-name: table-inline
+---
+### MyBatis动态SQL?
+if、where、set、foreach、sql片段标签
 
-        sharding-algorithms:
-          db-inline:
-            type: INLINE
-            props:
-              algorithm-expression: ds$->{factory_id % 2}  # 按厂商ID分2个库
-          table-inline:
-            type: INLINE
-            props:
-              algorithm-expression: point_data_$->{factory_id % 16}  # 分16张表
-```
+### MyBatis一级缓存和二级缓存?
+默认开启一级缓存，属于sqlSession的，相同的查询结果会被缓存起来，下次再执行相同的查询语句时，直接从缓存中获取，而不会再去数据库查询。
 
-```java
-// 分表后的查询（ShardingSphere自动路由）
-@Mapper
-public interface PointDataMapper extends BaseMapper<PointData> {
-    // 查询某厂商的数据（自动路由到对应分表）
-    @Select("SELECT * FROM point_data WHERE factory_id = #{factoryId} LIMIT #{limit}")
-    List<PointData> findByFactory(Long factoryId, Integer limit);
-}
+二级缓存：二级缓存是Mapper级别的缓存，它是跨越多个SqlSession对象的。查询结果会被缓存到一个共享的缓存区域中，供多个SqlSession对象共享。
 
-// 面试话术：
-// "我们测点数据超过1000万，按厂商ID对16取模，
-//  分到16张表中，同一厂商数据在同一张表，
-//  查询时ShardingSphere自动路由，
-//  核心查询从8秒优化到300毫秒以内。"
-```
+配置开启：在MyBatis的配置文件中，通过cache元素来开启二级缓存
+
+--- 
+### 数据库事务ACID特性
+原子性：要么全部成功，要么全部失败
+
+隔离性：多个事务之间操作互不影响
+
+一致性：事务执行前后的数据要保持一致
+
+持久性：一个事务一旦提交成功，那么它对数据库的改变就是永久性的
+
 
 ---
 
+### 数据库三大范式（建数据表的规则）
+1：列不可再分
+
+2：每个列都和主键有关系
+
+3：消除依赖（用外键和其他表关联）
+
+---
 ### MySQL三大日志？
 
-**大白话**：
-- binlog：银行的流水账，记录所有改动，用于主从同步
-- redo log：草稿纸，先在这里记，然后再写到正式账本（防崩溃丢数据）
-- undo log：改之前先备份旧版本，事务回滚时用
+- binlog：二进制日志（主从复制）
+- redo log：重做日志（确保事务的持久性，如果发生故障，会把事务写到磁盘，等再次重启mysql的时候，会再次打开执行）----持久性
+- undo log：撤销日志（数据回滚）----原子性
 
 ```
 写数据流程：
@@ -1073,6 +964,114 @@ public interface PointDataMapper extends BaseMapper<PointData> {
 重启时用redo log恢复已提交的事务
 用undo log回滚未提交的事务
 ```
+---
+### SQL内连接外连接有什么差别?
+**笛卡尔积**：是指通过SELECT语句获取两个或多个表的所有可能组合的结果集。
+
+**内连接**：利用where子句对多表连接形成的笛卡尔积进行筛选，说白了**内连接就是获取两个表之间的公共部分内容。**
+
+**左外连接**：获取左表中的全部内容
+
+**右外连接**：获取右表的全部内容
+
+
+---
+
+### sql怎么优化？
+
+```sql
+第一步：发现慢SQL
+① 开启MySQL慢查询日志，设置阈值（比如超过1秒记录）：
+set global slow_query_log = ON;
+set global long_query_time = 1;  -- 超过1秒的SQL记录
+② 也可以在代码层面用MyBatis的日志，或者接入SkyWalking等APM工具自动捕获慢SQL并报警。
+③ 我们项目里当时查询响应到8秒，是用户反馈页面加载慢，然后我去MySQL里开的慢查询日志找到问题SQL。
+第二步：EXPLAIN分析执行计划
+找到慢SQL后，在前面加EXPLAIN关键字执行：
+EXPLAIN SELECT * FROM device_data WHERE factory_id=1 AND create_time>'2024-01-01';
+重点看这几列：
+•	type列：ALL是全表扫描（最差），ref/range是走了索引，const是最优；
+•	key列：NULL表示没用索引，有值表示用了哪个索引；
+•	rows列：预估扫描的行数，越小越好；
+•	Extra列：Using filesort是排序没用索引，Using temporary是用了临时表，都是需要优化的信号。
+第三步：针对性优化
+•	加索引：最直接有效，但要选对字段（区分度高的字段优先）；
+•	复合索引注意最左前缀，WHERE条件的字段顺序要和索引一致；
+•	避免在索引列上做函数（如WHERE YEAR(create_time)=2024），改成范围查询；
+•	大表深分页用WHERE id > last_id LIMIT n代替LIMIT offset, n；
+•	SELECT只查需要的字段，不要SELECT *；
+•	JOIN查询注意关联字段要有索引；
+•	我们的方案：ShardingSphere分库分表+复合索引，8秒降到2秒以内。
+好用的工具：
+•	MySQL自带：EXPLAIN、慢查询日志、SHOW PROCESSLIST（看当前执行的SQL）；
+•	pt-query-digest：分析慢查询日志的利器，能统计出最慢的TOP N SQL；
+•	SkyWalking / Arthas：线上追踪慢SQL。
+```
+
+---
+
+### mySQL的事务隔离级别是什么？
+隔离级别，说白了就是为了解决一个核心矛盾："我想让很多人同时用数据库（高性能），但又不想让他们互相干扰（数据准确）。"
+
+四个隔离级别，MySQL默认是可重复读（Repeatable Read）：
+
+•	**读未提交** —— "看草稿"
+
+场景：小王正在改一个数字，他刚敲了一个"5"，还没按保存。你凑过去一看："哦，是 5"。结果小王觉得不对，把"5"删了，改成了"8"，然后才保存。
+
+你的体验：你看到了一个根本不存在的数字（5）。
+后果：你被误导了。这就是"脏读"（读到了脏数据）。
+
+•	**读已提交** —— "看保存后的结果"
+
+场景：小王正在改数字，你凑过去看。系统提示："小王正在编辑，请等他保存完再看"。等小王保存后，你才看到新数字。
+
+你的体验：你第一次看是 100。过了一会儿，小王把 100 改成了 200 并保存。你刷新一下页面，发现变成了 200。
+后果：你在同一个文档里，前后两次看到的数据不一样。这就是"不可重复读"。
+
+•	**可重复读** —— "自带时光机"（默认设置）
+
+场景：当你打开文档的那一刻，系统给这个文档拍了一张"快照"（或者叫存档）。
+
+你的体验：不管小王在后面怎么改、怎么保存，你看到的永远是你打开那一刻的样子。哪怕小王把整个表格都删了，你眼里它还是原来的样子，直到你关闭文档重新打开。
+
+后果：你看到的数据非常稳定，不会变来变去。
+
+唯一的小漏洞：虽然内容不变，但如果小王新增了一行数据，你有时候可能会突然看到多出来一行（这就是"幻读"）。
+
+•	**串行化** —— "独占会议室"
+
+场景：这个文档被锁死了。只要你正在看，谁也不许动，连小王也不行。必须等你关掉文档走了，小王才能上去改。
+
+你的体验：绝对安全，绝对不会变。
+
+后果：效率极低。大家都在排队，一个人用，其他人干瞪眼等着。
+
+MySQL InnoDB在可重复读级别下用MVCC（多版本并发控制）解决了不可重复读，用间隙锁（Gap Lock）解决了大部分幻读问题。
+
+--- 
+### B+树的特点？
+b+树是在b树上的优化，继承了b树的节点下有多个分支的优点。唯一不同的是数据存储结构，b+树的根节点存储的是键值，叶子节点存储的是数据。这样就能根据键值快速找到对应叶子节点的数据了。
+
+---
+
+### 🆕 ShardingSphere分库分表你们是怎么用的？
+
+**结合DCIM项目回答：**
+
+我们平台测点数据量千万级，且每天持续增长（设备每分钟上报数据），单表查询越来越慢，于是引入ShardingSphere做水平分表。
+
+**分表策略**：按`factory_id`（厂商ID）+ 时间月份进行分表，比如 `device_data_0001_202405`，这样同一厂商的数据集中在少数几张表里，按时间范围查也很高效。
+
+**分片键选择原则**：
+- 选查询最频繁的过滤条件（我们90%查询都带factory_id）
+- 选数据分布均匀的字段（避免热点）
+
+**遇到的坑**：
+- 跨分片的ORDER BY+LIMIT需要在每个分片执行后再合并排序，性能较差。我们的解决方案是：业务上强制要求查询时必须带factory_id，把跨分片查询变成单分片查询
+- 分表后自增ID冲突问题：改用雪花算法生成全局唯一ID
+
+**效果**：核心查询从8秒降到2秒以内，冷数据定期归档备份表后存储成本降低约40%。
 
 ---
 
@@ -1080,10 +1079,10 @@ public interface PointDataMapper extends BaseMapper<PointData> {
 
 ### Redis数据类型及使用场景？
 
-**大白话**：Redis是内存数据库，速度极快，有5种数据结构
+Redis是内存数据库，速度极快，有5种数据结构
 
 ```java
-// String：最简单的键值对
+// String：键值对
 redisTemplate.opsForValue().set("user:1:name", "张三", 30, TimeUnit.MINUTES);
 redisTemplate.opsForValue().increment("visit:count");  // 原子自增
 
@@ -1111,10 +1110,17 @@ Set<String> alarms = redisTemplate.opsForZSet().range("alarm:priority", 0, -1);
 
 ### 缓存穿透、击穿、雪崩？
 
-**大白话**：
-- 穿透：查一个不存在的数据（黑客攻击），Redis没有就去查DB，DB也没有，每次都白跑DB
-- 击穿：一个超热门的key过期了，一瞬间所有人都去查DB（哈利波特图书馆崩溃效应）
-- 雪崩：大批key同时过期，大量请求同时打DB（多米诺骨牌）
+- 穿透：查一个不存在的数据（黑客攻击），Redis没有就穿透去查DB，DB也没有，每次都白跑DB
+
+**解决办法**：布隆过滤器 + 空值缓存
+
+- 击穿：击穿是缓存过期，直接击穿
+
+**解决办法**：分布式锁（只让一个请求去查DB）
+
+- 雪崩：大批key同时过期，大量请求同时打DB
+
+**解决办法**：加随机值：给每个key添加不一样的过期时间，不要让他们在同一时间过期
 
 ```java
 // 穿透解决：布隆过滤器 + 空值缓存
@@ -1177,19 +1183,114 @@ public User getUserWithLock(Long id) {
 long expire = 30 + new Random().nextInt(10);  // 30-40分钟随机
 redisTemplate.opsForValue().set(key, value, expire, TimeUnit.MINUTES);
 ```
+---
+### 如何保证 Redis 数据与DB 一致？
+**1、延时双删**
+
+流程：
+
+先删除缓存（防止读请求读到旧数据）。
+更新数据库。
+休眠 N 毫秒（比如 500ms）。
+再次删除缓存（把在此期间可能产生的脏数据删掉）。
+
+
+**2、异步重试（最推荐，高可用）**
+
+流程：
+
+更新数据库。
+尝试删除 Redis。
+如果删除失败（网络波动、超时），不要直接放弃。
+将"删除 Key"的任务发送到消息队列（MQ）或存入数据库的"重试表"。
+后台有个消费者不断监听，发现删除失败的任务，就无限重试，直到删除成功。
+
+**3、Redis 过期删除策略**
+
+流程：
+
+设置过期时间
+定时器每秒检查是否过期
+
+**4、Canal + MQ（监听 Binlog）**
+
+流程：
+
+1.你往 MySQL 写数据。
+
+2.MySQL 写入 Binlog。
+
+3.Canal 模拟成 MySQL 从节点，读取 Binlog。
+
+4.Canal 发送消息到 Kafka/RabbitMQ。
+
+5.你的同步程序消费消息，更新 Redis。
+
+●优点：对业务代码零侵入，解耦。
+
+●时延：通常在毫秒级，感官上就是"实时"的。
+
+---
+### Redis分布式锁为什么用Redisson？
+自己用SET NX实现分布式锁有一个核心问题：锁的过期时间怎么设置是一个难题。
+
+设短了：业务还没执行完锁就自动过期，其他线程抢到锁，产生并发问题；
+
+设长了：如果服务器崩溃没有执行unlock，这个锁会一直占用，其他线程等很久。
+
+Redisson的看门狗（Watchdog）机制完美解决了这个问题：
+
+•	获取锁后，看门狗后台线程每隔 锁TTL/3 的时间自动给锁续期；
+
+•	只要业务还在运行（JVM没崩），锁就不会自然过期；
+
+•	如果JVM崩了，看门狗线程也跟着死了，锁过期后自动释放，不会死锁；
+
+•	正常执行完调unlock()显式释放，通过Lua脚本原子性判断是否是自己的锁再删除，防止误删别人的锁。
+
+---
+###  Redis的数据持久化方式？RDB和AOF的区别？
+#### Redis有两种持久化方式：
+
+**RDB（快照）：**
+
+定期把内存数据全量写到一个.rdb文件里。优点是文件小、加载快、适合做备份；缺点是可能丢失最后一次快照之后的数据（比如每5分钟快照一次，宕机最多丢5分钟数据）。
+
+**AOF（追加日志）：**
+
+每次写操作都追加记录到.aof文件里。有三种刷盘策略：always（每次写立刻刷盘，最安全最慢）、everysec（每秒刷盘，最多丢1秒数据，推荐）、no（让OS决定，最快最不安全）。优点是数据安全；缺点是文件大，恢复慢。
+混合持久化（Redis 4.0+推荐）：
+AOF文件里先存RDB格式的全量数据，后面追加AOF格式的增量数据，兼顾安全性和恢复速度。我们生产用的这个模式。
 
 ---
 
-## 第八章：Kafka（项目重点）
+### 🆕 你项目里Redis具体用在哪些地方？
+**结合DCIM项目回答：**
+
+1. **会话缓存**：存储多轮对话上下文、用户登录态，key用 `session:{sessionId}`，TTL 2小时
+
+2. **告警消息去重**：用Redis SETNX存消息唯一ID（厂商+设备+时间+告警码），消费告警前先 `setIfAbsent` 判断，已处理则跳过，解决Kafka重复消费问题
+
+3. **分布式锁**：告警处理时防止多个消费者同时处理同一条告警，用Redisson实现可重入锁
+
+4. **实时设备状态缓存**：100万+测点实时状态，每次设备上报就更新Redis，前端查实时状态直接读Redis，不查DB，大幅降低数据库压力
+
+5. **接口限流**：对部分查询接口用Redis计数器实现滑动窗口限流，防止高频查询压垮数据库
+
+---
+
+## 第八章：Kafka
 
 ### Kafka核心概念？
 
-**大白话**：Kafka就像一个超高速传送带
-- Topic：传送带（按类型分类）
-- Partition：传送带分成多条并行（提高吞吐）
-- Producer：往传送带上放东西的人
-- Consumer：从传送带取东西的人
-- Consumer Group：一组取货员，每条传送带只分配给一个取货员
+Kafka就像一个超高速传送带
+
+- Topic：消息的分类，相当于一个队列的名字
+- Partition（分区）：Topic被分成多个Partition，每个Partition是一个有序的日志文件，Kafka的高吞吐就来自于分区并行
+- Broker：Kafka集群里的每一台服务器叫Broker，我们搭了3个Broker的集群；
+- Producer：消息生产者，往Topic里发消息
+- Consumer：消息消费者，从Topic里拉消息
+- Consumer Group：消费者组,创建一个组，让多个Consumer订阅同一个topic同时消费
 
 ```
 生产者发消息 → Topic → Partition0 → 消费者A
@@ -1200,9 +1301,30 @@ redisTemplate.opsForValue().set(key, value, expire, TimeUnit.MINUTES);
 
 ---
 
+### Kafka的底层逻辑是什么？为什么Kafka这么强？
+
+Kafka高性能的核心秘密有四个：
+
+**1. 顺序写磁盘**
+Kafka的消息是追加写到日志文件末尾，磁盘顺序写速度和内存随机写差不多（约600MB/s），比随机写快100倍以上。
+
+**2. 零拷贝（Zero Copy）**
+传统数据发送：磁盘→内核缓冲区→用户空间→内核Socket缓冲区→网卡，需要4次拷贝。
+Kafka用`sendfile`系统调用：磁盘→内核缓冲区→网卡，只需2次拷贝，CPU几乎不参与。
+
+**3. 页缓存（Page Cache）**
+Kafka读写都经过OS的页缓存（内存），热数据基本都在内存里，读取速度极快。
+
+**4. 批量处理 + 消息压缩**
+Producer批量打包发送（linger.ms等待时间内积攒消息），消费者批量拉取，再配合gzip/snappy压缩，网络传输量大幅减少。
+
+**结合项目**：我们告警Topic单日峰值10万条，3台Broker集群 + 8个分区，轻松支撑，消费延迟基本控制在秒级以内。
+
+---
+
 ### Kafka如何保证消息不丢失（项目实战）？
 
-**大白话**：三道保险：生产者确认、Broker存副本、消费者手动确认
+三道保险：生产者确认、Broker存副本、消费者手动确认
 
 ```java
 // 1. 生产者配置（application.yml）
@@ -1250,11 +1372,50 @@ public void handleDeadLetter(ConsumerRecord<String, String> record) {
 }
 ```
 
+--- 
+
+### Kafka如何保证消息时效性？
+比如消费者积压了很多消息，放进去11:01的，11:10才消费到
+
+**排查和解决思路：**
+
+**1. 监控Consumer Lag**：用 `kafka-consumer-groups.sh --describe` 或Prometheus + Grafana监控每个分区的Lag（积压量），超过阈值（比如1000条）立刻报警。
+
+**2. 扩容消费者**：增加Consumer实例数，但不能超过Partition数量（多余的Consumer会闲置）。我们按需把消费者从4个扩到8个与分区数对应。
+
+**3. 提升消费速度**：
+- 消费者内部用线程池异步处理业务逻辑，消费主线程只负责拉消息
+- 批量消费（`max.poll.records` 调大）
+
+**4. P1告警双通道保障**：对于时效性要求极高的P1级关键告警，我们设置了MQTT直连设备作为备用通道，即使Kafka积压也能实时到达。
+
+**5. 消息设置TTL**：对时效性要求高的消息，在消息体内加入`expireTime`字段，消费时先检查是否过期，过期直接丢弃不处理，避免处理"过时"数据。
+
+---
+
+### Kafka的分片（分区）策略有哪些？
+
+- **默认策略（轮询）**：消息轮流分配到各个Partition，数据均匀，适合大多数场景
+- **Key哈希分区**：指定消息Key，相同Key的消息一定进同一个Partition，保证顺序消费。我们按`factory_id`做Key，同一厂商的告警按顺序处理，避免乱序
+- **自定义分区器**：实现Partitioner接口，按业务逻辑分配，比如P1级告警固定分配到高优先级分区
+- **随机分区**：随机选一个Partition，适合Key分布不均匀时避免热点
+
+**我们项目的做法**：以`factory_id`为分区Key，8个Partition对应8个消费者线程并行消费，同厂商告警有序处理。
+
 ---
 
 ### Kafka如何避免重复消费（幂等性）？
 
-**大白话**：就像快递签收，每个包裹有唯一单号，签过了就不签第二次
+就像快递签收，每个包裹有唯一单号，签过了就不签第二次
+
+两个层面：
+
+**生产者幂等性：**
+开启 enable.idempotence=true，Kafka会给每条消息分配PID+序列号，Broker检测到重复序列号会去重，保证同一条消息只写一次。
+
+**消费者业务幂等：**
+即使Kafka保证了生产侧不重复，消费侧因为重试还是可能重复消费。所以我们在业务层用**Redis SETNX**存消息唯一ID（比如告警ID），消费前先用SETNX判断
+这样即使同一条消息被投递两次，业务层也只会处理一次。
 
 ```java
 @Service
@@ -1298,11 +1459,9 @@ public class AlarmConsumerService {
 
 ---
 
-## 第九章：MQTT（项目经验）
+## 第九章：MQTT
 
 ### MQTT协议是什么？
-
-**大白话**：MQTT就像微信群，设备（群成员）发消息给服务器（群主），后端（其他群成员）订阅接收。特点是消息很小，省流量，适合物联网设备
 
 **与HTTP对比**：
 ```
@@ -1370,54 +1529,86 @@ public class MqttAlarmHandler {
 
 ---
 
+### 解释一下 MQTT 的发布/订阅模式是如何工作的？
+
+MQTT是经典的发布/订阅（Pub/Sub）模式，核心是一个中间人——**Broker（消息代理）**。
+
+```
+设备（Publisher）
+   ↓ 发布消息到 Topic: /factory/001/device/A01/alarm
+MQTT Broker（EMQX）
+   ↓ 转发给所有订阅了该Topic的客户端
+后台服务（Subscriber）— 订阅了 /factory/+/device/+/alarm
+```
+
+**关键点**：
+- **发布者和订阅者完全解耦**，互相不知道对方存在，只通过Topic联系
+- **Topic支持通配符**：`+` 匹配单层（`/factory/+/alarm` 匹配 `/factory/001/alarm`），`#` 匹配多层（`/factory/#` 匹配所有子Topic）
+- **QoS三个级别**：
+  - QoS 0：最多一次，可能丢消息（适合不重要的遥测数据）
+  - QoS 1：至少一次，可能重复（需要业务侧幂等处理）
+  - QoS 2：恰好一次，最安全但最慢（适合关键告警，我们P1告警用这个）
+- **保留消息（Retain）**：Broker保存最后一条消息，新订阅者连上来立刻收到，适合设备状态同步
+
+---
+
+### 如果 MQTT 消息丢失或延迟，你会怎么排查？
+
+**排查步骤**：
+
+1. **先看Broker端**：登录EMQX管理控制台，查看Broker的订阅数、消息速率、连接数是否正常，看是否有消息积压或Broker资源耗尽（CPU/内存）
+
+2. **看网络连接**：检查设备到Broker的连接状态，`netstat -an | grep 1883` 看TCP连接是否正常，ping延迟是否过高
+
+3. **看客户端日志**：查看设备端和后台服务端的MQTT客户端日志，是否有连接断开、重连、发布失败的记录
+
+4. **QoS检查**：确认使用了正确的QoS级别，QoS 0在网络抖动时会丢消息
+
+5. **看CleanSession配置**：如果设置了`cleanSession=true`，断线重连后未接收的消息会丢失，关键场景要设为false
+
+6. **消息补偿机制**：我们项目对告警数据设计了补偿机制——设备端也会定期通过HTTP上报最近N条告警，与平台对账，发现缺失立刻补推
+
+---
+
+### 如果你们的MQTT挂了怎么办？
+
+我们设计了**双通道告警冗余方案**：
+
+**正常情况**：设备通过MQTT推送告警 → EMQX Broker → 后台服务处理
+
+**MQTT故障时**：
+1. **Kafka作为备用通道**：厂商通过HTTP接口推送告警到我们的REST接口，我们写入Kafka，消费者照常处理。对于能走HTTP的厂商，MQTT挂了切换无感知
+2. **告警补偿轮询**：对于只支持MQTT的设备，后台定时任务（XXL-JOB）每5分钟主动轮询设备网关HTTP接口拉取未接收的告警，防止漏报
+3. **EMQX集群化部署**：EMQX本身搭了集群（3节点），单节点故障会自动切换，大幅降低单点故障风险
+4. **监控告警**：对MQTT连接数做监控，连接数骤降触发告警，5分钟内运维介入
+
+**结果**：系统上线后实现零漏报，多次EMQX节点维护期间均无告警丢失。
+
+---
+
 ## 第十章：Spring Cloud微服务
 
-### Nacos工作原理？
+### 微服务包含哪些东西？他们的作用分别是什么？
 
-**大白话**：
-- 注册中心：就像公司通讯录，每个服务启动时把自己的电话（IP+端口）登记进去，别人要打电话就来查
-- 配置中心：集中管理配置文件，改了配置不用重启服务
+微服务不是单一技术，是一套组件体系：
 
-```java
-// 服务注册（自动，加了nacos依赖就行）
-# application.yml
-spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848  # Nacos地址
-      config:
-        server-addr: 127.0.0.1:8848
-        file-extension: yaml
+| 组件 | 作用 | 常用选型 |
+|------|------|---------|
+| **服务注册与发现** | 服务自动注册、互相找到对方 | Nacos、Eureka |
+| **API 网关** | 统一入口，鉴权/限流/路由 | Spring Cloud Gateway、Kong |
+| **配置中心** | 集中管理所有服务的配置，热更新 | Nacos Config、Apollo |
+| **负载均衡** | 同一服务多实例时分流请求 | Ribbon、LoadBalancer |
+| **服务调用** | 服务间HTTP调用（声明式） | OpenFeign |
+| **熔断降级** | 服务故障时快速失败，保护整体 | Sentinel、Hystrix |
+| **链路追踪** | 追踪请求经过哪些服务、哪里慢 | SkyWalking、Zipkin |
+| **消息总线** | 服务间异步通信、事件驱动 | Kafka、RabbitMQ |
 
-// 服务调用（Feign声明式调用）
-@FeignClient(name = "alarm-service")  // 服务名（Nacos里注册的）
-public interface AlarmFeignClient {
-    @GetMapping("/api/alarm/list")
-    List<AlarmVO> getAlarms(@RequestParam Long factoryId);
-}
-
-// 使用
-@Autowired
-private AlarmFeignClient alarmFeignClient;
-
-List<AlarmVO> alarms = alarmFeignClient.getAlarms(factoryId);
-// Feign自动从Nacos获取alarm-service的地址，发HTTP请求
-
-// 动态配置刷新
-@RefreshScope  // 加这个注解，Nacos配置变更时自动刷新
-@RestController
-public class AlarmController {
-    @Value("${alarm.threshold:100}")  // 告警阈值，可以在Nacos动态修改
-    private int threshold;
-}
-```
+**我们项目用到的**：Spring Cloud Gateway（网关）+ Nacos（注册中心+配置中心）+ OpenFeign（服务调用）+ Sentinel（熔断限流）+ Kafka（异步消息）+ Docker/Nginx（部署）
 
 ---
 
 ### 什么是服务熔断和降级？
 
-**大白话**：
 - 熔断：像家里的断路器，电流过大就断开，保护整个电路
 - 降级：降级就是"退而求其次"，主要功能不行了，给个备用方案
 
@@ -1447,88 +1638,43 @@ public List<AlarmVO> getAlarmListBlocked(Long factoryId, BlockException e) {
 
 ---
 
-## 第十一章：项目核心问题（面试必备）
+### 🆕 OpenFeign是什么？怎么用？
 
-### ❓ 千万级数据如何存储和查询？
+OpenFeign是Spring Cloud的声明式HTTP客户端，让服务间调用像调用本地方法一样简单。
 
-**面试话术**：
+```java
+// 1. 定义Feign接口（像写Controller一样）
+@FeignClient(name = "alarm-service", fallback = AlarmClientFallback.class)
+public interface AlarmFeignClient {
+    
+    @GetMapping("/api/alarm/list")
+    List<AlarmVO> getAlarms(@RequestParam Long factoryId);
+    
+    @PostMapping("/api/alarm/process")
+    void processAlarm(@RequestBody AlarmDTO alarm);
+}
+
+// 2. 降级类（服务不可用时的兜底）
+@Component
+public class AlarmClientFallback implements AlarmFeignClient {
+    @Override
+    public List<AlarmVO> getAlarms(Long factoryId) {
+        return Collections.emptyList();  // 返回空，而不是报错
+    }
+}
+
+// 3. 直接注入使用（像调本地方法一样）
+@Autowired
+private AlarmFeignClient alarmFeignClient;
+
+List<AlarmVO> alarms = alarmFeignClient.getAlarms(factoryId);
 ```
-"我们DCIM平台有100万+测点，实时+历史数据达到千万级。
- 单表查询慢到8秒，我们引入了ShardingSphere做水平分表。
 
- 分片策略：按厂商ID对16取模，分成16张表，
- 同一厂商数据必然在同一张表，不会跨表查询。
-
- 同时做了冷热分离：
- - 3个月内数据在主表（建了复合索引，factory_id+create_time）
- - 超过3个月的数据定期归档到备份表
- - 超过1年的极少查询的数据可以考虑转对象存储
-
- 优化效果：核心查询从8秒降到300毫秒以内，
- 存储成本降低约40%。"
-```
+**底层原理**：Feign通过JDK动态代理生成接口的实现类，调用时通过Ribbon从注册中心获取服务实例列表，进行负载均衡，最终用HttpClient/OkHttp发起真实HTTP请求。
 
 ---
 
-### ❓ Kafka高并发告警可靠性方案？
-
-**面试话术**：
-```
-"我们统一告警模块单日峰值告警10万+条，
- 涉及机房安全责任，必须零漏报。
-
- 我们从三个层面保证：
-
- 消息不丢失：
- 生产者acks=all，所有副本确认才算发送成功；
- 消费者手动提交offset，处理成功才确认；
- 引入死信队列，重试3次失败的消息转入DLQ，
- 人工介入处理，同时发钉钉告警给运维。
-
- 消息不重复：
- Redis存储消息唯一ID（厂商+设备+时间+告警码），
- 消费前SETNX校验，已处理则跳过；
- 数据库层加唯一索引兜底，双重保障。
-
- 消费延迟：
- 按厂商分8个Partition，对应8个消费者线程；
- 监控Consumer Lag，超1000条触发预警；
- P1级关键告警设置MQTT双通道备用。
-
- 上线后实现零漏报，成功规避多起机房安全隐患。"
-```
-
----
-
-### ❓ MQTT从零对接厂商设备？
-
-**面试话术**：
-```
-"我们有几家厂商不支持HTTP或Kafka，只能通过MQTT协议对接。
- 我独立完成了从零到上线的全过程。
-
- 主要解决的技术难点：
- 1. 连接稳定性：设置心跳60秒，开启自动重连，
-    自定义重连监听器，断线后指数退避重试（1s→2s→4s→最大60s）
-
- 2. 消息乱序：用设备ID作为消息key，
-    保证同一设备的告警有序处理
-
- 3. 消息质量：关键告警设置QoS2（恰好一次），
-    避免告警重复或丢失
-
- 4. 海量设备：按厂商设计Topic层级
-    /factory/{code}/device/{id}/alarm，
-    多消费者订阅不同厂商的Topic并行处理"
-```
-
----
-
-## 第十二章：AI相关（新增专题）
-
-### AI大白话入门
-
-**大白话**：AI（人工智能）就是让电脑像人一样思考和回答问题
+## 第十一章：AI相关
 
 **AI底层如何实现——从零理解**：
 
@@ -1561,13 +1707,13 @@ AI处理过程：
 
 #### 1. LLM（大语言模型）
 
-**大白话**：读了海量书籍的超级学生，能回答各种问题
+读了海量书籍的超级学生，能回答各种问题
 - 代表：GPT-4、Claude、DeepSeek、通义千问、文心一言
 - 特点：通过训练几乎"读遍"了互联网上的文字
 
 #### 2. Token（令牌）
 
-**大白话**：AI处理文字的基本单位，中文一般1个字=1-2个Token
+AI处理文字的基本单位，中文一般1个字=1-2个Token
 ```
 "你好世界" → ["你", "好", "世", "界"] = 4个Token
 计费通常按Token数量，输入+输出一起算
@@ -1575,7 +1721,7 @@ AI处理过程：
 
 #### 3. Prompt（提示词）
 
-**大白话**：你给AI的指令，Prompt写得好，回答质量高十倍
+你给AI的指令，Prompt写得好，回答质量高十倍
 
 ```
 差的Prompt："写个代码"
@@ -1588,12 +1734,12 @@ AI处理过程：
 - 给AI一个角色身份
 - 描述清楚任务和背景
 - 指定输出格式
-- 给示例（Few-Shot）
+- 给示例
 ```
 
 #### 4. Embedding（向量化）
 
-**大白话**：把文字转成一串数字，让电脑能计算文字之间的相似程度
+把文字转成一串数字，让电脑能计算文字之间的相似程度
 ```
 "苹果" → [0.8, 0.2, -0.5, ...]
 "橙子" → [0.7, 0.3, -0.4, ...]  ← 和苹果相似，数字接近
@@ -1605,7 +1751,7 @@ AI处理过程：
 
 #### 5. RAG（检索增强生成）
 
-**大白话**：AI不知道你公司内部数据，RAG先帮你查出相关资料，再喂给AI回答。就像开卷考试，AI先查笔记再答题
+AI不知道你公司内部数据，RAG先帮你查出相关资料，再喂给AI回答。就像开卷考试，AI先查笔记再答题
 
 ```
 用户问："北七家机房上月电费是多少？"
@@ -1620,129 +1766,29 @@ AI处理过程：
 4. AI回答："北七家上月电费为2400元（3000度×0.8元/度）"
 ```
 
-```java
-// Java实现RAG简单示例
-@Service
-public class RagService {
-    @Autowired
-    private VectorStore vectorStore;  // 向量数据库（如Milvus）
-    @Autowired
-    private OpenAiChatClient chatClient;  // AI客户端
-
-    public String answer(String question) {
-        // 1. 把问题向量化，在向量库里搜索相关文档
-        List<Document> relevantDocs = vectorStore.similaritySearch(
-            SearchRequest.query(question).withTopK(3)  // 找最相关的3条
-        );
-
-        // 2. 把相关文档拼成上下文
-        String context = relevantDocs.stream()
-            .map(Document::getContent)
-            .collect(Collectors.joining("\n---\n"));
-
-        // 3. 构建带上下文的Prompt
-        String prompt = String.format("""
-            你是一个数据中心运维助手，根据以下数据回答问题，
-            如果数据中没有相关信息，请说"数据中没有相关记录"。
-            
-            参考数据：
-            %s
-            
-            问题：%s
-            """, context, question);
-
-        // 4. 调用AI生成回答
-        return chatClient.call(prompt);
-    }
-}
-```
-
 #### 6. Text2SQL
 
-**大白话**：用自然语言查数据库，不用写SQL。你说"给我看看北七家上周的告警"，AI自动生成SQL查出来
-
-```java
-// 项目中Text2SQL实现
-@Service
-public class Text2SqlService {
-
-    private static final String SYSTEM_PROMPT = """
-        你是一个数据库查询专家，根据用户的自然语言问题生成对应的MySQL查询SQL。
-        
-        数据库表结构：
-        alarm表（告警表）：
-          - id: 主键
-          - factory_code: 厂商编码
-          - device_id: 设备ID
-          - alarm_level: 告警级别（1=P1,2=P2,3=P3）
-          - alarm_time: 告警时间
-          - alarm_desc: 告警描述
-          - status: 状态（0=未处理,1=已处理,2=已恢复）
-          - factory_location: 机房位置（如：北七家、上地）
-        
-        point_data表（测点数据表）：
-          - factory_code: 厂商编码
-          - device_id: 设备ID
-          - point_name: 测点名称（如：电量、温度）
-          - value: 数值
-          - unit: 单位
-          - record_time: 记录时间
-        
-        规则：
-        1. 只能生成SELECT语句，不能生成INSERT/UPDATE/DELETE
-        2. 只返回SQL语句，不要解释
-        3. 时间范围查询用BETWEEN，日期格式用 'yyyy-MM-dd'
-        4. 未提及条件不要加
-        """;
-
-    @Autowired
-    private DeepSeekClient deepSeekClient;  // AI客户端
-
-    public String naturalLanguageQuery(String question) {
-        // 1. 调用AI生成SQL
-        String sql = deepSeekClient.chat(SYSTEM_PROMPT, question);
-
-        // 2. 安全校验（只允许SELECT）
-        if (!sql.trim().toUpperCase().startsWith("SELECT")) {
-            throw new SecurityException("只允许查询操作！");
-        }
-
-        // 3. 执行SQL
-        List<Map<String, Object>> results = jdbcTemplate.queryForList(sql);
-
-        // 4. 把结果让AI整理成自然语言
-        String resultJson = JSON.toJSONString(results);
-        String summaryPrompt = "根据以下查询结果，用简洁的中文回答用户的问题。\n" +
-                               "用户问题：" + question + "\n" +
-                               "查询结果：" + resultJson;
-        return deepSeekClient.chat(summaryPrompt);
-    }
-}
-```
+用自然语言查数据库，不用写SQL。你说"给我看看北七家上周的告警"，AI自动生成SQL查出来
 
 #### 7. Function Calling（函数调用）
 
-**大白话**：给AI一个工具箱，AI根据问题自动决定用哪个工具
+给AI一个工具箱，AI根据问题自动决定用哪个工具
 
 ```
-工具箱里有：
-- 查询告警工具（getAlarmList）
-- 查询能耗工具（getEnergyData）
-- 发送通知工具（sendNotification）
+工具箱里有：[查告警、查能耗、发邮件、查设备状态]
 
-用户说："帮我查一下北七家最新的P1告警，
-        如果超过10条就发邮件通知运维"
+用户问："北七家今天有没有高温告警，有的话发邮件给运维负责人"
 
-AI自动：
-1. 调用 getAlarmList(location="北七家", level="P1")
-2. 发现有15条P1告警
-3. 调用 sendNotification(type="email", message="...")
-4. 回答用户："已查到15条P1告警，邮件通知已发送"
+AI自动规划：
+步骤1：调用"查告警"工具，条件：北七家+今天+高温
+步骤2：发现有3条高温告警
+步骤3：调用"发邮件"工具，收件人：运维负责人，内容：高温告警详情
 ```
 
 #### 8. Agent（智能体）
 
-**大白话**：能自主规划任务、使用工具、执行多步骤任务的AI
+能自主规划任务、使用工具、执行多步骤任务的AI
+
 - 普通AI：你问一句，它答一句（被动）
 - Agent：你说目标，它自己规划步骤，调用各种工具完成任务（主动）
 
@@ -1760,7 +1806,8 @@ Agent执行过程（自动规划）：
 
 #### 9. Vector Database（向量数据库）
 
-**大白话**：专门存储向量（数字数组）的数据库，能快速找出"最相似"的数据
+专门存储向量（数字数组）的数据库，能快速找出"最相似"的数据
+
 - 普通数据库：精确匹配（找名字叫"张三"的人）
 - 向量数据库：相似匹配（找和"张三"最像的人）
 
@@ -1774,7 +1821,7 @@ Agent执行过程（自动规划）：
 
 #### 10. Chain of Thought（思维链，CoT）
 
-**大白话**：让AI"先思考再回答"，就像做数学题先列步骤再给答案，准确率更高
+让AI"先思考再回答"，就像做数学题先列步骤再给答案，准确率更高
 
 ```
 没有CoT：
@@ -1799,95 +1846,45 @@ AI回答：需要执行以下SQL：...
 
 ---
 
-### AI在Java项目中的实践
+### AI在Java项目中的搭建
 
-#### Spring AI框架
+#### 网络与部署环境
+GPU服务器（本地部署LLM必须）：中等规模用 A100/H100，小规模用RTX 4090集群也行
+内网代理（如果用外部API如OpenAI/Claude）：搭一个HTTP代理或部署在DMZ区
+容器化环境：Docker + Kubernetes，用于管理所有AI服务
 
-**大白话**：Spring官方的AI集成框架，让Java调用AI像调用普通接口一样简单
+#### 核心技术栈清单
+| 技术领域 | 核心组件/技术 | 推荐方案/工具 | 选型理由与适用场景 |
+| :--- | :--- | :--- | :--- |
+| 大语言模型 (LLM) | 私有化部署<br>(数据不出域) | Qwen2.5<br>GLM-4<br>LLaMA 3 | Qwen2.5：中文能力极强，代码/逻辑推理优秀，开源生态好。<br>GLM-4：长文本处理能力强，适合处理复杂企业文档。<br>LLaMA 3：全球生态最强，适合英文场景或作为基座微调。 |
+| | API 调用<br>(追求最强效果) | GPT-4o / o1<br>Claude 3.5 Sonnet | GPT-4o：综合推理能力最强，适合处理高难度任务。<br>Claude 3.5：代码生成与"类人"语感极佳，适合辅助编程和写作。 |
+| Embedding 模型<br>(文本向量化) | 本地部署 | BGE-M3<br>BGE-large-zh | BGE-M3：支持多语言、长文本，检索精度高，是中文场景下的首选开源模型。 |
+| | API 服务 | text-embedding-3<br>(OpenAI) | text-embedding-3-large：性能稳定，无需维护模型服务，适合快速验证或非敏感数据。 |
+| 向量数据库<br>(知识库存储) | 大规模/企业级 | Milvus | 专为海量数据设计，性能强悍，支持分布式部署，适合拥有百万级文档的大型企业。 |
+| | 中小规模/高性能 | Qdrant | 基于 Rust 开发，资源占用低且速度快，部署简单，适合大多数中型业务场景。 |
+| | 轻量级/一体化 | pgvector | 基于 PostgreSQL 插件，如果公司已有 PG 数据库，直接复用即可，运维成本最低。 |
+| RAG 框架<br>(检索增强生成) | 核心编排 | LangChain<br>LlamaIndex | LangChain：生态最全，组件丰富，适合构建复杂的 Agent 应用。<br>LlamaIndex：专注于数据处理和索引，在 RAG 数据流转上更细腻。 |
+| Agent 框架<br>(智能体/工具调用) | 复杂任务编排 | LangGraph<br>AutoGen | LangGraph：基于 LangChain，擅长处理有状态、多步骤的复杂工作流（如审批流）。<br>AutoGen：微软出品，擅长多智能体对话协作（如一个写代码，一个检查代码）。 |
+| 推理加速框架<br>(本地 LLM 运行) | 生产环境 | vLLM | 吞吐量极高，支持连续批处理，是私有化部署大模型的首选推理引擎。 |
+| | 开发/测试 | Ollama | 一键运行，极其方便，适合本地开发调试或轻量级演示。 |
+| | 官方优化 | TGI<br>(HuggingFace) | 专为 Transformer 模型优化，容器化部署友好，适合 HuggingFace 生态用户。 |
+| 检索优化<br>(提升准确率) | 混合检索 | BM25 + 向量 | 结合关键词匹配（BM25）和语义匹配（向量），解决专有名词（如内部项目代号）搜不到的问题。 |
+| | 重排序<br>(Rerank) | BGE-Reranker<br>Cohere Rerank | 在初步检索后进行二次精细排序，能显著提升 Top-K 结果的准确性，是 RAG 系统的"点睛之笔"。 |
 
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>org.springframework.ai</groupId>
-    <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
-    <version>0.8.1</version>
-</dependency>
-```
 
-```yaml
-# application.yml
-spring:
-  ai:
-    openai:
-      api-key: your-api-key
-      base-url: https://api.deepseek.com  # DeepSeek兼容OpenAI接口
-      chat:
-        options:
-          model: deepseek-chat
-          temperature: 0.7  # 创造性（0=保守，1=发散）
-```
 
-```java
-// 基本使用
-@RestController
-public class AiController {
-    @Autowired
-    private ChatClient chatClient;
+#### 完整落地流程（按阶段）
+第一阶段：搭基础（1-2个月）
+确定数据安全边界（私有化 vs API）→ 搭GPU推理服务（vLLM/Ollama）→ 部署向量数据库（Milvus）→ 搭Java网关
 
-    @PostMapping("/ai/query")
-    public String query(@RequestBody String question) {
-        return chatClient.call(question);
-    }
+第二阶段：做RAG知识库（1-2个月）
+收集公司内部文档（手册、FAQ、规范）→ 用Python做文档解析+分块+Embedding入库 → 搭问答界面 → 测试召回准确率
 
-    // 流式输出（打字机效果）
-    @GetMapping(value = "/ai/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<String> stream(@RequestParam String question) {
-        return chatClient.stream(question);
-    }
-}
-```
+第三阶段：集成业务系统（2-3个月）
+让AI能查CRM、ERP等内部数据 → 用Agent框架编排工具调用 → 通过Java业务层做权限控制（谁能查什么数据）
 
-#### 如何调用DeepSeek（你项目中用的）
-
-```java
-// 直接用HTTP调用（不依赖Spring AI）
-@Service
-public class DeepSeekService {
-
-    private static final String API_URL = "https://api.deepseek.com/v1/chat/completions";
-
-    @Value("${deepseek.api-key}")
-    private String apiKey;
-
-    public String chat(String systemPrompt, String userMessage) {
-        // 构建请求体
-        Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("model", "deepseek-chat");
-        requestBody.put("temperature", 0.1);  // 低温度，输出更稳定（适合SQL生成）
-
-        List<Map<String, String>> messages = new ArrayList<>();
-        if (systemPrompt != null) {
-            messages.add(Map.of("role", "system", "content", systemPrompt));
-        }
-        messages.add(Map.of("role", "user", "content", userMessage));
-        requestBody.put("messages", messages);
-
-        // 发HTTP请求
-        RestTemplate restTemplate = new RestTemplate();
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "Bearer " + apiKey);
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody, headers);
-        ResponseEntity<Map> response = restTemplate.postForEntity(API_URL, entity, Map.class);
-
-        // 解析结果
-        List<Map> choices = (List<Map>) response.getBody().get("choices");
-        Map message = (Map) choices.get(0).get("message");
-        return (String) message.get("content");
-    }
-}
-```
+第四阶段：规模化+优化（持续）
+微调垂直领域模型 → 添加用量监控/成本统计 → A/B测试不同LLM效果 → 搭内部Prompt管理平台
 
 ---
 
@@ -1895,7 +1892,6 @@ public class DeepSeekService {
 
 **Q1：AI大模型底层原理是什么？**
 ```
-大白话版回答：
 "大模型基于Transformer架构，
  核心是自注意力机制（Self-Attention），
  能计算一段话中每个词与其他词的关联程度。
@@ -1930,38 +1926,10 @@ RAG（检索增强）：
 而微调的数据一旦固化就过时了。
 ```
 
-**Q3：如何防止AI生成有害的SQL？**
-```java
-// SQL安全校验
-public void validateSql(String sql) {
-    String upperSql = sql.trim().toUpperCase();
 
-    // 1. 只允许SELECT
-    if (!upperSql.startsWith("SELECT")) {
-        throw new SecurityException("只允许SELECT查询");
-    }
-
-    // 2. 禁止危险关键词
-    List<String> forbidden = Arrays.asList(
-        "DROP", "DELETE", "UPDATE", "INSERT",
-        "TRUNCATE", "ALTER", "CREATE", "EXEC"
-    );
-    for (String keyword : forbidden) {
-        if (upperSql.contains(keyword)) {
-            throw new SecurityException("SQL包含危险关键词：" + keyword);
-        }
-    }
-
-    // 3. 限制查询结果数量（防止全表扫描）
-    if (!upperSql.contains("LIMIT")) {
-        sql = sql + " LIMIT 1000";  // 自动加限制
-    }
-}
+**Q3：什么是幻觉（Hallucination）？怎么解决？**
 ```
-
-**Q4：什么是幻觉（Hallucination）？怎么解决？**
-```
-大白话：AI有时候会"一本正经地胡说八道"，
+AI有时候会"一本正经地胡说八道"，
        编造一些看起来合理但实际不存在的信息
 
 原因：AI是预测下一个词，当知识不足时，
@@ -1976,98 +1944,87 @@ public void validateSql(String sql) {
 4. 降低temperature（设置为0.1-0.3），让输出更保守
 ```
 
----
+**Q4：你在项目里具体怎么把AI集成到业务系统里的？**
+```
+结合DCIM项目实际经历回答：
 
-## 第十三章：设计模式
+我们做了两个AI能力集成：
 
-### 常见设计模式（结合项目）
+1. 智能告警分析：用户可以对某条告警问"这个告警是什么原因，历史上有没有类似的"
+   - Java层接收请求，从DB查出该设备历史告警记录
+   - 拼装成结构化数据传给AI引擎
+   - AI结合历史数据和设备手册（RAG知识库）给出分析
+   - Java层把AI回答存到数据库，展示给用户
 
-**大白话**：设计模式是代码问题的经典解决方案，就像武术套路
+2. 自然语言查询能耗（Text2SQL）：用户输入"上个月北七家机房的总电费"
+   - AI把自然语言转成SQL
+   - Java层执行SQL查数据库
+   - 把结果返回给AI组装成自然语言回答
+   - 既保证数据准确，又让交互更自然
 
-```java
-// 1. 单例模式 - Spring默认Bean作用域
-// 大白话：整个程序只有一个实例，节省资源
-public class AlarmConfig {
-    private volatile static AlarmConfig instance;
-
-    private AlarmConfig() {}
-
-    public static AlarmConfig getInstance() {
-        if (instance == null) {
-            synchronized (AlarmConfig.class) {
-                if (instance == null) {
-                    instance = new AlarmConfig();
-                }
-            }
-        }
-        return instance;
-    }
-}
-
-// 2. 策略模式 - 告警处理策略
-// 大白话：同一操作有多种实现方式，可以灵活切换
-interface AlarmStrategy {
-    void handle(AlarmDTO alarm);
-}
-
-// P1告警策略：立即通知
-@Component("p1Strategy")
-class P1AlarmStrategy implements AlarmStrategy {
-    @Override
-    public void handle(AlarmDTO alarm) {
-        notifyService.sendImmediate(alarm);  // 立即发送
-        networkMonitorService.push(alarm);   // 推送网监
-        createWorkOrder(alarm);              // 自动创建工单
-    }
-}
-
-// P3告警策略：只记录
-@Component("p3Strategy")
-class P3AlarmStrategy implements AlarmStrategy {
-    @Override
-    public void handle(AlarmDTO alarm) {
-        alarmMapper.insert(alarm);  // 只记录，不通知
-    }
-}
-
-// 根据告警级别选择策略
-@Service
-public class AlarmService {
-    @Autowired
-    private Map<String, AlarmStrategy> strategies;  // Spring自动注入所有策略
-
-    public void process(AlarmDTO alarm) {
-        String strategyKey = "p" + alarm.getLevel() + "Strategy";
-        AlarmStrategy strategy = strategies.get(strategyKey);
-        strategy.handle(alarm);  // 自动选择对应策略
-    }
-}
-
-// 3. 工厂模式 - 创建不同厂商的数据适配器
-// 大白话：根据条件创建不同的对象，不暴露创建细节
-interface DataAdapter {
-    List<DeviceData> fetchData(String factoryCode);
-}
-
-class AdapterFactory {
-    public static DataAdapter create(String protocol) {
-        return switch (protocol) {
-            case "HTTP" -> new HttpDataAdapter();
-            case "MQTT" -> new MqttDataAdapter();
-            case "Kafka" -> new KafkaDataAdapter();
-            default -> throw new IllegalArgumentException("不支持的协议：" + protocol);
-        };
-    }
-}
+关键设计：AI只负责理解和生成，数据查询和权限控制全在Java层做，确保安全。
 ```
 
 ---
 
-## 第十四章：登录与鉴权
+## 第十二章：设计模式
+
+### 常见设计模式？
+设计模式是代码问题的经典解决方案，就像武术套路
+
+**创建型模式（怎么创建对象）**：
+- **单例模式**：全局只有一个实例，Spring中默认Bean就是单例。比如我们的MQTT连接管理器，只需要一个
+- **工厂模式**：不直接new，交给工厂类创建，方便扩展。比如不同厂商设备解析器，用工厂按厂商ID创建对应解析器
+- **建造者模式（Builder）**：链式调用构建复杂对象，MyBatis Plus的`LambdaQueryWrapper`就是这个思路
+
+**结构型模式（怎么组织对象）**：
+- **代理模式**：Spring AOP和`@Transactional`的底层实现，代理类在方法前后加切面逻辑
+- **适配器模式**：对接10+家异构厂商设备数据时用到，把不同厂商的数据格式适配成统一格式
+
+**行为型模式（对象怎么交互）**：
+- **观察者模式**：Spring的事件机制（ApplicationEvent），告警产生时发布事件，多个监听器（通知、派单、日志）各自响应
+- **策略模式**：告警分级处理，P1/P2/P3告警处理逻辑不同，用策略模式替代if-else，新增级别只加一个策略类
+- **模板方法模式**：定义处理骨架，子类实现细节。比如各厂商设备的数据解析流程骨架相同（连接→认证→解析→入库），具体解析逻辑各厂商不同
+
+```java
+// 策略模式示例：告警分级处理
+public interface AlarmStrategy {
+    void handle(AlarmDTO alarm);
+}
+
+@Component("p1Strategy")
+public class P1AlarmStrategy implements AlarmStrategy {
+    @Override
+    public void handle(AlarmDTO alarm) {
+        // P1：实时推送网监 + 触发派单 + 短信通知
+        networkMonitorService.push(alarm);
+        workOrderService.create(alarm);
+        smsService.sendUrgent(alarm);
+    }
+}
+
+@Component("p3Strategy")
+public class P3AlarmStrategy implements AlarmStrategy {
+    @Override
+    public void handle(AlarmDTO alarm) {
+        // P3：仅页面展示，不派单不通知
+        alarmPageService.display(alarm);
+    }
+}
+
+// 使用：根据告警级别选择策略
+Map<String, AlarmStrategy> strategies = Map.of(
+    "P1", p1Strategy, "P2", p2Strategy, "P3", p3Strategy
+);
+strategies.get(alarm.getLevel()).handle(alarm);
+```
+
+---
+
+## 第十三章：登录与鉴权
 
 ### JWT登录流程？
-
-**大白话**：JWT就像景区门票，进门检验合法后领票，之后进每个景点刷票就行，不用每次去入口重新检验
+JWT就像景区门票，进门检验合法后领票，之后进每个景点刷票就行，不用每次去入口重新检验
 
 ```java
 // JWT工具类
@@ -2140,122 +2097,205 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 ---
 
-## 第十五章：快速速查表
+## 第十四章：其他
 
-### 面试高频考点TOP20
-```
-1.  HashMap底层原理 + 扩容机制（必考）
-2.  ConcurrentHashMap vs HashTable
-3.  JVM内存模型 + GC回收算法
-4.  线程池7个参数 + 工作流程（必考）
-5.  synchronized vs Lock 区别
-6.  MySQL索引失效8种场景（必考）
-7.  MySQL事务隔离级别 + MVCC原理
-8.  ShardingSphere分库分表（项目，必考）
-9.  Redis缓存穿透击穿雪崩解决方案
-10. Redis分布式锁实现
-11. Kafka消息不丢失三层保障（项目，必考）
-12. Kafka消息幂等性Redis去重（项目，必考）
-13. Spring事务失效6种场景（必考）
-14. Spring循环依赖 + 三级缓存
-15. SpringBoot自动配置原理
-16. 微服务熔断降级（Sentinel）
-17. JWT完整登录流程
-18. CAP理论（CP vs AP）
-19. 双亲委派模型
-20. volatile vs synchronized 区别
+### ES为什么这么快（什么是倒排索引）？
+Es主要是提供搜索服务，数据检索。当进行关键词查询时，如果是正向索引需要扫描索引库中的所有文档，找到所有包含关键词的文档。很显然这样性能会成为问题。
+而倒排索引则是根据关键词去寻找对应文档。每个关键词都对应这一系列文档，这样只要建立了该关键词的索引，就可以避免全索引库扫描的方式来进行关键词查询。
+主要有两部分组成，**词条和文档**：词条列表记录了每个文档中包含哪些关键字，文档列出了所有在文档集合中出现过的关键字所对应的id
+
+---
+### ES中query和 filter 的区别？
+用于检索和筛选文档的,ES中，每个文档都有一个比分值，用于衡量文档与查询的相关性或匹配程度的值，匹配度越高，排名越靠前，查询越快。
+
+query涉及打分
+
+filter不涉及打分
+
+---
+
+### 开发工作中好用的工具有哪些？比如查询慢SQL
+
+**问题排查类**：
+- **Arthas**：阿里开源的Java线上诊断工具，不重启服务即可查看方法执行耗时（`trace`命令）、实时查看类信息、热更新代码、dump堆内存。生产上排查告警处理慢，用`trace`定位到是某个厂商设备解析方法耗时3秒，针对性优化
+- **SkyWalking**：分布式链路追踪，能看到一次请求经过哪些微服务、每段耗时多少，快速定位哪个服务是瓶颈
+- **MySQL慢查询日志 + EXPLAIN**：找到慢SQL → EXPLAIN分析 → 针对加索引
+- **pt-query-digest**：批量分析慢查询日志，找出TOP N最慢的SQL
+
+**开发效率类**：
+- **IDEA插件**：MybatisX（快速跳转Mapper和XML）、GitToolBox（行内显示git提交人）、Lombok
+- **Postman / Apifox**：接口调试，Apifox还能直接生成接口文档
+- **DBeaver**：多数据库客户端，支持MySQL/PG/高斯，比Navicat便宜（开源免费）
+- **Redis客户端 Another Redis Desktop Manager**：可视化查看Redis数据
+- **Docker Desktop**：本地快速起各种中间件（Redis、Kafka、MySQL），不用在本机安装
+
+**运维监控类**：
+- **Prometheus + Grafana**：监控服务CPU/内存/JVM/Kafka Lag，设置告警阈值
+- **EMQX Dashboard**：监控MQTT连接数、消息速率、Topic订阅情况
+- **Nginx日志分析**：`awk`命令统计高频接口和响应时间分布
+
+---
+
+### 🆕 Docker和Nginx你们是怎么用的？
+
+**Docker的使用**：
+
+我们所有服务都容器化部署，包括：
+- 各微服务打成Docker镜像，通过`docker-compose`编排
+- Redis、Kafka、EMQX等中间件也跑在Docker里，环境隔离，一键拉起
+- CI/CD流程：代码提交→Jenkins自动构建→打镜像→推到私有Harbor仓库→自动部署到测试环境
+
+```bash
+# 我们项目典型的docker-compose配置片段
+services:
+  alarm-service:
+    image: registry.内网/dcim/alarm-service:latest
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+    depends_on:
+      - kafka
+      - redis
 ```
 
-### 和简历挂钩必背场景
-```
-千万级数据  → ShardingSphere分16表，查询8s→300ms，冷热分离
-消息不丢失  → acks=all+副本数2+手动offset+死信队列+钉钉告警
-消息不重复  → Redis SETNX唯一ID + 数据库唯一索引兜底
-告警延迟    → 8分区+8消费者+Consumer Lag监控+MQTT双通道备用
-MQTT对接    → EMQX+心跳60s+自动重连+QoS2关键告警
-超时订单    → EMQX延迟消息（精准触发vs定时轮询）
-自动派单    → XXL-JOB分片广播+乐观锁防重复派单
-AI功能      → Text2SQL+Schema注入+SQL安全校验+自然语言回答
-```
+**Nginx的使用**：
 
-### 5分钟快速回忆口诀
-```
-基础：   GC找不到根就回收，HashMap数组链表红黑树
-集合：   查频用ArrayList，改频用LinkedList，线程安全ConcurrentHashMap
-线程：   线程池7参数，核心/最大/存活/单位/队列/工厂/拒绝
-锁：     synchronized自动，Lock手动，volatile只保可见性不保原子
-Spring： IOC管对象，AOP加功能，事务失效记6种
-数据库：  索引失效记8种，分表用ShardingSphere，三大日志binlog/redo/undo
-Redis：  穿透布隆，击穿互斥锁，雪崩随机过期
-Kafka：  不丢三层（acks/副本/手动提交），不重Redis去重
-AI：     LLM预测下一个词，RAG先检索再回答，Text2SQL自然语言转SQL
+1. **反向代理**：所有外部请求先打Nginx，再转发给对应服务，隐藏内部服务端口
+2. **前端静态资源**：Vue打包后的dist目录部署在Nginx，配置history路由模式
+3. **负载均衡**：多个后端实例时，Nginx轮询分发请求
+4. **SSL终止**：HTTPS证书在Nginx层处理，后端服务只需处理HTTP
+
+```nginx
+# 典型配置
+server {
+    listen 443 ssl;
+    server_name dcim.内网域名.com;
+    
+    # 前端
+    location / {
+        root /var/www/dist;
+        try_files $uri $uri/ /index.html;  # history路由
+    }
+    
+    # 后端API转发
+    location /api/ {
+        proxy_pass http://gateway:8080;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
 ```
 
 ---
 
-## 附录：面试话术模板
+## 第十五章：项目核心问题
 
-### 自我介绍（1分钟版）
-```
-"您好，我叫梁磊，有5年Java全栈开发经验。
- 目前就职于浪潮科技，负责数据中心DCIM平台的核心开发，
- 平台接入了10多家厂商的设备数据，
- 管理测点超过100万，是一个物联网+数据中心领域的综合平台。
+### ❓ 千万级数据如何存储和查询？
 
- 我独立负责前后端加运维的全链路工作，
- 在这个过程中解决了不少技术挑战，
- 比如千万级数据的分库分表优化、
- Kafka高并发告警的可靠性保障，
- 以及多协议厂商数据接入等。
+1.ShardingSphere做水平分表
+2.建了复合索引
+3.超过3个月的数据定期归档到备份表
 
- 我在兴元公司时做过物联网无人售货机项目，
- 接触到了MQTT、XXL-JOB等技术。
+---
 
- 目前希望找到一个技术氛围更好、
- 业务规模更大的团队，继续深耕后端领域。"
-```
+### ❓ Kafka高并发告警可靠性方案？
 
-### 遇到不会的问题
 ```
-"这块我目前了解得还不够深入，
- 我知道它的基本原理是XXX，
- 在项目中我用XXX方式解决类似问题，
- 后续我会针对这块深入学习研究。"
-```
+三个层面保证：
 
-### 为什么离职
-```
-"在浪潮成长了很多，做了将近3年，
- 独立负责了DCIM平台从建设到上线的全过程，
- 技术上也有不少积累。
- 现在想寻求更大的平台，
- 接触更大规模的业务和技术挑战，
- 进一步提升自己的技术深度和广度。"
-```
+ 消息不丢失：
+ 生产者acks=all，所有副本确认才算发送成功；
+ 消费者手动提交offset，处理成功才确认；
+ 引入死信队列，重试3次失败的消息转入DLQ，
+ 人工介入处理，同时发送告警给异常告警页面处理。
 
-### 优点
-```
-"我的优势主要是全栈能力强，
- 前后端加运维都能独立完成，
- 解决问题的能力也比较强，
- 项目中遇到的千万级数据、告警可靠性这些难题，
- 基本上都是我独立研究解决的。
- 另外学习能力也比较快，
- 比如MQTT协议、ShardingSphere这些，
- 都是在项目需要时自学并快速落地的。"
-```
+ 消息不重复：
+ Redis存储消息唯一ID（厂商+设备+时间+告警码），
+ 消费前SETNX校验，已处理则跳过；
+ 数据库层加唯一索引兜底，双重保障。
 
-### 缺点（套路答法）
-```
-"我有时候对代码质量要求比较高，
- 会花比较多时间在技术方案的打磨上，
- 但也在努力平衡，
- 在保证基本质量的前提下提高交付效率，
- 不过多纠结完美。"
+ 消费延迟：
+ 按厂商分8个分片，对应8个消费者线程；
+ 监控Consumer Lag，超1000条触发预警；
+ P1级关键告警设置MQTT双通道备用。
+
+ 上线后实现零漏报，成功规避多起机房安全隐患。"
 ```
 
 ---
 
-*📝 文档版本：2026年4月*  
-*🎯 目标薪资：15-18K*  
-*💪 技术是真实的，面试是临门一脚，加油！*
+### ❓ 对接10+家异构厂商，数据协议不统一怎么解决？
+
+这是项目里最有挑战的部分，用了**适配器模式 + 统一数据协议**来解决。
+
+1. **制定统一数据标准**：定义统一的告警DTO格式（字段名、类型、枚举值），所有厂商数据最终都要转成这个格式
+
+2. **每个厂商实现自己的适配器**：
+```java
+// 统一接口
+public interface DeviceAdapter {
+    List<AlarmDTO> parseAlarm(String rawData);
+    DeviceStatus parseStatus(String rawData);
+}
+
+// 阿里云厂商适配器
+@Component("aliAdapter")
+public class AliDeviceAdapter implements DeviceAdapter {
+    @Override
+    public List<AlarmDTO> parseAlarm(String rawData) {
+        // 解析阿里云格式的告警JSON，转成统一AlarmDTO
+        AliAlarmRaw raw = JSON.parseObject(rawData, AliAlarmRaw.class);
+        return raw.getAlarms().stream()
+            .map(this::convert)
+            .collect(Collectors.toList());
+    }
+}
+```
+
+3. **工厂模式选择适配器**：
+```java
+// 根据厂商ID自动选择对应适配器
+@Autowired
+private Map<String, DeviceAdapter> adapters;  // Spring自动注入所有实现
+
+DeviceAdapter adapter = adapters.get(factory.getAdapterName());
+List<AlarmDTO> alarms = adapter.parseAlarm(rawData);
+```
+
+4. **协议兼容**：不同厂商用MQTT、HTTP、WebSocket等不同协议，我们在接入层统一转换，业务层只处理标准化数据
+
+**效果**：新增一家厂商，只需实现一个适配器类，不需要改核心业务代码，扩展性很好。
+
+---
+
+### ❓ 你做过哪些性能优化，效果怎么样？
+
+结合项目整理了几个有数据支撑的优化：
+
+| 问题 | 方案 | 效果 |
+|------|------|------|
+| 核心查询8秒 | ShardingSphere分表 + 复合索引 | 优化到2秒以内 |
+| 单表数据量过大 | 历史冷数据定期归档备份表 | 存储成本降低40% |
+| 多厂商串行查询慢 | CompletableFuture并行 | 10秒→2秒 |
+| 100万测点实时状态查DB慢 | Redis缓存设备实时状态 | 接口响应从秒级→毫秒级 |
+| 告警处理重复 | Redis SETNX幂等 + DB唯一索引 | 零重复处理 |
+| 告警漏报 | Kafka+MQTT双通道+死信队列补偿 | 零漏报 |
+
+---
+
+### ❓ 说说你遇到过印象最深的线上问题？
+
+**问题**：某天凌晨，运维反映告警页面显示设备状态"正常"，但现场实际有设备故障。
+
+**排查过程**：
+1. 先看Kafka Consumer Lag，发现积压了约5万条消息，消费速度明显下降
+2. 用Arthas的`thread`命令看线程状态，发现消费者线程池里大量线程处于`WAITING`
+3. 进一步用`thread -b`查到阻塞原因：某厂商设备解析方法里，调用外部HTTP接口（查设备信息）没有设超时时间，该厂商接口响应极慢（30秒），导致线程全部阻塞
+4. 线程池满→新消息进不来→积压越来越多→页面数据不更新
+
+**解决方案**：
+- 立刻：重启消费者服务，恢复消费；同时临时禁用有问题的厂商查询
+- 根本：给所有外部HTTP调用统一加超时配置（连接超时3s，读超时10s），用`@Async`异步化非关键的外部查询，不阻塞主消费流程
+
+**总结**：这次问题让我养成了两个习惯：所有外部调用必须设超时，线程池监控必须纳入告警体系。

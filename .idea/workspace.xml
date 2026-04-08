@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="687400b0-85a1-4a5c-94b1-f873da6bda5f" name="Changes" comment="111">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/admin/my.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/admin/my.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/other/interview.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/other/interview.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
     "npm.docs:build.executor": "Run",
     "npm.docs:dev.executor": "Run",
     "settings.editor.selected.configurable": "settings.javascript.runtime",
-    "ts.external.directory.path": "D:\\myDev\\idea\\IntelliJ IDEA 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "D:\\mydev\\Idea\\IntelliJ IDEA 2026.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
