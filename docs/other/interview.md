@@ -819,6 +819,10 @@ SELECT * FROM device_data WHERE factory_id = 1 ORDER BY create_time DESC LIMIT 1
 
 ---
 
+### PostgreSQL为什么比MySQL强？
+因为pg用的多进程，mysql用的多线程
+
+---
 ### sql索引都有哪些？他们分别用来做什么？哪个索引最快？
 
 **按数据结构分**：
