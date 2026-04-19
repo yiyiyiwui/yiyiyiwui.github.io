@@ -28,63 +28,74 @@
 | **智谱AI** | [https://open.bigmodel.cn/dev/api](https://open.bigmodel.cn/dev/api) | GLM系列大模型 |
 | **通义千问** | [https://help.aliyun.com/zh/model-studio](https://help.aliyun.com/zh/model-studio) | 阿里大模型API |
 
-## Java / 后端框架
+## 后端框架 & 脚手架
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **若依框架** | [http://www.ruoyi.vip](http://www.ruoyi.vip) | 国内最流行的Java后端脚手架，开箱即用权限管理 |
+| **芋道框架** | [https://www.iocoder.cn](https://www.iocoder.cn) | 基于若依改良，微服务版更完整，文档超详细 |
+| **JeecgBoot** | [https://jeecg.com](https://jeecg.com) | 企业级低代码平台，代码生成器强大 |
+| **Spring Boot官网** | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) | Spring Boot官方文档，最权威的配置参考 |
+| **Spring Cloud** | [https://spring.io/projects/spring-cloud](https://spring.io/projects/spring-cloud) | 微服务全家桶，服务注册/网关/熔断文档 |
+| **Mybatis Plus** | [https://baomidou.com](https://baomidou.com) | Mybatis增强工具，条件构造器/代码生成 |
+| **Sa-Token** | [https://sa-token.cc](https://sa-token.cc) | 国产轻量级权限认证框架，比Spring Security简单 |
+| **Hutool** | [https://hutool.cn](https://hutool.cn) | Java工具类库，日期/加密/HTTP等常用工具 |
+| **Knife4j** | [https://doc.xiaominfo.com](https://doc.xiaominfo.com) | Swagger增强UI，接口文档更美观好用 |
+| **EasyExcel** | [https://easyexcel.opensource.alibaba.com](https://easyexcel.opensource.alibaba.com) | 阿里出品，Excel读写处理，百万数据不OOM |
+| **Easy-Es** | [https://easy-es.cn](https://easy-es.cn) | 操作ES像MP一样简单的ORM框架 |
+| **Avue** | [https://avuejs.com](https://avuejs.com) | 基于Vue+ElementUI的低代码框架 |
+
+## Java / 后端框架（补充）
 | 名称 | 网站地址 | 解释 |
 | :--- | :--- | :--- |
 | **Spring Boot** | [https://github.com/spring-projects/spring-boot](https://github.com/spring-projects/spring-boot) | Java 最流行框架 |
 | **Spring Cloud** | [https://github.com/spring-cloud](https://github.com/spring-cloud) | 微服务框架 |
 | **MyBatis** | [https://github.com/mybatis/mybatis-3](https://github.com/mybatis/mybatis-3) | ORM 框架 |
-| **MyBatis Plus** | [https://github.com/baomidou/mybatis-plus](https://github.com/baomidou/mybatis-plus) | MyBatis增强 |
 | **Dubbo** | [https://github.com/apache/dubbo](https://github.com/apache/dubbo) | RPC框架 |
 | **Netty** | [https://github.com/netty/netty](https://github.com/netty/netty) | 高性能网络框架 |
 | **Elasticsearch** | [https://github.com/elastic/elasticsearch](https://github.com/elastic/elasticsearch) | 搜索引擎 |
-| **Hutool** | [https://github.com/dromara/hutool](https://github.com/dromara/hutool) | Java 工具库 |
-| **Sa-Token** | [https://github.com/dromara/sa-token](https://github.com/dromara/sa-token) | 权限框架 |
 | **Forest** | [https://github.com/dromara/forest](https://github.com/dromara/forest) | HTTP客户端 |
-| **xxl-job** | [https://github.com/xuxueli/xxl-job](https://github.com/xuxueli/xxl-job) | 分布式任务调度 |
 | **Sentinel** | [https://github.com/alibaba/Sentinel](https://github.com/alibaba/Sentinel) | 限流熔断 |
 | **ShardingSphere** | [https://github.com/apache/shardingsphere](https://github.com/apache/shardingsphere) | 分布式数据库 |
 | **SkyWalking** | [https://github.com/apache/skywalking](https://github.com/apache/skywalking) | APM监控 |
 | **Seata** | [https://github.com/apache/incubator-seata](https://github.com/apache/incubator-seata) | 分布式事务 |
 | **Nacos** | [https://github.com/alibaba/nacos](https://github.com/alibaba/nacos) | 配置中心 |
 | **Canal** | [https://github.com/alibaba/canal](https://github.com/alibaba/canal) | MySQL binlog同步 |
-| **Knife4j** | [https://github.com/xiaoymin/knife4j](https://github.com/xiaoymin/knife4j) | Swagger UI增强 |
 | **Arthas** | [https://github.com/alibaba/arthas](https://github.com/alibaba/arthas) | Java诊断工具 |
 | **JHipster** | [https://github.com/jhipster/generator-jhipster](https://github.com/jhipster/generator-jhipster) | Java全栈脚手架 |
-| **若依框架** | [http://www.ruoyi.vip](http://www.ruoyi.vip) | 国内最流行的Java后端脚手架，开箱即用权限管理 |
-| **芋道框架** | [https://www.iocoder.cn](https://www.iocoder.cn) | 基于若依改良，微服务版更完整，文档超详细 |
-| **JeecgBoot** | [https://jeecg.com](https://jeecg.com) | 企业级低代码平台，代码生成器强大 |
+| **Redisson** | [https://redisson.org](https://redisson.org) | Java版Redis客户端，分布式锁首选 |
+
+## 定时任务 & 分布式调度
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **XXL-JOB** | [https://www.xuxueli.com/xxl-job](https://www.xuxueli.com/xxl-job) | 分布式定时任务调度平台，可视化控制台 |
 | **PowerJob** | [http://www.powerjob.tech](http://www.powerjob.tech) | 新一代分布式任务调度，功能更强 |
 | **Elastic-Job** | [https://shardingsphere.apache.org/elasticjob](https://shardingsphere.apache.org/elasticjob) | 当当网开源，支持分片任务调度 |
 | **Quartz** | [https://www.quartz-scheduler.org](https://www.quartz-scheduler.org) | Java定时任务经典框架，Spring原生支持 |
-| **EasyExcel** | [https://easyexcel.opensource.alibaba.com](https://easyexcel.opensource.alibaba.com) | 阿里出品，Excel读写处理，百万数据不OOM |
-| **Easy-Es** | [https://easy-es.cn](https://easy-es.cn) | 操作ES像MP一样简单的ORM框架 |
-| **Redisson** | [https://redisson.org](https://redisson.org) | Java版Redis客户端，分布式锁首选 |
 
-## 前端框架 / UI
+## 消息队列 & 中间件
 | 名称 | 网站地址 | 解释 |
 | :--- | :--- | :--- |
-| **React** | [https://github.com/facebook/react](https://github.com/facebook/react) | 最流行前端框架 |
-| **Vue** | [https://github.com/vuejs/core](https://github.com/vuejs/core) | Vue3 |
-| **Angular** | [https://github.com/angular/angular](https://github.com/angular/angular) | Google框架 |
-| **Next.js** | [https://github.com/vercel/next.js](https://github.com/vercel/next.js) | React全栈 |
-| **Nuxt.js** | [https://github.com/nuxt/nuxt](https://github.com/nuxt/nuxt) | Vue全栈 |
-| **Vite** | [https://github.com/vitejs/vite](https://github.com/vitejs/vite) | 新一代构建工具 |
-| **TailwindCSS** | [https://github.com/tailwindlabs/tailwindcss](https://github.com/tailwindlabs/tailwindcss) | CSS框架 |
-| **Ant Design** | [https://github.com/ant-design/ant-design](https://github.com/ant-design/ant-design) | UI组件库 |
-| **Element Plus** | [https://github.com/element-plus/element-plus](https://github.com/element-plus/element-plus) | Vue UI |
-| **Material UI** | [https://github.com/mui/material-ui](https://github.com/mui/material-ui) | React UI |
-| **Svelte** | [https://github.com/sveltejs/svelte](https://github.com/sveltejs/svelte) | 编译型框架 |
-| **Astro** | [https://github.com/withastro/astro](https://github.com/withastro/astro) | 静态站点 |
-| **Docusaurus** | [https://github.com/facebook/docusaurus](https://github.com/facebook/docusaurus) | 文档站 |
-| **Storybook** | [https://github.com/storybookjs/storybook](https://github.com/storybookjs/storybook) | UI开发 |
-| **Tauri** | [https://github.com/tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 桌面应用 |
-| **Avue** | [https://avuejs.com](https://avuejs.com) | 基于Vue+ElementUI的低代码框架 |
-| **Naive UI** | [https://www.naiveui.com/zh-CN](https://www.naiveui.com/zh-CN) | Vue3组件库，TypeScript完整支持 |
-| **Vant** | [https://vant-ui.github.io/vant/#/zh-CN](https://vant-ui.github.io/vant/#/zh-CN) | 移动端Vue组件库 |
-| **Uniapp** | [https://uniapp.dcloud.net.cn](https://uniapp.dcloud.net.cn) | 一套代码多端发布 |
+| **Kafka官方文档** | [https://kafka.apache.org/documentation](https://kafka.apache.org/documentation) | 分布式消息流平台，高吞吐场景首选 |
+| **RabbitMQ** | [https://www.rabbitmq.com/documentation.html](https://www.rabbitmq.com/documentation.html) | 消息中间件，支持多种消息模式 |
+| **RocketMQ** | [https://rocketmq.apache.org/zh](https://rocketmq.apache.org/zh) | 阿里开源，金融级消息队列，延迟消息强 |
+| **EMQX** | [https://www.emqx.com/zh/docs](https://www.emqx.com/zh/docs) | MQTT消息代理，物联网场景必备 |
+| **Nacos** | [https://nacos.io/zh-cn/docs](https://nacos.io/zh-cn/docs) | 服务注册+配置中心，Spring Cloud首选 |
+| **Sentinel** | [https://sentinelguard.io/zh-cn/docs](https://sentinelguard.io/zh-cn/docs) | 阿里流量防卫兵，限流熔断降级 |
+| **Seata** | [https://seata.apache.org/zh-cn](https://seata.apache.org/zh-cn) | 分布式事务解决方案 |
 
-## 数据库 / 数据平台
+## 缓存 & 数据库
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **Redis官方文档** | [https://redis.io/docs](https://redis.io/docs) | 内存数据库，命令查询/数据类型参考 |
+| **Redisson** | [https://redisson.org](https://redisson.org) | Java版Redis客户端，分布式锁首选 |
+| **ShardingSphere** | [https://shardingsphere.apache.org/document/5.4.1/cn](https://shardingsphere.apache.org/document/5.4.1/cn) | 分库分表中间件，Apache顶级项目 |
+| **Milvus向量数据库** | [https://milvus.io/docs/zh](https://milvus.io/docs/zh) | 开源向量数据库，AI/RAG场景必备 |
+| **MinIO** | [https://min.io/docs/minio/linux/index.html](https://min.io/docs/minio/linux/index.html) | 高性能对象存储，替代OSS自建方案 |
+| **Elasticsearch** | [https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) | 分布式搜索分析引擎官方文档 |
+| **ClickHouse** | [https://clickhouse.com/docs](https://clickhouse.com/docs) | 列式数据库，分析查询速度极快 |
+| **TiDB** | [https://docs.pingcap.com/zh/tidb/stable](https://docs.pingcap.com/zh/tidb/stable) | MySQL兼容分布式数据库 |
+
+## 数据库 / 数据平台（补充）
 | 名称 | 网站地址 | 解释 |
 | :--- | :--- | :--- |
 | **MySQL** | [https://github.com/mysql/mysql-server](https://github.com/mysql/mysql-server) | 最流行数据库 |
@@ -102,34 +113,6 @@
 | **QuestDB** | [https://github.com/questdb/questdb](https://github.com/questdb/questdb) | 时序数据库 |
 | **SurrealDB** | [https://github.com/surrealdb/surrealdb](https://github.com/surrealdb/surrealdb) | 新型数据库 |
 | **Cassandra** | [https://github.com/apache/cassandra](https://github.com/apache/cassandra) | 分布式数据库 |
-| **MinIO** | [https://min.io/docs/minio/linux/index.html](https://min.io/docs/minio/linux/index.html) | 高性能对象存储，替代OSS自建方案 |
-
-## 消息队列 & 中间件
-| 名称 | 网站地址 | 解释 |
-| :--- | :--- | :--- |
-| **Kafka** | [https://kafka.apache.org/documentation](https://kafka.apache.org/documentation) | 分布式消息流平台，高吞吐场景首选 |
-| **RabbitMQ** | [https://www.rabbitmq.com/documentation.html](https://www.rabbitmq.com/documentation.html) | 消息中间件，支持多种消息模式 |
-| **RocketMQ** | [https://rocketmq.apache.org/zh](https://rocketmq.apache.org/zh) | 阿里开源，金融级消息队列 |
-| **EMQX** | [https://www.emqx.com/zh/docs](https://www.emqx.com/zh/docs) | MQTT消息代理，物联网场景必备 |
-
-## DevOps / 运维
-| 名称 | 网站地址 | 解释 |
-| :--- | :--- | :--- |
-| **Docker** | [https://github.com/docker/docker-ce](https://github.com/docker/docker-ce) | 容器 |
-| **Kubernetes** | [https://github.com/kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 容器编排 |
-| **Prometheus** | [https://github.com/prometheus/prometheus](https://github.com/prometheus/prometheus) | 监控 |
-| **Grafana** | [https://github.com/grafana/grafana](https://github.com/grafana/grafana) | 可视化监控 |
-| **Helm** | [https://github.com/helm/helm](https://github.com/helm/helm) | Kubernetes包管理 |
-| **Istio** | [https://github.com/istio/istio](https://github.com/istio/istio) | Service Mesh |
-| **ArgoCD** | [https://github.com/argoproj/argo-cd](https://github.com/argoproj/argo-cd) | GitOps |
-| **Jenkins** | [https://github.com/jenkinsci/jenkins](https://github.com/jenkinsci/jenkins) | CI/CD |
-| **Ansible** | [https://github.com/ansible/ansible](https://github.com/ansible/ansible) | 自动化运维 |
-| **Terraform** | [https://github.com/hashicorp/terraform](https://github.com/hashicorp/terraform) | IaC |
-| **Harbor** | [https://github.com/goharbor/harbor](https://github.com/goharbor/harbor) | 容器仓库 |
-| **MinIO** | [https://github.com/minio/minio](https://github.com/minio/minio) | 对象存储 |
-| **Nginx** | [https://github.com/nginx/nginx](https://github.com/nginx/nginx) | Web服务器 |
-| **Traefik** | [https://github.com/traefik/traefik](https://github.com/traefik/traefik) | 反向代理 |
-| **Caddy** | [https://github.com/caddyserver/caddy](https://github.com/caddyserver/caddy) | 自动HTTPS服务器 |
 
 ## 支付 & 第三方对接
 | 名称 | 网站地址 | 解释 |
@@ -143,21 +126,135 @@
 | **腾讯云短信** | [https://cloud.tencent.com/document/product/382](https://cloud.tencent.com/document/product/382) | 腾讯云短信SDK文档 |
 | **七牛云** | [https://developer.qiniu.com/kodo](https://developer.qiniu.com/kodo) | 对象存储/CDN，图片处理功能强大 |
 
+## 前端框架 & 组件库
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **Vue 3 官方文档** | [https://cn.vuejs.org](https://cn.vuejs.org) | Vue3组合式API，国内最流行前端框架 |
+| **Element Plus** | [https://element-plus.org/zh-CN](https://element-plus.org/zh-CN) | Vue3 UI组件库，企业后台首选 |
+| **Ant Design Vue** | [https://www.antdv.com/components/overview](https://www.antdv.com/components/overview) | Ant Design的Vue实现 |
+| **Naive UI** | [https://www.naiveui.com/zh-CN](https://www.naiveui.com/zh-CN) | Vue3组件库，TypeScript完整支持 |
+| **Vant** | [https://vant-ui.github.io/vant/#/zh-CN](https://vant-ui.github.io/vant/#/zh-CN) | 移动端Vue组件库 |
+| **Uniapp** | [https://uniapp.dcloud.net.cn](https://uniapp.dcloud.net.cn) | 一套代码多端发布 |
+| **Nuxt.js** | [https://nuxt.com/docs/zh](https://nuxt.com/docs/zh) | Vue服务端渲染框架 |
+| **React官方文档** | [https://zh-hans.react.dev](https://zh-hans.react.dev) | Facebook出品前端框架 |
+| **Ant Design** | [https://ant-design.antgroup.com/index-cn](https://ant-design.antgroup.com/index-cn) | React企业级UI组件 |
+| **TailwindCSS** | [https://tailwindcss.com/docs](https://tailwindcss.com/docs) | 原子CSS框架 |
+
+## 前端框架 / UI（补充）
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **React** | [https://github.com/facebook/react](https://github.com/facebook/react) | 最流行前端框架 |
+| **Vue** | [https://github.com/vuejs/core](https://github.com/vuejs/core) | Vue3 |
+| **Angular** | [https://github.com/angular/angular](https://github.com/angular/angular) | Google框架 |
+| **Next.js** | [https://github.com/vercel/next.js](https://github.com/vercel/next.js) | React全栈 |
+| **Vite** | [https://github.com/vitejs/vite](https://github.com/vitejs/vite) | 新一代构建工具 |
+| **Material UI** | [https://github.com/mui/material-ui](https://github.com/mui/material-ui) | React UI |
+| **Svelte** | [https://github.com/sveltejs/svelte](https://github.com/sveltejs/svelte) | 编译型框架 |
+| **Astro** | [https://github.com/withastro/astro](https://github.com/withastro/astro) | 静态站点 |
+| **Docusaurus** | [https://github.com/facebook/docusaurus](https://github.com/facebook/docusaurus) | 文档站 |
+| **Storybook** | [https://github.com/storybookjs/storybook](https://github.com/storybookjs/storybook) | UI开发 |
+| **Tauri** | [https://github.com/tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 桌面应用 |
+
 ## 图表 & 可视化
 | 名称 | 网站地址 | 解释 |
 | :--- | :--- | :--- |
-| **ECharts** | [https://github.com/apache/echarts](https://github.com/apache/echarts) | 最强大的Web图表库 |
-| **D3.js** | [https://github.com/d3/d3](https://github.com/d3/d3) | 数据驱动可视化库 |
-| **AntV G2** | [https://g2.antv.antgroup.com](https://g2.antv.antgroup.com) | 蚂蚁金服可视化语法 |
-| **Three.js** | [https://threejs.org/docs](https://threejs.org/docs) | WebGL 3D可视化 |
-| **DataV** | [https://datav.aliyun.com/portal](https://datav.aliyun.com/portal) | 阿里云大屏可视化 |
-| **Highcharts** | [https://www.highcharts.com.cn](https://www.highcharts.com.cn) | 商业图表库 |
-| **chart.js** | [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js) | 轻量级 HTML5 图表库 |
-| **visx** | [https://github.com/airbnb/visx](https://github.com/airbnb/visx) | Airbnb 出品的可视化组件 |
-| **mermaid** | [https://github.com/mermaid-js/mermaid](https://github.com/mermaid-js/mermaid) | Markdown 流程图/思维导图 |
-| **Cytoscape.js** | [https://github.com/cytoscape/cytoscape.js](https://github.com/cytoscape/cytoscape.js) | 图数据关系可视化 |
+| **ECharts** | [https://echarts.apache.org/zh/index.html](https://echarts.apache.org/zh/index.html) | Apache顶级项目，最强大的Web图表库 |
+| **AntV G2** | [https://g2.antv.antgroup.com](https://g2.antv.antgroup.com) | 蚂蚁金服可视化语法，语法简洁 |
+| **D3.js** | [https://d3js.org](https://d3js.org) | 数据驱动的底层可视化库，灵活度最高 |
+| **Three.js** | [https://threejs.org/docs](https://threejs.org/docs) | 3D可视化/WebGL，大屏3D场景 |
+| **DataV** | [https://datav.aliyun.com/portal](https://datav.aliyun.com/portal) | 阿里云数据可视化，大屏组件现成用 |
+| **Highcharts** | [https://www.highcharts.com.cn](https://www.highcharts.com.cn) | 商业图表库，企业报表场景 |
 
-## 学习 / 开发资源
+## DevOps & 运维
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **Docker官方文档** | [https://docs.docker.com](https://docs.docker.com) | 容器化部署必看，Dockerfile/Compose |
+| **Kubernetes文档** | [https://kubernetes.io/zh-cn/docs/home](https://kubernetes.io/zh-cn/docs/home) | K8s中文文档，容器编排 |
+| **Nginx文档** | [https://nginx.org/en/docs](https://nginx.org/en/docs) | Nginx配置手册，反向代理/负载均衡 |
+| **Jenkins** | [https://www.jenkins.io/zh/doc](https://www.jenkins.io/zh/doc) | CI/CD流水线，自动构建部署 |
+| **Prometheus** | [https://prometheus.io/docs](https://prometheus.io/docs) | 监控系统，采集指标/告警 |
+| **Grafana** | [https://grafana.com/docs/grafana/latest](https://grafana.com/docs/grafana/latest) | 可视化监控面板，配合Prometheus使用 |
+| **SkyWalking** | [https://skywalking.apache.org/docs](https://skywalking.apache.org/docs) | 分布式链路追踪，定位慢接口 |
+| **Arthas** | [https://arthas.aliyun.com/doc](https://arthas.aliyun.com/doc) | Java诊断工具，线上问题排查神器 |
+
+## DevOps / 运维（补充）
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **Docker** | [https://github.com/docker/docker-ce](https://github.com/docker/docker-ce) | 容器 |
+| **Kubernetes** | [https://github.com/kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | 容器编排 |
+| **Helm** | [https://github.com/helm/helm](https://github.com/helm/helm) | Kubernetes包管理 |
+| **Istio** | [https://github.com/istio/istio](https://github.com/istio/istio) | Service Mesh |
+| **ArgoCD** | [https://github.com/argoproj/argo-cd](https://github.com/argoproj/argo-cd) | GitOps |
+| **Ansible** | [https://github.com/ansible/ansible](https://github.com/ansible/ansible) | 自动化运维 |
+| **Terraform** | [https://github.com/hashicorp/terraform](https://github.com/hashicorp/terraform) | IaC |
+| **Harbor** | [https://github.com/goharbor/harbor](https://github.com/goharbor/harbor) | 容器仓库 |
+| **Traefik** | [https://github.com/traefik/traefik](https://github.com/traefik/traefik) | 反向代理 |
+| **Caddy** | [https://github.com/caddyserver/caddy](https://github.com/caddyserver/caddy) | 自动HTTPS服务器 |
+
+## 网关 & 安全
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **Spring Security** | [https://docs.spring.io/spring-security/reference/index.html](https://docs.spring.io/spring-security/reference/index.html) | Spring生态安全框架，权限认证标准 |
+| **Kong网关** | [https://docs.konghq.com](https://docs.konghq.com) | 云原生API网关，插件生态丰富 |
+| **APISIX** | [https://apisix.apache.org/zh/docs/apisix/getting-started](https://apisix.apache.org/zh/docs/apisix/getting-started) | Apache顶级API网关，国内用得多 |
+| **JWT.io** | [https://jwt.io](https://jwt.io) | JWT在线解析/生成，调试必备 |
+| **OAuth2文档** | [https://oauth.net/2](https://oauth.net/2) | OAuth2.0协议规范与接入指南 |
+
+## 在线工具
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **Maven仓库** | [https://mvnrepository.com](https://mvnrepository.com) | 搜索Maven依赖版本，groupId/artifactId |
+| **cron表达式生成** | [https://cron.qqe2.com](https://cron.qqe2.com) | 可视化生成Cron定时表达式 |
+| **正则测试** | [https://regex101.com](https://regex101.com) | 在线正则表达式测试与调试 |
+| **JSON格式化** | [https://jsonformatter.curiousconcept.com](https://jsonformatter.curiousconcept.com) | JSON在线格式化/校验/压缩 |
+| **Base64工具** | [https://base64.guru](https://base64.guru) | Base64编解码在线工具 |
+| **MD5加密** | [https://www.md5hashgenerator.com](https://www.md5hashgenerator.com) | 在线MD5/SHA加密工具 |
+| **IP查询** | [https://tool.lu/ip](https://tool.lu/ip) | IP地址归属地查询 |
+| **二维码生成** | [https://cli.im](https://cli.im) | 在线生成/解析二维码 |
+| **图片压缩** | [https://squoosh.app](https://squoosh.app) | Squoosh在线无损压缩图片 |
+| **Can I Use** | [https://caniuse.com](https://caniuse.com) | 查浏览器CSS/JS特性兼容性 |
+| **Postman** | [https://www.postman.com](https://www.postman.com) | API接口调试工具官网 |
+| **Apifox** | [https://apifox.com](https://apifox.com) | API设计+调试+Mock+文档一体化 |
+
+## Linux & Shell
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **Linux命令大全** | [https://www.runoob.com/linux/linux-command-manual.html](https://www.runoob.com/linux/linux-command-manual.html) | Linux命令中文手册，快速查用法 |
+| **Shell脚本教程** | [https://www.runoob.com/linux/linux-shell.html](https://www.runoob.com/linux/linux-shell.html) | Bash脚本编写参考 |
+| **Crontab工具** | [https://crontab.guru](https://crontab.guru) | Linux定时任务crontab在线编辑 |
+| **explainshell** | [https://explainshell.com](https://explainshell.com) | 输入命令自动解释每个参数含义 |
+
+## 文件处理 & 办公
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **EasyPDF** | [https://easypdf.cn](https://easypdf.cn) | Java PDF操作库，iText平替 |
+| **iText7** | [https://itextpdf.com/products/itext-core](https://itextpdf.com/products/itext-core) | Java/C# PDF生成与处理 |
+| **POI官方** | [https://poi.apache.org](https://poi.apache.org) | Apache POI，操作Office文档的Java标准 |
+| **EasyExcel文档** | [https://easyexcel.opensource.alibaba.com](https://easyexcel.opensource.alibaba.com) | 阿里出品，百万Excel高性能读写 |
+| **WPS开放平台** | [https://open.wps.cn](https://open.wps.cn) | WPS文档在线预览/编辑接入 |
+| **kkFileView** | [https://kkfileview.keking.cn/zh-cn/index.html](https://kkfileview.keking.cn/zh-cn/index.html) | 开源文件预览服务，Word/Excel/PDF |
+
+## 开源项目参考
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **mall项目** | [http://www.macrozheng.com](http://www.macrozheng.com) | 电商系统完整实现，SpringBoot+Vue |
+| **pig框架** | [https://www.pig4cloud.com](https://www.pig4cloud.com) | Spring Cloud授权微服务脚手架 |
+| **Halo博客** | [https://docs.halo.run](https://docs.halo.run) | Spring Boot博客系统，代码质量高 |
+| **PowerJob** | [https://www.powerjob.tech](https://www.powerjob.tech) | 分布式任务调度，可参考架构设计 |
+| **dromara/hutool** | [https://github.com/dromara/hutool](https://github.com/dromara/hutool) | Java工具类库，学习工具类设计 |
+| **国内开源镜像站** | [https://gitee.com/explore](https://gitee.com/explore) | gitee国内代码托管，下载不限速 |
+
+## 文档 & 学习
+| 名称 | 网站地址 | 解释 |
+| :--- | :--- | :--- |
+| **JavaGuide** | [https://javaguide.cn](https://javaguide.cn) | Java面试+学习指南，覆盖最全 |
+| **小林coding** | [https://xiaolincoding.com](https://xiaolincoding.com) | 图解计算机网络/操作系统/MySQL |
+| **美团技术博客** | [https://tech.meituan.com](https://tech.meituan.com) | 美团工程师分享，实战干货多 |
+| **阿里技术** | [https://developer.aliyun.com/group/alitech](https://developer.aliyun.com/group/alitech) | 阿里巴巴技术团队分享 |
+| **InfoQ中文** | [https://www.infoq.cn](https://www.infoq.cn) | 软件开发技术资讯与深度分析 |
+| **掘金** | [https://juejin.cn](https://juejin.cn) | 国内技术社区，前端后端文章质量高 |
+
+## 学习 / 开发资源（补充）
 | 名称 | 网站地址 | 解释 |
 | :--- | :--- | :--- |
 | **freeCodeCamp** | [https://github.com/freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 免费编程课程 |
@@ -168,7 +265,6 @@
 | **awesome** | [https://github.com/sindresorhus/awesome](https://github.com/sindresorhus/awesome) | Awesome合集 |
 | **free-programming-books** | [https://github.com/EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 免费编程书 |
 | **coding-interview-university** | [https://github.com/jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) | CS学习 |
-| **JavaGuide** | [https://github.com/Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide) | Java指南 |
 | **awesome-java** | [https://github.com/akullpp/awesome-java](https://github.com/akullpp/awesome-java) | Java资源 |
 | **awesome-python** | [https://github.com/vinta/awesome-python](https://github.com/vinta/awesome-python) | Python资源 |
 | **awesome-go** | [https://github.com/avelino/awesome-go](https://github.com/avelino/awesome-go) | Go资源 |
@@ -182,7 +278,6 @@
 | **Flutter** | [https://github.com/flutter/flutter](https://github.com/flutter/flutter) | 跨平台 UI 框架 |
 | **React Native** | [https://github.com/facebook/react-native](https://github.com/facebook/react-native) | 跨平台移动开发 |
 | **Ionic** | [https://github.com/ionic-team/ionic-framework](https://github.com/ionic-team/ionic-framework) | HTML5 混合移动框架 |
-| **uni-app** | [https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app) | 多端开发框架 |
 | **Fastlane** | [https://github.com/fastlane/fastlane](https://github.com/fastlane/fastlane) | 移动自动化运维工具 |
 | **awesome-android** | [https://github.com/JStumpp/awesome-android](https://github.com/JStumpp/awesome-android) | 安卓开发资源汇总 |
 | **awesome-ios** | [https://github.com/vsouza/awesome-ios](https://github.com/vsouza/awesome-ios) | iOS 开发资源汇总 |

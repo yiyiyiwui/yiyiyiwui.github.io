@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="687400b0-85a1-4a5c-94b1-f873da6bda5f" name="Changes" comment="111">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/dev/ai.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev/ai.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/java/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/java/java.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/java.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/java/openSource.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/openSource.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/linux/linux.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/linux/linux.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/utils/ai.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/other/interview.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/other/interview.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
