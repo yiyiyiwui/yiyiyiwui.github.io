@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as t,ah as h}from"./chunks/framework.B91VqcGd.js";const b=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"other/memo.md","filePath":"other/memo.md"}'),i={name:"other/memo.md"};function l(n,a,o,s,p,c){return r(),t("div",null,[...a[0]||(a[0]=[h("",423)])])}const f=e(i,[["render",l]]);export{b as __pageData,f as default};
