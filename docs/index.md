@@ -8,7 +8,7 @@ title: 一一一五的井
 <img class="m-avatar" src="/images/avatar.jpg" alt="一一一五" />
 <div class="m-id">
 <h1>一一一五</h1>
-<p>一只在 Java 与 Linux 的井底敲代码的青蛙</p>
+<p>一只青蛙</p>
 </div>
 </header>
 <p class="m-intro">
