@@ -5,216 +5,216 @@
 <link>https://yiyiyiwui.github.io</link>
 <description>一一一五的井 · 德智体美劳全面发展 · Java / Linux / AI / 工具收藏</description>
 <language>zh-CN</language>
-<lastBuildDate>Tue, 19 May 2026 03:26:32 GMT</lastBuildDate>
+<lastBuildDate>Tue, 19 May 2026 03:30:12 GMT</lastBuildDate>
 <atom:link href="https://yiyiyiwui.github.io/feed.xml" rel="self" type="application/rss+xml" />
 <item>
 <title>my</title>
 <link>https://yiyiyiwui.github.io/admin/my</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/admin/my</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>关于这只蛙 🐸        井底有一方天，井外有万顷海。     我在井里读书，也偶尔抬头看光。    ---  一句话：自嘲式程序员，把每一次踩坑都当成&quot;井壁上的脚印&quot;，攀爬的同时也写下来。 --- ::: tip 后端 / Java 生态 Java 基础 · Spring · Spring Cloud · My</description>
 </item>
 <item>
 <title>AI</title>
 <link>https://yiyiyiwui.github.io/dev/ai</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/dev/ai</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>AI（Artificial Intelligence，人工智能）是指让机器（尤其是计算机系统）模拟人类智能过程的技术。 核心能力： - 学习：从数据中获取知识和规律 - 推理：运用规则推导出结论 - 感知：理解图像、声音、文字等输入 - 决策：基于分析做出判断或预测 AI的三个层次： | 层次 | 定义 | 示例 | </description>
 </item>
 <item>
 <title>Docker</title>
 <link>https://yiyiyiwui.github.io/dev/docker</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/dev/docker</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>镜像，容器，数据卷 官网解释： Docker是一组平台即服务（PaaS）的产品。它基于操作系统层级的虚拟化技术，将软件与其依赖项打包为容器。托管容器的软件称为Docker引擎。 Docker能够帮助开发者在轻量级容器中自动部署应用程序，并使得不同容器中的应用程序彼此隔离，高效工作 可以这么理解：   项目运行需要运行软</description>
 </item>
 <item>
 <title>mysql</title>
 <link>https://yiyiyiwui.github.io/dev/mysql</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/dev/mysql</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>~~~ CREATE TABLE newtable LIKE oldtable; ~~~ ~~~ CREATE TABLE backuptable AS SELECT  FROM originaltable; ~~~ ~~~ SELECT DATEDIFF(&apos;2025-12-31&apos;, &apos;2025-01-01&apos;) AS </description>
 </item>
 <item>
 <title>nginx</title>
 <link>https://yiyiyiwui.github.io/dev/nginx</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/dev/nginx</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description></description>
 </item>
 <item>
 <title>Redis</title>
 <link>https://yiyiyiwui.github.io/dev/redis</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/dev/redis</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>redis是一个基于内存的key-value结构的NoSQL数据库,默认端口号6379 NoSQL: 关系型数据库是数据库和数据库之间存在关系，但是存在磁盘上，读写数据比较差。而NoSQL是非关系型数据库，意思是不要SQL，也就是不用sql，而是用 API 或专用命令，格式比较灵活，比如redis就是用的键值对，存储在</description>
 </item>
 <item>
 <title>位图</title>
 <link>https://yiyiyiwui.github.io/java/bitmap</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/bitmap</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>位图，即大量bit组成的一个数据结构(每个bit只能是0和1)，主要适合在一些场景下，进行空间的节省。 它是一个字符串类型的数据结构，实际上是对字符串的每个比特位进行操作。 例如一些大量的bool类型的存取，一个用户365天的签到记录，签到了是1，没签到是0，如果用普通的key/value进行存储，当用户量很大的时候，</description>
 </item>
 <item>
 <title>分布式事务</title>
 <link>https://yiyiyiwui.github.io/java/dt</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/dt</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>CAP定理、BASE理论、AC/PC模式、Seata 事务就是要保证一组数据库操作，要么全部成功，要么全部失败! 原子性：事务中的操作，要么全部成功，要么全部失败 一致性：事务执行前后，数据要保持一致 隔离性：多个事务之间操作互不影响 持久性：一个事务一旦提交成功，那么它对数据库的改变就是永久性的 分布式系统一致性：就</description>
 </item>
 <item>
 <title>ES</title>
 <link>https://yiyiyiwui.github.io/java/es</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/es</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>Elasticsearch 倒排索引、Logstash ES就类似数据库，用于存储海量数据 ES用来倒排索引来存储文档！ ES刚开始得到数据后会根据搜索的关键字创建出一个词条和文档 查询的时候会根据词条作为索引关键字，倒排索引主要有两个组件构成，词条和文档 词条列表记录了每个文档中包含哪些单词 文档列出了所有在文档集合</description>
 </item>
 <item>
 <title>博学之，审问之，慎思之，明辨之，笃行之。</title>
 <link>https://yiyiyiwui.github.io/java/java</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/java</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>| 名称                     | 网站地址                                                                                                   | 解释                          </description>
 </item>
 <item>
 <title>MybatisPlus</title>
 <link>https://yiyiyiwui.github.io/java/mp</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/mp</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>自动填充 时间、分页插件、逻辑删除、代码生成器 导入依赖 连接配置文件： ORM O是对象实体类 R是数据库表 M是把表和实体类建立映射关系 有了数据库和实体类后，我们创建一个Mapper接口：在接口上继承 extends BaseMapper  直接导入使用： 如果类名和数据库名不一致的话，需要添加注解，如果一样的话</description>
 </item>
 <item>
 <title>MQ</title>
 <link>https://yiyiyiwui.github.io/java/mq</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/mq</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>每个微服务之间通信方式有两种，同步和异步，Feign就是基于http协议的同步通信方式，而MQ是微服务异步调用的方式。 假设我们做了个12306系统，我们买票成功后，需要做以下几件事：调用库存系统扣减车票库存，调用短信系统给用户发送短信，调用邮件系统给用户发邮件，调用第三方客户端通知买票成功。那么如果这几个服务一直能正</description>
 </item>
 <item>
 <title>MQTT</title>
 <link>https://yiyiyiwui.github.io/java/mqtt</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/mqtt</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>MQTT、EMQX、MQTTX 1：发布者发布一个主题，比如开启车联网的汽车空调，然后会有负载，我们把内容存到负载里面。之后订阅者订阅主题就可以取到内容 2：需要有服务质量，比如连接设备断网了，消息怎么办？ 三个级别 Qos0：消息最多传递一次，说白了就是只发一次，发完我就关闭了，有没有收到我不管，如果当时客户端不可用</description>
 </item>
 <item>
 <title>Mybatis</title>
 <link>https://yiyiyiwui.github.io/java/mybatis</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/mybatis</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>Mybatis是一个持久层框架，用于实现向数据库发送SQL语句，实现增删改查 ORM: 对象关系映射。以操作对象的方式来操作数据表 实体类属性名和数据库表查询返回的字段名一致的话，mybatis会自动封装，如果不一致，就不会自动封装。 如果字段名与属性名符合驼峰命名规则，mybatis会通过驼峰式命名自动映射。 在my</description>
 </item>
 <item>
 <title>开源项目大全</title>
 <link>https://yiyiyiwui.github.io/java/openSource</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/openSource</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>| 名称 | 网站地址 | 解释 | | :--- | :--- | :--- | | LangChain |  | 构建 LLM 应用最流行的框架 | | LlamaIndex |  | LLM 数据连接框架 | | AutoGPT |  | AI 自动代理 | | Ollama |  | 本地运行大模型 | | O</description>
 </item>
 <item>
 <title>java项目</title>
 <link>https://yiyiyiwui.github.io/java/project</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/project</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>Java项目分享 •    •    •    •    •    •    •    •    •    •    •</description>
 </item>
 <item>
 <title>Spring</title>
 <link>https://yiyiyiwui.github.io/java/spring</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/spring</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>IOC、AOP、MVC、SpringBoot IOC:控制反转 AOP:面向切面编程 MVC：开发web应用程序 事务：无需编写代码，即可实现数据库事务管理 控制：对象创建权交给SpringIOC容器 反转：对象的创建由程序员在类中主动创建反转到由Spring容器来创建，说白了就是原来是我程序员创建对象，我不创建了，反</description>
 </item>
 <item>
 <title>SpringCache</title>
 <link>https://yiyiyiwui.github.io/java/springCache</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/springCache</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>SpringCache是一个框架，实现了基于注解的缓存功能 添加依赖~ @EnableCachaing 放在启动类上，用于开启基于注解的缓存 @Cacheable 放在查询方法上， 方法执行前先看是否有缓存，如果有直接返回，如果没有，去后台查询方法并添加到缓存中 @CacheEvict 清空缓存 @CahePut （了</description>
 </item>
 <item>
 <title>SpringCloud</title>
 <link>https://yiyiyiwui.github.io/java/springCloud</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/springCloud</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>负载均衡、Nacos、Feign、熔断器、网关、断言 单体应用架构是把所有应用模块放一起，用的时候都去数据库调用，如果数据库崩了，就会影响所有的模块运行。 微服务架构是把应用模块分成好几个各自的模块，每个模块都有各自的数据库，用的时候互相调用即可，如果有一个模块崩了，不用影响其他模块运行，大大提高了容错率。 有了思想，</description>
 </item>
 <item>
 <title>SpringTask</title>
 <link>https://yiyiyiwui.github.io/java/springTask</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/springTask</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>Spring 框架内置的一个轻量级任务调度和异步执行模块 在启动类上添加注解：@EnableScheduling 开启定时任务注解 方法上添加注解： @Scheduled(fixedDelay=”毫秒时间”) / @Scheduled（cron=”cron表达式”） 设置每分钟检查一次当前订单状态，如果为未支付，则修改</description>
 </item>
 <item>
 <title>WebSocket</title>
 <link>https://yiyiyiwui.github.io/java/webSocket</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/java/webSocket</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>http通信时单向的，先请求，后响应，而WebSocket时双向通信，没有请求也可以响应，双向通信，实时响应，适用于高实时的的场景，需要服务器主动给客户端推送数据 导入坐标，注册服务器端对象到ioc容器 我们服务器需要用一个map存会话对象，比如存手机号码，以后没有给我们发消息，我们可以根据地址主动给会话发消息 比如我</description>
 </item>
 <item>
 <title>Linux 常用命令速查手册</title>
 <link>https://yiyiyiwui.github.io/linux/commands</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/linux/commands</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>| 命令/操作 | 说明 | 示例 | | :--- | :--- | :--- | | linux镜像网站 | CentOS 6.9 镜像下载 |  | | su | 切换到root用户 | su | | echo $LANG | 查看当前系统中默认语言环境变量 | 输出 enUS.UTF-8 表示美式英语 | | </description>
 </item>
 <item>
 <title>Linux 常用命令速查手册</title>
 <link>https://yiyiyiwui.github.io/linux/linux</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/linux/linux</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>| 命令/操作 | 说明 | 示例 | | :--- | :--- | :--- | | linux镜像网站 | CentOS 6.9 镜像下载 |  | | su | 切换到root用户 | su | | echo $LANG | 查看当前系统中默认语言环境变量 | 输出 enUS.UTF-8 表示美式英语 | | </description>
 </item>
 <item>
 <title>博客分享 ️</title>
 <link>https://yiyiyiwui.github.io/other/blog</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/other/blog</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>一些值得看的技术博客和团队站点。 •  •  •  •  •  •</description>
 </item>
 <item>
 <title>做饭教程</title>
 <link>https://yiyiyiwui.github.io/other/cooking</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/other/cooking</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>学做菜的几个站点。 •  •  •  •</description>
 </item>
 <item>
 <title>文化博物馆 ️</title>
 <link>https://yiyiyiwui.github.io/other/culture</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/other/culture</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>在线博物馆和文化资源。 •  •  •  •  •  •</description>
 </item>
 <item>
 <title>英语学习</title>
 <link>https://yiyiyiwui.github.io/other/english</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/other/english</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>一些英语学习相关的网站和资源。 •  •  •  •  •  •</description>
 </item>
 <item>
 <title>有趣网站</title>
 <link>https://yiyiyiwui.github.io/other/fun</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/other/fun</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>一些好玩、有意思的网站集合。 •  •  •  •  •  •  •  •  •  •  •  •  •  •  •   看全球哪里天空最黑、星星最多 •  •   滚动屏幕浏览地球 46 亿年历史 •  •  •  •   能弹《卡农》《天空之城》，不懂乐理也行 •  •</description>
 </item>
 <item>
 <title>Java面试宝典</title>
 <link>https://yiyiyiwui.github.io/other/interview</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/other/interview</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>- 封装 保安全（数据不乱改）：防止&quot;脏数据&quot;污染数据库，保证业务逻辑的严密性 - 继承 省代码（共性不重写）：代码复用，减少重复劳动。修改父类，所有子类自动生效 - 多态 防僵化（扩展不修改）：消除 if-else，系统扩展性极强。新增设备类型时，只需新增一个类，不需要修改核心业务代码 --- - JDK：Java开</description>
 </item>
 <item>
 <title>Linux 相关</title>
 <link>https://yiyiyiwui.github.io/other/linux</link>
 <guid isPermaLink="true">https://yiyiyiwui.github.io/other/linux</guid>
-<pubDate>Tue, 19 May 2026 03:26:06 GMT</pubDate>
+<pubDate>Tue, 19 May 2026 03:29:45 GMT</pubDate>
 <description>Ubuntu / Linux 学习与资源站点。 •  •  •  •  •  •  •  •  •  •  •  •  •  •  •  •</description>
 </item>
 </channel>
