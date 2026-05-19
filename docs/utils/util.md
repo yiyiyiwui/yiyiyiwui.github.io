@@ -534,45 +534,123 @@ outline: deep
 • [https://uptime.kuma.pet/](https://uptime.kuma.pet/)
 > 自托管监控演示
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **VitePress**
+• [https://vitepress.dev/zh/](https://vitepress.dev/zh/)
+> 基于 Vite 与 Vue 的静态网站生成器
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **MP3 转 WAV**
+• [https://cloudconvert.com/mp3-to-wav](https://cloudconvert.com/mp3-to-wav)
+> 在线音频格式转换
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **txt 转 pdf**
+• [https://www.aconvert.com/cn/pdf/txt-to-pdf/](https://www.aconvert.com/cn/pdf/txt-to-pdf/)
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **在线 HTTP 请求**
+• [https://hoppscotch.io/](https://hoppscotch.io/)
+> 开源的 API 测试工具
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **在线测试代码**
+• [https://www.tutorialspoint.com/compilers/online-java-compiler.htm](https://www.tutorialspoint.com/compilers/online-java-compiler.htm)
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **数据库备份**
+• [https://github.com/iKeepLearn/db-back-tool](https://github.com/iKeepLearn/db-back-tool)
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **远程兼职岗位**
+• [https://easynomad.cn/](https://easynomad.cn/)
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **远程桌面软件**
+• [https://www.crossdesk.cn/#features](https://www.crossdesk.cn/#features)
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **HTML 转 PDF**
+• [https://www.bkhtmltopdf.com/zh-CN/](https://www.bkhtmltopdf.com/zh-CN/)
 
-### **中文排行榜**
-• [123](123)
-> 开源项目中文排行榜
+### **uptime-kuma 运维监控视图**
+• [https://github.com/louislam/uptime-kuma](https://github.com/louislam/uptime-kuma)
+
+### **查询中国节假日、调休、24 节气**
+• [https://chinese-days.yaavi.me/](https://chinese-days.yaavi.me/)
+
+### **程序员工具合集**
+• [https://www.quanxiaoha.com/dev-tools/](https://www.quanxiaoha.com/dev-tools/)
+
+### **学习 Java**
+• [https://labex.io/zh/learn/java](https://labex.io/zh/learn/java)
+
+### **github 代理加速**
+• [https://ghfast.top/](https://ghfast.top/)
+
+### **健康数据管理**
+• [https://www.wellally.tech/zh](https://www.wellally.tech/zh)
+> 系统化管理您和家人的健康数据
+
+### **去除图片水印**
+• [https://clearcat.lingxiangtools.top/](https://clearcat.lingxiangtools.top/)
+
+### **selfhostyourself 自托管服务**
+• [https://selfhostyourself.com/](https://selfhostyourself.com/)
+
+### **office 在线**
+• [https://office.ziziyi.com/](https://office.ziziyi.com/)
+
+### **AirScan-QR**
+• [https://github.com/topcss/AirScan-QR](https://github.com/topcss/AirScan-QR)
+> 通过二维码动态流解决跨设备、跨网络数据传输
+
+### **EasyPostman**
+• [https://github.com/lakernote/EasyPostman/blob/master/README_zh.md](https://github.com/lakernote/EasyPostman/blob/master/README_zh.md)
+> 开源 API 调试 & 性能测试桌面工具
+
+### **kodcloud 私有云存储**
+• [https://kodcloud.com/](https://kodcloud.com/)
+
+### **站址导航**
+• [https://www.zhanlian.net/code](https://www.zhanlian.net/code)
+
+### **frpc-desktop**
+• [https://mp.weixin.qq.com/s/7nCQKfUj-YPoj_ESVw-5bA](https://mp.weixin.qq.com/s/7nCQKfUj-YPoj_ESVw-5bA)
+> 开源网穿透工具 frp 的桌面客户端
+
+### **苹果电脑版应用仓库**
+• [https://apps.apple.com/app/id1596411278](https://apps.apple.com/app/id1596411278)
+
+### **匿名邮件**
+• [https://anonymousemail.me/](https://anonymousemail.me/)
+
+### **kafka**
+• [https://kafka.apache.org/downloads](https://kafka.apache.org/downloads)
+
+### **zookeeper**
+• [https://archive.apache.org/dist/zookeeper/zookeeper-3.5.9/](https://archive.apache.org/dist/zookeeper/zookeeper-3.5.9/)
+
+### **文件快传**
+• [https://transfer.52python.cn/](https://transfer.52python.cn/)
+
+### **鼠标样式**
+• [https://sweezy-cursors.com/](https://sweezy-cursors.com/)
+
+### **downsub（youtube 字幕）**
+• [https://downsub.com/](https://downsub.com/)
+
+### **IDEA 导入 Eclipse 项目**
+• [https://blog.csdn.net/zeal9s/article/details/90690524](https://blog.csdn.net/zeal9s/article/details/90690524)
+
+### **pairdrop 局域网数据传输**
+• [https://pairdrop.net/](https://pairdrop.net/)
+
+### **alloyteam web 前端导航**
+• [http://www.alloyteam.com/nav/](http://www.alloyteam.com/nav/)
+
+### **茂茂的前端导航模板**
+• [https://fe-nav.netlify.app/](https://fe-nav.netlify.app/)
+
+### **tunelo 将任何东西暴露到互联网**
+• [https://tunelo.net/#zh](https://tunelo.net/#zh)
+
+### **pinme 一键发布网站**
+• [https://pinme.eth.limo/#/](https://pinme.eth.limo/#/)
+
+### **vercel 云部署**
+• [https://vercel.com/home](https://vercel.com/home)
 
 
 

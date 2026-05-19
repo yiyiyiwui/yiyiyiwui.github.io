@@ -39,15 +39,8 @@ outline: deep
 ### **后续**
 • [https://netflixhz.com/free-movie-websites/](https://netflixhz.com/free-movie-websites/)
 
+### **netflixgc 电影**
+• [https://www.netflixgc.com/](https://www.netflixgc.com/)
+> 电影资源站
 
-## 📺 电视
 
-### **天猫影视** 
-• [https://example-tv.com](https://example-tv.com)
-> 提供高清电视直播流，涵盖多种频道
-
-## 🎎 动漫
-
-### **动漫天堂** 
-• [https://example-anime.com](https://example-anime.com)
-> 专注二次元内容，收录新番经典

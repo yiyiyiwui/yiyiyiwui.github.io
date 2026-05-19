@@ -1,4 +1,20 @@
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
 dist
 cache
 .temp
-node_modules
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
